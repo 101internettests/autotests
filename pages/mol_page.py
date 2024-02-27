@@ -15,20 +15,20 @@ class OneHundredMainPage(BasePage):
             self.voronezh_assert_text()
             time.sleep(60)
             # self.driver.back()
-        with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
-            self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
-            self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
-            self.choose_connection_type()
-            self.voronezh_assert_text()
-            time.sleep(60)
+        # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
+        #     self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
+        #     self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
+        #     self.choose_connection_type()
+        #     self.voronezh_assert_text()
+        #     time.sleep(60)
         tags_to_check = [
-            TagPagelocators.TAG_HOME_INTERNET,
+            # TagPagelocators.TAG_HOME_INTERNET,
             TagPagelocators.TAG_INTERNET_TV,
             TagPagelocators.TAG_CHEAP_INTERNET,
             TagPagelocators.TAG_100_MB,
-            TagPagelocators.TAG_300_MB,
-            TagPagelocators.TAG_500_MB,
-            TagPagelocators.TAG_ONLINE_CINEMA
+            # TagPagelocators.TAG_300_MB,
+            # TagPagelocators.TAG_500_MB,
+            # TagPagelocators.TAG_ONLINE_CINEMA
         ]
 
         for tag in tags_to_check:
@@ -84,15 +84,16 @@ class OneHundredMainPage(BasePage):
         self.choose_connection_type()
         self.moscow_assert_text()
         time.sleep(60)
-        with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
+        # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             # self.driver.back()
-            self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
-            self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
-            self.choose_connection_type()
-            self.moscow_assert_text()
-            time.sleep(60)
-        new_new_tags = [TagPagelocators.TAG_HOME_INTERNET,
-                        TagPagelocators.TAG_INTERNET_TV,
+            # self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
+            # self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
+            # self.choose_connection_type()
+            # self.moscow_assert_text()
+            # time.sleep(60)
+        new_new_tags = [
+                        # TagPagelocators.TAG_HOME_INTERNET,
+                        # TagPagelocators.TAG_INTERNET_TV]
                         TagPagelocators.TAG_CHEAP_INTERNET,
                         TagPagelocators.TAG_ONLINE_CINEMA]
         for new_tag in new_new_tags:

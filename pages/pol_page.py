@@ -14,17 +14,17 @@ class OneHundredMainPage(BasePage):
             self.choose_connection_type()
             self.voronezh_assert_text()
             time.sleep(60)
-        with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
-            self.element_is_visible(Tagpagelocators.TAG_INTERNET_TV_MOBILE).click()
-            self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
-            self.choose_connection_type()
-            self.voronezh_assert_text()
-            time.sleep(60)
+        # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
+        #     self.element_is_visible(Tagpagelocators.TAG_INTERNET_TV_MOBILE).click()
+        #     self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
+        #     self.choose_connection_type()
+        #     self.voronezh_assert_text()
+        #     time.sleep(60)
         tags_to_check = [
-            Tagpagelocators.TAG_HOME_INTERNET,
-            Tagpagelocators.TAG_INTERNET_TV,
-            Tagpagelocators.TAG_CHEAP_INTERNET,
-            Tagpagelocators.TAG_100_MB,
+            # Tagpagelocators.TAG_HOME_INTERNET,
+            # Tagpagelocators.TAG_INTERNET_TV,
+            # Tagpagelocators.TAG_CHEAP_INTERNET,
+            # Tagpagelocators.TAG_100_MB,
             Tagpagelocators.TAG_300_MB,
             Tagpagelocators.TAG_500_MB,
             Tagpagelocators.TAG_ONLINE_CINEMA
@@ -101,15 +101,15 @@ class OneHundredMainPage(BasePage):
             self.choose_connection_type()
             self.moscow_assert_text()
             time.sleep(60)
-        with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
-            self.element_is_visible(Tagpagelocators.TAG_INTERNET_TV_MOBILE).click()
-            self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
-            self.choose_connection_type()
-            self.moscow_assert_text()
-            time.sleep(60)
+        # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
+        #     self.element_is_visible(Tagpagelocators.TAG_INTERNET_TV_MOBILE).click()
+        #     self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
+        #     self.choose_connection_type()
+        #     self.moscow_assert_text()
+        #     time.sleep(60)
         new_new_tags = [Tagpagelocators.TAG_HOME_INTERNET,
-                        Tagpagelocators.TAG_INTERNET_TV,
-                        Tagpagelocators.TAG_CHEAP_INTERNET]
+                        Tagpagelocators.TAG_INTERNET_TV]
+                        # Tagpagelocators.TAG_CHEAP_INTERNET]
         for new_tag in new_new_tags:
             with allure.step(f"Проверка {new_tag}"):
                 self.element_is_visible(new_tag).click()

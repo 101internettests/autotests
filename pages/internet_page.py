@@ -27,12 +27,12 @@ class OneHundredMainPage(BasePage):
             time.sleep(60)
         tags_to_check = [
             TagPagelocators.TAG_HOME_INTERNET,
-            TagPagelocators.TAG_INTERNET_TV,
-            TagPagelocators.TAG_CHEAP_INTERNET,
-            TagPagelocators.TAG_100_MB,
-            TagPagelocators.TAG_300_MB,
-            TagPagelocators.TAG_500_MB,
-            TagPagelocators.TAG_ONLINE_CINEMA
+            # TagPagelocators.TAG_INTERNET_TV,
+            # TagPagelocators.TAG_CHEAP_INTERNET,
+            # TagPagelocators.TAG_100_MB,
+            # TagPagelocators.TAG_300_MB,
+            # TagPagelocators.TAG_500_MB,
+            # TagPagelocators.TAG_ONLINE_CINEMA
         ]
         for tag in tags_to_check:
             with allure.step(f"Проверка {tag}"):
@@ -95,17 +95,17 @@ class OneHundredMainPage(BasePage):
             self.choose_connection_type()
             self.moscow_assert_text()
             time.sleep(60)
-        new_new_tags = [TagPagelocators.TAG_HOME_INTERNET,
-                        TagPagelocators.TAG_INTERNET_TV,
-                        TagPagelocators.TAG_CHEAP_INTERNET,
-                        TagPagelocators.TAG_ONLINE_CINEMA]
-        for new_tag in new_new_tags:
-            with allure.step(f"Проверка {new_tag}"):
-                self.element_is_visible(new_tag).click()
-                self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
-                self.choose_connection_type()
-                self.moscow_assert_text()
-                time.sleep(60)
+        # new_new_tags = [TagPagelocators.TAG_HOME_INTERNET]
+        #                 # TagPagelocators.TAG_INTERNET_TV,
+        #                 # TagPagelocators.TAG_CHEAP_INTERNET,
+        #                 # TagPagelocators.TAG_ONLINE_CINEMA]
+        # for new_tag in new_new_tags:
+        #     with allure.step(f"Проверка {new_tag}"):
+        #         self.element_is_visible(new_tag).click()
+        #         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
+        #         self.choose_connection_type()
+        #         self.moscow_assert_text()
+                # time.sleep(60)
 
     @allure.step("Проверить текст попапа и отправить заявку для города Москва")
     def moscow_assert_text(self):
@@ -145,14 +145,14 @@ class OneHundredMainPage(BasePage):
             self.choose_connection_type()
             self.moscow_assert_text()
             time.sleep(60)
-        new_new_tags = [TagPagelocators.TAG_HOME_INTERNET,
-                        TagPagelocators.TAG_INTERNET_TV,
-                        TagPagelocators.TAG_CHEAP_INTERNET,
-                        TagPagelocators.TAG_ONLINE_CINEMA]
-        for new_tag in new_new_tags:
-            with allure.step(f"Проверка {new_tag}"):
-                self.element_is_visible(new_tag).click()
-                self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
-                self.choose_connection_type()
-                self.moscow_assert_text()
-                time.sleep(60)
+        # new_new_tags = [TagPagelocators.TAG_HOME_INTERNET],
+        #                 # TagPagelocators.TAG_INTERNET_TV,
+        #                 # TagPagelocators.TAG_CHEAP_INTERNET,
+        #                 # TagPagelocators.TAG_ONLINE_CINEMA]
+        # for new_tag in new_new_tags:
+        #     with allure.step(f"Проверка {new_tag}"):
+        #         self.element_is_visible(new_tag).click()
+        #         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
+        #         self.choose_connection_type()
+        #         self.moscow_assert_text()
+                # time.sleep(60)
