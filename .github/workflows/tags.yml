@@ -2,7 +2,7 @@ name: tags workflow
 
 on:
   schedule:
-    - cron: '40 05 * * *'  
+    - cron: '05 12 * * *'  
           
 permissions:
   contents: read
@@ -45,7 +45,7 @@ jobs:
           https://api.github.com/repos/101internettests/autotests/actions/artifacts/$REPORT_ID/zip 
           -o pages.zip
       - run: mkdir allure-results && unzip artifacts.zip -d allure-results
-      - run: mkdir old_pages pages_history && unzip pages.zip -d old_pages && tar -xvf old_pages/artifact.tar -C pages_history
+      - run: mkdir old_pages pages_history && unzip pages.zip -d old_pages && mv old_pages/artifact.tar pages_history/
       - run: cp pages_history/history/* allure-results && cp -r pages_history/history/ allure-results
       - name: Store allure history
         uses: actions/upload-artifact@v3
@@ -126,7 +126,13 @@ jobs:
         uses: actions/download-artifact@v3
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1.2.9 
-  
+      - name: Deploy to beget-page
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          password: ${{ secrets.SERVER_PASSWORD }}
+          port: ${{ secrets.SERVER_PORT }}
+          rm: true
+          source: "./*"
+          target: "public_html/allure-report"
