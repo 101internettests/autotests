@@ -1,8 +1,10 @@
 name: tags workflow
 
-on:
-  schedule:
-    - cron: '55 15 * * *'  
+on:  
+  workflow_dispatch:
+  # schedule:
+  #   - cron: '55 15 * * *'
+ 
           
 permissions:
   contents: read
