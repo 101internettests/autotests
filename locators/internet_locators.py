@@ -68,7 +68,38 @@ class RewiewForRegion:
     ENTER_FEEDBACK = (By.XPATH, "//textarea[@datatest='feedback_comment']")
     LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
     CLICK_ANONIM = (By.XPATH, "//div[contains(text(), 'Анонимно')]")
-    SUCCESS_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв')]")
+    SUCCESS_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
+
+
+class RewiewOnTheStreet:
+    SCROLL = (By.XPATH, "//div[contains(text(), 'Начать')]")
+    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
+    LEAVE_NAME = (By.XPATH, "//input[@autocomplete='name']")
+    CHOOCE_PRIVIDER = (By.XPATH, "//span[contains(text(), 'Провайдер')]")
+    CLICK_PROVIDER = (By.XPATH, "//li[contains(text(), 'Онлайм')]")
+    LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
+    ENTER_PHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
+    GET_101_PUB = (By.XPATH, "//div[contains(text(), 'Получить 101 руб')]")
+    CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
+
+
+
+class RewiewOnTheHouse:
+    CLICK_PROVIDER = (By.XPATH, "(//li[contains(text(), 'Онлайм')])[2]")
+    ENTER_PHONE_NUMBER = (By.XPATH, "(//input[@id='fix_callback_phone'])[2]")
+
+class RewiewOperator:
+    SCROLL = (By.XPATH, "//p[contains(text(), 'Важность качественной мобильной связи сложно переоценить.')]")
+    CHOOCE_OPERATOR = (By.XPATH, "//span[contains(text(), 'Оператор')]")
+    CLICK_OPERATOR = (By.XPATH, "(//li[contains(text(), 'билайн')])[4]")
+    CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
+
+
+
+
+
+
+
 
 
 
