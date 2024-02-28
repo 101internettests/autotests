@@ -53,3 +53,24 @@ class LocatorsForOtherPages:
     POP_UP_SELECT_CONNECTION_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[3]")
     POP_UP_NOT_SUCCESS_NUMBER = (By.XPATH, "//input[@autocomplete='tel']")
     CLOSE_THE_WINDOW = (By.XPATH, "(//span[@class='icon24 icon-close'])[5]")
+
+
+class RewiewForRegion:
+    SCROLL = (By.XPATH, "//div[contains(text(), 'Общая оценка')]")
+    LEAVE_FEEDBACK = (By.XPATH, "(//a[@datatest='main_allreviews_button'])[2]")
+    CHOOSE_PROVIDER = (By.XPATH, "(//span[contains(text(), 'Выберите')])[1]")
+    CLICK_PROVIDER = (By.XPATH, "//li[contains(text(), 'Ростелеком')]")
+    CHOOSE_INTERNET = (By.XPATH, "(//span[contains(text(), 'Выберите')])[2]")
+    CLICK_INTERNET = (By.XPATH, "//li[contains(text(), 'Интернет в квартиру ')]")
+    CHOOSE_TIME = (By.XPATH, "//div[contains(text(), '3 месяца - 1 год')]")
+    CHOOSE_SERVISE = (By.XPATH, "//div[contains(text(), 'Интернет и ТВ')]")
+    CLICK_RATING = (By.XPATH, "(//div[@datatest='feedback_rating_button']/div/div/span)[1]")
+    ENTER_FEEDBACK = (By.XPATH, "//textarea[@datatest='feedback_comment']")
+    LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
+    CLICK_ANONIM = (By.XPATH, "//div[contains(text(), 'Анонимно')]")
+    SUCCESS_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв')]")
+
+
+
+
+
