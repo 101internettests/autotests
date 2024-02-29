@@ -136,5 +136,5 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           rm: true
-          source: "./*"
-          target: "../y90143on.beget.tech/public_html"
+          source: "."
+          target: "y90143on.beget.tech/public_html"
