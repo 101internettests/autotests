@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
   # schedule:
   #   - cron: '55 15 * * *'
- 
+
+env:
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  CHAT_ID: ${{ secrets.CHAT_ID }}
           
 permissions:
   contents: read
