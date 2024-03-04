@@ -1,4 +1,4 @@
-from pages.internet_page import RewiewPageRegion, RewiewPageStreet, RewiewPageProvider, RewiewPageProvider
+from pages.internet_page import RewiewPageRegion, RewiewPageStreet, RewiewPageProvider
 import random
 
 urls = ['https://101internet.ru/ekaterinburg/reviews', 'https://www.moskvaonline.ru/moskovskaya-oblast/reviews',
@@ -6,6 +6,16 @@ urls = ['https://101internet.ru/ekaterinburg/reviews', 'https://www.moskvaonline
 
 urls_provider = ['https://101internet.ru/chelyabinsk/providers/lentest', 'https://www.moskvaonline.ru/providers/mts-home',
                  'https://piter-online.net/providers/dom-ru']
+
+urls_operator = ['https://piter-online.net/operatory/mts']
+
+urls_street = ['https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534',
+                'https://piter-online.net/address/%D1%84%D1%80%D1%83%D0%BD%D0%B7%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-id1206/%D1%83%D0%BB-%D0%BE%D0%BB%D0%B5%D0%BA%D0%BE-%D0%B4%D1%83%D0%BD%D0%B4%D0%B8%D1%87%D0%B0-id268405',
+                'https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534']
+
+urls_house = ['https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534/d-1-id218520',
+              'https://www.moskvaonline.ru/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534/d-1-id218520',
+              'https://piter-online.net/address/%D1%84%D1%80%D1%83%D0%BD%D0%B7%D0%B5%D0%BD%D1%81%D0%BA%D0%B8%D0%B9-id1206/%D1%83%D0%BB-%D0%BE%D0%BB%D0%B5%D0%BA%D0%BE-%D0%B4%D1%83%D0%BD%D0%B4%D0%B8%D1%87%D0%B0-id268405/d-10-k1-id152365']
 
 urls_provider_feedback = ['https://101internet.ru/chelyabinsk/rating/rostelecom', 'https://www.moskvaonline.ru/rating/rostelecom',
                           'https://piter-online.net/rating/rostelecom']
@@ -27,17 +37,20 @@ class Test101Rewiew:
         rewiew.leave_feedback_region()
 
     def test_101_rub_street(self, driver):
-        rewiew = RewiewPageStreet(driver, "https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534")
+        random_url = random.choice(urls_street)
+        rewiew = RewiewPageStreet(driver, random_url)
         rewiew.open()
         rewiew.leave_the_feedback_101_pub()
 
     def test_101_rub_house(self, driver):
-        rewiew = RewiewPageStreet(driver, "https://101internet.ru/moskva/address/%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id1141/%D1%83%D0%BB-%D0%B0%D1%80%D0%B1%D0%B0%D1%82-id266534/d-1-id218520")
+        random_url = random.choice(urls_house)
+        rewiew = RewiewPageStreet(driver, random_url)
         rewiew.open()
         rewiew.leave_the_feedback_101_pub_house()
 
     def test_101_rub_operator(self, driver):
-        rewiew = RewiewPageStreet(driver, "https://www.moskvaonline.ru/operatory/beeline")
+        random_url = random.choice(urls_operator)
+        rewiew = RewiewPageStreet(driver, random_url)
         rewiew.open()
         rewiew.leave_the_feedback_101_pub_operator()
 

@@ -234,7 +234,7 @@ class RewiewPageStreet(BasePage):
 
     def leave_the_feedback_101_pub_operator(self):
         time.sleep(3)
-        scroll = self.element_is_visible(RewiewOperator.SCROLL)
+        scroll = self.element_is_visible(RewiewOperator.LEAVE_FEEDBACK)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         self.element_is_visible(RewiewOnTheStreet.LEAVE_FEEDBACK).send_keys(
