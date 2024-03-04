@@ -83,16 +83,35 @@ class RewiewOnTheStreet:
     CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
 
 
-
 class RewiewOnTheHouse:
     CLICK_PROVIDER = (By.XPATH, "(//li[contains(text(), 'Онлайм')])[2]")
     ENTER_PHONE_NUMBER = (By.XPATH, "(//input[@id='fix_callback_phone'])[2]")
+
 
 class RewiewOperator:
     SCROLL = (By.XPATH, "//p[contains(text(), 'Важность качественной мобильной связи сложно переоценить.')]")
     CHOOCE_OPERATOR = (By.XPATH, "//span[contains(text(), 'Оператор')]")
     CLICK_OPERATOR = (By.XPATH, "(//li[contains(text(), 'билайн')])[4]")
     CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
+
+class RewiewProvider:
+        SCROLL = (By.XPATH, "(//a[@datatest='providers_provider_allreviews_button'])[2]")
+
+
+class RewiewProviderFeedback:
+    LEAVE_FEEDBACK = (By.XPATH, "//a[@datatest='providers_reviews_feedback_button']")
+
+class RewiewMainPage:
+    SCROLL = (By.XPATH, "//div[contains(text(), 'Отзыв проверен и участвует в подсчёте рейтинга провайдера')]")
+    LEAVE_FEEDBACK = (By.XPATH, "(//a[@datatest='main_allreviews_button'])[1]")
+
+
+
+
+
+
+
+
 
 
 
