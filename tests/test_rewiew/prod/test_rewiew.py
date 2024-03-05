@@ -78,7 +78,7 @@ class Test101Rewiew:
         rewiew.open()
         rewiew.leave_feedback_maim_page()
 
-    def test_rewiew_office(self, driver):
+    def test_rewiew_dacha(self, driver):
         random_url = random.choice(urls_dacha)
         rewiew = RewiewPageRegion(driver, random_url)
         rewiew.open()
