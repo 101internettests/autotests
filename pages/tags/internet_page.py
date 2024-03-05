@@ -165,6 +165,7 @@ class RewiewPageRegion(BasePage):
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         self.element_is_visible(RewiewForRegion.LEAVE_FEEDBACK).click()
+        time.sleep(3)
         self.element_is_visible(RewiewForRegion.CHOOSE_PROVIDER).click()
         self.element_is_visible(RewiewForRegion.CLICK_PROVIDER).click()
         self.element_is_visible(RewiewForRegion.CHOOSE_INTERNET).click()
@@ -175,6 +176,7 @@ class RewiewPageRegion(BasePage):
         self.element_is_visible(RewiewForRegion.ENTER_FEEDBACK).send_keys("ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(RewiewForRegion.LEAVE_FEEDBACK_2).click()
         self.element_is_visible(RewiewForRegion.CLICK_ANONIM).click()
+        time.sleep(3)
         close = self.element_is_present(RewiewForRegion.SUCCESS_POPAP)
         assert close.text == "Спасибо за отзыв!"
 
