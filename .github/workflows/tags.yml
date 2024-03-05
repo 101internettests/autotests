@@ -3,7 +3,7 @@ name: tags workflow
 on:  
   # workflow_dispatch:
   schedule:
-    - cron: '15 4 * * *'
+    - cron: '45 4 * * *'
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
