@@ -1,63 +1,21 @@
 name: tags workflow
 
-on:  
-  # workflow_dispatch:
+on:
   schedule:
-    - cron: '55 18 * * *'
- 
-          
+    - cron: "25 19 * * *"
+
+
+env:
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  CHAT_ID: ${{ secrets.CHAT_ID }}
+
 permissions:
   contents: read
   pages: write
   id-token: write
 
-  
-jobs:
-  # download-history:
-  #   runs-on: ubuntu-latest
-  #   name: Download history
-  #   steps:
-  #     - name: Set up Python
-  #       uses: actions/setup-python@v3
-  #       with:
-  #         python-version: ${{ matrix.python-version }}
-  #     - run: >
-  #         ARTIFACT_ID=$(curl -L 
-  #         -H "Accept: application/vnd.github+json" 
-  #         -H "X-Github-Api-Version: 2022-11-28" 
-  #         "https://api.github.com/repos/101internettests/autotests/actions/artifacts?name=allure-results" 
-  #         | python -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);") 
-  #         && 
-  #         curl -L 
-  #         -H "Accept: application/vnd.github+json" 
-  #         -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
-  #         -H "X-GitHub-Api-Version: 2022-11-28" 
-  #         https://api.github.com/repos/101internettests/autotests/actions/artifacts/$ARTIFACT_ID/zip 
-  #         -o artifacts.zip &&
-  #         REPORT_ID=$(curl -L 
-  #         -H "Accept: application/vnd.github+json" 
-  #         -H "X-Github-Api-Version: 2022-11-28" 
-  #         "https://api.github.com/repos/101internettests/autotests/actions/artifacts?name=github-pages" 
-  #         | python -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);") 
-  #         && 
-  #         curl -L 
-  #         -H "Accept: application/vnd.github+json" 
-  #         -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
-  #         -H "X-GitHub-Api-Version: 2022-11-28" 
-  #         https://api.github.com/repos/101internettests/autotests/actions/artifacts/$REPORT_ID/zip 
-  #         -o pages.zip
-  #     - run: mkdir allure-results && unzip artifacts.zip -d allure-results
-  #     - run: mkdir old_pages pages_history && unzip pages.zip -d old_pages && mv old_pages/artifact.tar pages_history/
-  #     - run: cp pages_history/history/* allure-results && cp -r pages_history/history/ allure-results
-  #     - name: Store allure history
-  #       uses: actions/upload-artifact@v3
-  #       with:
-  #         name: allure-results
-  #         path:
-  #           allure-results
-  #         retention-days: 1
-      
 
+jobs:
   run-tests:
     strategy:
       fail-fast: false
@@ -67,7 +25,7 @@ jobs:
           - "3.11"
     name: Test
     runs-on: ${{ matrix.os }}
-    # needs: download-history 
+    # needs: download-history
 
     steps:
       - name: Checkout code
@@ -78,17 +36,17 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      # - name: Install dependencies
+      #   run: pip install -r requirements.txt
 
       # - name: Download all workflow run artifacts
       #   uses: actions/download-artifact@v3
-        
-      - name: all tests
-        if: "github.event.inputs.deployment_target == 'all'"
-        run:  pytest tests/test_tags/prod --alluredir=allure-results
-        continue-on-error: true
-        
+
+      # - name: all tests
+      #   # if: "github.event.inputs.deployment_target == 'all'"
+      #   run: printenv && pytest tests/test_tags/prod --alluredir=allure-results
+      #   continue-on-error: true
+
       - name: Store allure results
         uses: actions/upload-artifact@v3
         with:
@@ -96,7 +54,52 @@ jobs:
           path:
             allure-results
           retention-days: 2
-          
+
+
+
+  download-history:
+    runs-on: ubuntu-latest
+    name: Download history
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: >
+          ARTIFACT_ID=$(curl -L 
+          -H "Accept: application/vnd.github+json" 
+          -H "X-Github-Api-Version: 2022-11-28" 
+          "https://api.github.com/repos/101internettests/autotests/actions/artifacts?name=allure-results" 
+          | python -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);") 
+          && 
+          curl -L 
+          -H "Accept: application/vnd.github+json" 
+          -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
+          -H "X-GitHub-Api-Version: 2022-11-28" 
+          https://api.github.com/repos/101internettests/autotests/actions/artifacts/$ARTIFACT_ID/zip 
+          -o artifacts.zip &&
+          REPORT_ID=$(curl -L 
+          -H "Accept: application/vnd.github+json" 
+          -H "X-Github-Api-Version: 2022-11-28" 
+          "https://api.github.com/repos/101internettests/autotests/actions/artifacts?name=github-pages" 
+          | python -c "import sys, json; print(json.load(sys.stdin)['artifacts'][0]['id']);") 
+          && 
+          curl -L 
+          -H "Accept: application/vnd.github+json" 
+          -H "Authorization: Bearer ${{ secrets.TOKEN }}" 
+          -H "X-GitHub-Api-Version: 2022-11-28" 
+          https://api.github.com/repos/101internettests/autotests/actions/artifacts/$REPORT_ID/zip 
+          -o pages.zip
+      - run: mkdir allure-results && unzip artifacts.zip -d allure-results
+      - run: mkdir old_pages pages_history && unzip pages.zip -d old_pages && tar -xvf old_pages/artifact.tar -C pages_history
+      - run: cp pages_history/history/* allure-results && cp -r pages_history/history/ allure-results
+      - name: Store allure history
+        uses: actions/upload-artifact@v3
+        with:
+          name: allure-results
+          path:
+            allure-results
+          retention-days: 1
 
   generate-report:
     runs-on: ubuntu-latest
@@ -118,7 +121,7 @@ jobs:
           path:
             _site
           retention-days: 2
-        
+
   publish-report:
     runs-on: ubuntu-latest
     needs: generate-report
@@ -126,15 +129,20 @@ jobs:
     steps:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v3
+      # - name: Upload Pages artifact
+      #   uses: actions/upload-pages-artifact@v2
+      # - name: Deploy to beget-page
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.SERVER_HOST }}
+      #     username: ${{ secrets.SERVER_USERNAME }}
+      #     password: ${{ secrets.SERVER_PASSWORD }}
+      #     port: ${{ secrets.SERVER_PORT }}
+      #     rm: true
+      #     source: "."
+      #     target: "public_html"
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v2
-      - name: Deploy to beget-page
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USERNAME }}
-          password: ${{ secrets.SERVER_PASSWORD }}
-          port: ${{ secrets.SERVER_PORT }}
-          rm: true
-          source: "./*"
-          target: "../y90143on.beget.tech/public_html"
+      - name: Deploy to GitHub Pages
+        # id: deployment
+        uses: actions/deploy-pages@v1.2.9
