@@ -1,8 +1,11 @@
 name: tags workflow
 
-on:  
+on:
+  push:
+    branches:
+      - workflow
   schedule:
-    - cron: '50 12 * * *'
+    - cron: '35 12 * * *'
   
 
 env:
