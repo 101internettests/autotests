@@ -2,10 +2,8 @@ name: tags workflow
 
 on:  
   schedule:
-    - cron: '45 11 * * *'
-  push:
-    branches:
-      - workflow
+    - cron: '50 12 * * *'
+  
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
