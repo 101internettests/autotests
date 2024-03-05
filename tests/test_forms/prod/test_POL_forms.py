@@ -3,7 +3,7 @@ from pages.forms.pol_page import FormsPage
 
 class TestFormsInternetTags:
 
-    def test_voronezh_tags(self, driver):
+    def test_wait_call_pol_form(self, driver):
         tags = FormsPage(driver, "https://piter-online.net/")
         tags.open()
         tags.change_region_on_spb()

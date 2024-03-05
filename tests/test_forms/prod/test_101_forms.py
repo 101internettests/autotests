@@ -3,7 +3,7 @@ from pages.forms.internet_page import FormsPage
 
 class TestFormsInternetTags:
 
-    def test_voronezh_tags(self, driver):
+    def test_wait_call_form(self, driver):
         tags = FormsPage(driver, "https://101internet.ru/voronezh")
         tags.open()
         tags.change_region_on_msk()
