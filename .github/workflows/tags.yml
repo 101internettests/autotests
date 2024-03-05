@@ -2,8 +2,6 @@ name: tags workflow
 
 on:
   push:
-    branches:
-      - workflow
   schedule:
     - cron: '55 12 * * *'
   
