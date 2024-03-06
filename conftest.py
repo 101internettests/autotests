@@ -16,7 +16,5 @@ def pytest_sessionfinish(session, exitstatus):
     bot.send_message(chat_id, "Заявки отправлены, отчет смотри здесь вот тут")
 
 
-@pytest.fixture
-def skip_message():
-    bot.send_message(chat_id, "Заявки ")
+
 
