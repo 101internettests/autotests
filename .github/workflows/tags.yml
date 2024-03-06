@@ -2,7 +2,7 @@ name: tags workflow
 
 on:
   schedule:
-    - cron: "40 6 * * *"
+    - cron: "40 7 * * *"
 #  workflow_dispatch:
 
 env:
