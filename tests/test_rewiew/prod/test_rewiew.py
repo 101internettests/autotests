@@ -1,4 +1,4 @@
-from pages.tags.internet_page import RewiewPageRegion, RewiewPageStreet, RewiewPageProvider
+from pages.rewiew.internet_page import RewiewPageRegion, RewiewPageStreet, RewiewPageProvider
 import random
 
 urls = ['https://101internet.ru/ekaterinburg/reviews', 'https://www.moskvaonline.ru/moskovskaya-oblast/reviews',
