@@ -1,4 +1,4 @@
-from pages.pol_page import OneHundredMainPage
+from pages.tags.pol_page import OneHundredMainPage
 
 
 class TestPolTags:
