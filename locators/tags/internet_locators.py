@@ -55,56 +55,7 @@ class LocatorsForOtherPages:
     CLOSE_THE_WINDOW = (By.XPATH, "(//span[@class='icon24 icon-close'])[5]")
 
 
-class RewiewForRegion:
-    SCROLL = (By.XPATH, "//div[contains(text(), 'Общая оценка')]")
-    LEAVE_FEEDBACK = (By.XPATH, "(//a[@datatest='main_allreviews_button'])[2]")
-    CHOOSE_PROVIDER = (By.XPATH, "(//span[contains(text(), 'Выберите')])[1]")
-    CLICK_PROVIDER = (By.XPATH, "//li[contains(text(), 'Ростелеком')]")
-    CHOOSE_INTERNET = (By.XPATH, "(//span[contains(text(), 'Выберите')])[2]")
-    CLICK_INTERNET = (By.XPATH, "//li[contains(text(), 'Интернет в квартиру ')]")
-    CHOOSE_TIME = (By.XPATH, "//div[contains(text(), '3 месяца - 1 год')]")
-    CHOOSE_SERVISE = (By.XPATH, "//div[contains(text(), 'Интернет и ТВ')]")
-    CLICK_RATING = (By.XPATH, "(//div[@datatest='feedback_rating_button']/div/div/span)[1]")
-    ENTER_FEEDBACK = (By.XPATH, "//textarea[@datatest='feedback_comment']")
-    LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
-    CLICK_ANONIM = (By.XPATH, "//div[contains(text(), 'Анонимно')]")
-    SUCCESS_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
 
-
-class RewiewOnTheStreet:
-    SCROLL = (By.XPATH, "//div[contains(text(), 'Начать')]")
-    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
-    LEAVE_NAME = (By.XPATH, "//input[@autocomplete='name']")
-    CHOOCE_PRIVIDER = (By.XPATH, "//span[contains(text(), 'Провайдер')]")
-    CLICK_PROVIDER = (By.XPATH, "//li[contains(text(), 'Ростелеком')]")
-    LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
-    ENTER_PHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
-    GET_101_PUB = (By.XPATH, "//div[contains(text(), 'Получить 101 руб')]")
-    CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
-
-
-class RewiewOnTheHouse:
-    CLICK_PROVIDER = (By.XPATH, "(//li[contains(text(), 'Ростелеком')])[2]")
-    ENTER_PHONE_NUMBER = (By.XPATH, "(//input[@id='fix_callback_phone'])[2]")
-
-
-class RewiewOperator:
-    SCROLL = (By.XPATH, "//p[contains(text(), 'Важность качественной мобильной связи сложно переоценить.')]")
-    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
-    CHOOCE_OPERATOR = (By.XPATH, "//span[contains(text(), 'Оператор')]")
-    CLICK_OPERATOR = (By.XPATH, "//li[contains(text(), 'МТС')]")
-    CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
-
-class RewiewProvider:
-        SCROLL = (By.XPATH, "(//a[@datatest='providers_provider_allreviews_button'])[2]")
-
-
-class RewiewProviderFeedback:
-    LEAVE_FEEDBACK = (By.XPATH, "//a[@datatest='providers_reviews_feedback_button']")
-
-class RewiewMainPage:
-    SCROLL = (By.XPATH, "//div[contains(text(), 'Отзыв проверен и участвует в подсчёте рейтинга провайдера')]")
-    LEAVE_FEEDBACK = (By.XPATH, "(//a[@datatest='main_allreviews_button'])[1]")
 
 
 
