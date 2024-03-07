@@ -1,6 +1,6 @@
 # import time
 import allure
-from locators.url_locators import MainPhoneNumbersPage, ProviderPhoneNumbersPage
+from locators.tags.url_locators import MainPhoneNumbersPage, ProviderPhoneNumbersPage
 from pages.base_page import BasePage
 
 

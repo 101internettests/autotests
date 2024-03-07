@@ -1,4 +1,4 @@
-from pages.internet_page import OneHundredMainPage
+from pages.tags.internet_page import OneHundredMainPage
 
 
 class TestOneHundredInternetTags:

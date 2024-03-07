@@ -1,4 +1,4 @@
-from pages.mol_page import OneHundredMainPage
+from pages.tags.mol_page import OneHundredMainPage
 
 
 class TestMOLRatesTags:

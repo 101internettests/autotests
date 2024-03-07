@@ -1,6 +1,5 @@
-import time
 import allure
-from locators.mol_locators import TagPagelocators, SpareTagsLocators, PopupFillTheAddress, PopupSuccess
+from locators.tags.mol_locators import TagPagelocators, SpareTagsLocators, PopupFillTheAddress, PopupSuccess
 from pages.base_page import BasePage
 
 
