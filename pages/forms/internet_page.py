@@ -1,7 +1,7 @@
 import allure
 import time
-from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, PopUpPhoneNub, AddreesTariffForm, \
-    OutOfTownApplication
+from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, PopUpPhoneNub, AddreesTariffForm
+from locators.forms.internet_locator import RecentlyConnectionTariffs, OutOfTownApplication, NonPartnerCardRecCon
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
@@ -92,3 +92,42 @@ class FormsPage(BasePage):
         self.element_is_visible(OutOfTownApplication.BUTTON_CONNECTION).click()
         success_text = self.element_is_visible(OutOfTownApplication.TEXT_ASSERT)
         assert success_text.text == "Спасибо, ваша заявка на подключение принята и уже отправлена в работу! Ждите звонка в ближайшее время!"
+
+    @allure.step("Выбрать 'Поиск по адресу' внизу страницы")
+    def chose_button_find_by_address(self):
+        scroll = self.element_is_visible(RecentlyConnectionTariffs.SCROLL)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
+        self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FIND_ADDRESS).click()
+
+    @allure.step("Заполнить адрес через кнопку 'проверить адрес'")
+    def fill_address_in_addresspage(self):
+        self.element_is_visible(RecentlyConnectionTariffs.BUTTON_CHECK_ADDRESS).click()
+        self.element_is_visible(RecentlyConnectionTariffs.INPUT_STREET).send_keys("Тестовская")
+        self.element_is_visible(RecentlyConnectionTariffs.CLICK_ON_THE_STREET).click()
+        self.element_is_visible(RecentlyConnectionTariffs.INPUT_HOUSE).send_keys("1")
+        self.element_is_visible(RecentlyConnectionTariffs.CLICK_ON_THE_HOUSE).click()
+        self.element_is_visible(RecentlyConnectionTariffs.CHOOSE_TYPE_OF_CONNECTION).click()
+        self.element_is_visible(RecentlyConnectionTariffs.CLICK_ON_TYPE_OF_CONNECTION).click()
+        self.element_is_visible(RecentlyConnectionTariffs.CHECK_CONNECTION).click()
+
+    @allure.step("Выбрать 'провайдеры' в меню бургер")
+    def chose_providers_burger_button(self):
+        self.element_is_visible(NonPartnerCardRecCon.PROVIDERS_BUTTON).click()
+        time.sleep(3)
+
+    @allure.step("Выбрать в фильтрах 'Моснет'")
+    def chose_mosnet_provider(self):
+        self.element_is_visible(NonPartnerCardRecCon.CHOSE_PROVIDER_FILTER).send_keys("Моснет")
+        self.element_is_visible(NonPartnerCardRecCon.CHOSE_MOSNET).click()
+        self.element_is_visible(NonPartnerCardRecCon.ACCEPT_FILTER).click()
+        self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_PIC_MOSNET).click()
+        time.sleep(3)
+
+    @allure.step("Заполнить адрес с карточке провайдера")
+    def fill_the_address_provider_card(self):
+        self.element_is_visible(NonPartnerCardRecCon.INPUT_STREET).send_keys("Тестовый")
+        self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_STREET).click()
+        self.element_is_visible(NonPartnerCardRecCon.INPUT_HOUSE).send_keys("1")
+        self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_HOUSE).click()
+        self.element_is_visible(NonPartnerCardRecCon.SHOW_TARIFFS).click()
