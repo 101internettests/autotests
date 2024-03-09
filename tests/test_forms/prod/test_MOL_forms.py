@@ -1,4 +1,6 @@
 from pages.forms.mol_page import FormsPage
+import allure
+import time
 
 
 class TestMOLForms:
@@ -36,3 +38,13 @@ class TestMOLForms:
         forms.change_region_moscow()
         forms.chose_button_internet_outtown_mol()
         forms.fill_connect_to_application_outtown()
+
+    @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы'")
+    def test_check_button_connect_mol(self, driver):
+        forms = FormsPage(driver, "https://www.moskvaonline.ru/")
+        forms.open()
+        forms.change_region_moscow()
+        forms.chose_button_find_by_address()
+        forms.fill_address_in_addresspage()
+        time.sleep(2)
+        forms.fill_popup_number()

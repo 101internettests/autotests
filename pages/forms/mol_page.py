@@ -1,6 +1,6 @@
 import allure
 import time
-from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication
+from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication, RecentlyConnectionTariffs
 from locators.forms.mol_locators import WaitMOLCallLocators, PopUpPhoneNubMsk
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
@@ -87,3 +87,21 @@ class FormsPage(BasePage):
         self.element_is_visible(OutOfTownApplication.BUTTON_CONNECTION).click()
         success_text = self.element_is_visible(OutOfTownApplication.TEXT_ASSERT)
         assert success_text.text == "Спасибо, ваша заявка на подключение принята и уже отправлена в работу! Ждите звонка в ближайшее время!"
+
+    @allure.step("Выбрать 'Поиск по адресу' внизу страницы")
+    def chose_button_find_by_address(self):
+        scroll = self.element_is_visible(WaitMOLCallLocators.SCROLL)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
+        self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FIND_ADDRESS).click()
+
+    @allure.step("Заполнить адрес через кнопку 'проверить адрес'")
+    def fill_address_in_addresspage(self):
+        self.element_is_visible(RecentlyConnectionTariffs.BUTTON_CHECK_ADDRESS).click()
+        self.element_is_visible(RecentlyConnectionTariffs.INPUT_STREET).send_keys("Тестовская")
+        self.element_is_visible(RecentlyConnectionTariffs.CLICK_ON_THE_STREET).click()
+        self.element_is_visible(RecentlyConnectionTariffs.INPUT_HOUSE).send_keys("1")
+        self.element_is_visible(RecentlyConnectionTariffs.CLICK_ON_THE_HOUSE).click()
+        self.element_is_visible(RecentlyConnectionTariffs.CHOOSE_TYPE_OF_CONNECTION).click()
+        self.element_is_visible(RecentlyConnectionTariffs.CLICK_ON_TYPE_OF_CONNECTION).click()
+        self.element_is_visible(RecentlyConnectionTariffs.CHECK_CONNECTION).click()

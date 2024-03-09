@@ -1,3 +1,4 @@
+import allure
 import time
 from pages.forms.internet_page import FormsPage
 
@@ -26,6 +27,7 @@ class TestInternetForms:
         forms.fill_address_on_main_page()
         forms.fill_popup_number()
 
+    @allure.title("Проверка формы заявки 'адрес-тариф'")
     def test_tariff_form(self, driver):
         forms = FormsPage(driver, "https://101internet.ru/voronezh")
         forms.open()
@@ -34,9 +36,31 @@ class TestInternetForms:
         forms.close_popup()
         forms.fill_connect_to_application()
 
+    @allure.title("Проверка формы загородной заявки на 101")
     def test_out_of_town_application(self, driver):
         forms = FormsPage(driver, "https://101internet.ru/voronezh")
         forms.open()
         forms.change_region_moscow()
         forms.chose_button_internet_outtown()
         forms.fill_connect_to_application_outtown()
+
+    @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер")
+    def test_check_button_connect(self, driver):
+        forms = FormsPage(driver, "https://101internet.ru/voronezh")
+        forms.open()
+        forms.change_region_moscow()
+        forms.chose_button_find_by_address()
+        forms.fill_address_in_addresspage()
+        time.sleep(2)
+        forms.fill_popup_number()
+
+    @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
+    def test_check_button_connect(self, driver):
+        forms = FormsPage(driver, "https://101internet.ru/voronezh")
+        forms.open()
+        forms.change_region_moscow()
+        forms.chose_providers_burger_button()
+        forms.chose_mosnet_provider()
+        forms.fill_the_address_provider_card()
+        time.sleep(2)
+        forms.fill_popup_number()
