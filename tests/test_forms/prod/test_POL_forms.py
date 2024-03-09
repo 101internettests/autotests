@@ -1,5 +1,5 @@
 import time
-import pytest
+import allure
 from pages.forms.pol_page import FormsPage
 
 
@@ -40,3 +40,13 @@ class TestPOLForms:
         forms.change_region_on_spb()
         forms.chose_button_internet_outtown()
         forms.fill_connect_to_application_outtown()
+
+    @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы'")
+    def test_check_button_connect(self, driver):
+        forms = FormsPage(driver, "https://piter-online.net/")
+        forms.open()
+        forms.change_region_on_spb()
+        forms.chose_button_find_by_address_pol()
+        forms.fill_address_in_addresspage_pol()
+        time.sleep(2)
+        forms.fill_popup_number()

@@ -1,7 +1,9 @@
 import allure
 import time
-from locators.tags.internet_locators import DailyTagPages101Locators, TagPagelocators, LocatorsForOtherPages, RewiewOnTheHouse, RewiewMainPage
-from locators.tags.internet_locators import PopupFillTheAddress, PopupSuccess, RewiewForRegion, RewiewOnTheStreet, RewiewOperator, RewiewProvider, RewiewProviderFeedback
+from locators.tags.internet_locators import DailyTagPages101Locators, TagPagelocators, LocatorsForOtherPages, \
+    RewiewOnTheHouse, RewiewMainPage
+from locators.tags.internet_locators import PopupFillTheAddress, PopupSuccess, RewiewForRegion, RewiewOnTheStreet, \
+    RewiewOperator, RewiewProvider, RewiewProviderFeedback
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
@@ -106,7 +108,7 @@ class OneHundredMainPage(BasePage):
         #         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
         #         self.choose_connection_type()
         #         self.moscow_assert_text()
-                # time.sleep(60)
+        # time.sleep(60)
 
     @allure.step("Проверить текст попапа и отправить заявку для города Москва")
     def moscow_assert_text(self):
@@ -156,7 +158,8 @@ class OneHundredMainPage(BasePage):
         #         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
         #         self.choose_connection_type()
         #         self.moscow_assert_text()
-                # time.sleep(60)
+        # time.sleep(60)
+
 
 class RewiewPageRegion(BasePage):
     def leave_feedback_region(self):
@@ -173,13 +176,13 @@ class RewiewPageRegion(BasePage):
         self.element_is_visible(RewiewForRegion.CHOOSE_TIME).click()
         self.element_is_visible(RewiewForRegion.CHOOSE_SERVISE).click()
         self.element_is_visible(RewiewForRegion.CLICK_RATING).click()
-        self.element_is_visible(RewiewForRegion.ENTER_FEEDBACK).send_keys("ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
+        self.element_is_visible(RewiewForRegion.ENTER_FEEDBACK).send_keys(
+            "ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(RewiewForRegion.LEAVE_FEEDBACK_2).click()
         self.element_is_visible(RewiewForRegion.CLICK_ANONIM).click()
         time.sleep(3)
         close = self.element_is_present(RewiewForRegion.SUCCESS_POPAP)
         assert close.text == "Спасибо за отзыв!"
-
 
     def leave_feedback_maim_page(self):
         time.sleep(3)
@@ -203,13 +206,15 @@ class RewiewPageRegion(BasePage):
         close = self.element_is_present(RewiewForRegion.SUCCESS_POPAP)
         assert close.text == "Спасибо за отзыв!"
 
+
 class RewiewPageStreet(BasePage):
     def leave_the_feedback_101_pub(self):
         time.sleep(3)
         scroll = self.element_is_visible(RewiewOnTheStreet.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
-        self.element_is_visible(RewiewOnTheStreet.LEAVE_FEEDBACK).send_keys("ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
+        self.element_is_visible(RewiewOnTheStreet.LEAVE_FEEDBACK).send_keys(
+            "ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(RewiewOnTheStreet.LEAVE_NAME).send_keys("Тест")
         self.element_is_visible(RewiewOnTheStreet.CHOOCE_PRIVIDER).click()
         self.element_is_visible(RewiewOnTheStreet.CLICK_PROVIDER).click()
@@ -224,7 +229,8 @@ class RewiewPageStreet(BasePage):
         scroll = self.element_is_visible(RewiewOnTheStreet.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
-        self.element_is_visible(RewiewOnTheStreet.LEAVE_FEEDBACK).send_keys("ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
+        self.element_is_visible(RewiewOnTheStreet.LEAVE_FEEDBACK).send_keys(
+            "ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(RewiewOnTheStreet.LEAVE_NAME).send_keys("Тест")
         self.element_is_visible(RewiewOnTheStreet.CHOOCE_PRIVIDER).click()
         self.element_is_visible(RewiewOnTheHouse.CLICK_PROVIDER).click()
@@ -248,6 +254,7 @@ class RewiewPageStreet(BasePage):
         close = self.element_is_present(RewiewOperator.CLOSE_THE_POPAP)
         assert close.text == "Спасибо за отзыв!"
 
+
 class RewiewPageProvider(BasePage):
     def leave_feedback_provider(self):
         time.sleep(3)
@@ -261,7 +268,8 @@ class RewiewPageProvider(BasePage):
         self.element_is_visible(RewiewForRegion.CHOOSE_TIME).click()
         self.element_is_visible(RewiewForRegion.CHOOSE_SERVISE).click()
         self.element_is_visible(RewiewForRegion.CLICK_RATING).click()
-        self.element_is_visible(RewiewForRegion.ENTER_FEEDBACK).send_keys("ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
+        self.element_is_visible(RewiewForRegion.ENTER_FEEDBACK).send_keys(
+            "ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(RewiewForRegion.LEAVE_FEEDBACK_2).click()
         self.element_is_visible(RewiewForRegion.CLICK_ANONIM).click()
         time.sleep(3)
@@ -289,11 +297,3 @@ class RewiewPageProvider(BasePage):
         time.sleep(3)
         close = self.element_is_present(RewiewForRegion.SUCCESS_POPAP)
         assert close.text == "Спасибо за отзыв!"
-
-
-
-
-
-
-
-

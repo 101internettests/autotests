@@ -80,7 +80,8 @@ class RewiewOnTheStreet:
     LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
     ENTER_PHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
     GET_101_PUB = (By.XPATH, "//div[contains(text(), 'Получить 101 руб')]")
-    CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
+    CLOSE_THE_POPAP = (
+    By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
 
 
 class RewiewOnTheHouse:
@@ -95,33 +96,15 @@ class RewiewOperator:
     CLICK_OPERATOR = (By.XPATH, "//li[contains(text(), 'МТС')]")
     CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
 
+
 class RewiewProvider:
-        SCROLL = (By.XPATH, "(//a[@datatest='providers_provider_allreviews_button'])[2]")
+    SCROLL = (By.XPATH, "(//a[@datatest='providers_provider_allreviews_button'])[2]")
 
 
 class RewiewProviderFeedback:
     LEAVE_FEEDBACK = (By.XPATH, "//a[@datatest='providers_reviews_feedback_button']")
 
+
 class RewiewMainPage:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Отзыв проверен и участвует в подсчёте рейтинга провайдера')]")
     LEAVE_FEEDBACK = (By.XPATH, "(//a[@datatest='main_allreviews_button'])[1]")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

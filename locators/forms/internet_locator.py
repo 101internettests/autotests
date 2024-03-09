@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from random import randint
 
 
 class WaitCallLocators:
@@ -45,3 +46,29 @@ class OutOfTownApplication:
     INPUT_NUMBER = (By.XPATH, "(//input[@datatest='order_form_input_tel'])[1]")
     BUTTON_CONNECTION = (By.XPATH, "(//div[contains(text(), 'Подключиться')])[1]")
     TEXT_ASSERT = (By.XPATH, "(//div[contains(text(), 'Спасибо, ваша заявка на подключение принята')])[1]")
+
+
+class RecentlyConnectionTariffs:
+    SCROLL = (By.XPATH, "//div[contains(text(), 'Руководство пользователя.pdf')]")
+    BUTTON_FIND_ADDRESS = (By.XPATH, "(//a[contains(text(), 'Поиск по адресу')])[3]")
+    BUTTON_CHECK_ADDRESS = (By.XPATH, f"(// a[contains(text(), 'Проверить адрес')])[{randint(0, 4)}]")
+    INPUT_STREET = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[5]")
+    CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
+    INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[6]")
+    CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
+    CHOOSE_TYPE_OF_CONNECTION = (By.XPATH, "//span[contains(text(), 'Тип подключения')]")
+    CLICK_ON_TYPE_OF_CONNECTION = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[3]")
+    CHECK_CONNECTION = (By.XPATH, "(//div[contains(text(), 'Проверить')])[2]")
+
+
+class NonPartnerCardRecCon:
+    PROVIDERS_BUTTON = (By.XPATH, "(//a[contains(text(), 'провайдеры')])[1]")
+    CHOSE_PROVIDER_FILTER = (By.XPATH, "//input[@datatest='providers_provider_input_filter']")
+    CHOSE_MOSNET = (By.XPATH, "//div[contains(text(), 'Моснет')]")
+    ACCEPT_FILTER = (By.XPATH, "//div[contains(text(), 'Применить')]")
+    CLICK_ON_PIC_MOSNET = (By.XPATH, "//img[@alt='Моснет']")
+    INPUT_STREET = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[1]")
+    CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[2]")
+    INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
+    CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
+    SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
