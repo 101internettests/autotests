@@ -55,7 +55,6 @@ class LocatorsForOtherPages:
     CLOSE_THE_WINDOW = (By.XPATH, "(//span[@class='icon24 icon-close'])[5]")
 
 
-
 class RewiewOnTheStreet:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Начать')]")
     LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
@@ -66,7 +65,7 @@ class RewiewOnTheStreet:
     ENTER_PHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
     GET_101_PUB = (By.XPATH, "//div[contains(text(), 'Получить 101 руб')]")
     CLOSE_THE_POPAP = (
-    By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
+        By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
 
 
 class RewiewOnTheHouse:

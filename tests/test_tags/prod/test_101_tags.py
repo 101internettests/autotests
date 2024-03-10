@@ -17,5 +17,5 @@ class TestOneHundredInternetTags:
     def test_ekb_rostelecom_tags(self, driver):
         tags = OneHundredMainPage(driver, "https://101internet.ru/ekaterinburg/providers/rostelecom/rates/internet-i-mobilnaya-svyaz")
         tags.open()
-        # tags.new_application_provider_ekb()
+        tags.new_application_provider_ekb()
 
