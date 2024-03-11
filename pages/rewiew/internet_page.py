@@ -6,7 +6,7 @@ from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
 
-class RewiewPageRegion(BasePage):
+class ReviewPageRegion(BasePage):
 
     @allure.step("Скролл  до кнопки оставления отзыва и клик на нее")
     def scroll_to_feedback_region(self):
@@ -44,7 +44,7 @@ class RewiewPageRegion(BasePage):
         time.sleep(3)
 
 
-class RewiewPageStreet(BasePage):
+class ReviewPageStreet(BasePage):
     @allure.step("Оставление отзыва на улице")
     def leave_the_feedback_101_pub(self):
         time.sleep(3)
@@ -95,7 +95,7 @@ class RewiewPageStreet(BasePage):
         assert close.text == "Спасибо за отзыв!"
 
 
-class RewiewPageProvider(BasePage):
+class ReviewPageProvider(BasePage):
     @allure.step("Скролл до кнопки оставления отзыва в карточке провайдера и клик на нее")
     def scroll_to_feedback_provider(self):
         time.sleep(3)
