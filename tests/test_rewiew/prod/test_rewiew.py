@@ -1,4 +1,4 @@
-from pages.rewiew.internet_page import RewiewPageRegion, RewiewPageStreet, RewiewPageProvider
+from pages.rewiew.internet_page import ReviewPageRegion, ReviewPageStreet, ReviewPageProvider
 import random
 import allure
 
@@ -35,76 +35,76 @@ urls_dacha = ['https://101internet.ru/chelyabinsk/orders/sat', 'https://www.mosk
               'https://piter-online.net/orders/sat']
 
 
-class Test101Rewiew:
+class Test101Review:
 
     @allure.title("Отзыв оставлен на странице региона")
-    def test_random_rewiew(self, driver):
+    def test_random_review(self, driver):
         random_url = random.choice(urls)
-        rewiew = RewiewPageRegion(driver, random_url)
-        rewiew.open()
-        rewiew.scroll_to_feedback_region()
-        rewiew.leave_feedback()
+        review = ReviewPageRegion(driver, random_url)
+        review.open()
+        review.scroll_to_feedback_region()
+        review.leave_feedback()
 
     @allure.title("Отзыв оставлен на странице улицы")
     def test_101_rub_street(self, driver):
         random_url = random.choice(urls_street)
-        rewiew = RewiewPageStreet(driver, random_url)
-        rewiew.open()
-        rewiew.leave_the_feedback_101_pub()
+        review = ReviewPageStreet(driver, random_url)
+        review.open()
+        review.leave_the_feedback_101_pub()
 
     @allure.title("Отзыв оставлен на странице золотого дома")
     def test_101_rub_house(self, driver):
         random_url = random.choice(urls_house)
-        rewiew = RewiewPageStreet(driver, random_url)
-        rewiew.open()
-        rewiew.leave_the_feedback_101_pub_house()
+        review = ReviewPageStreet(driver, random_url)
+        review.open()
+        review.leave_the_feedback_101_pub_house()
 
     @allure.title("Отзыв оставлен на странице оператора")
     def test_101_rub_operator(self, driver):
         random_url = random.choice(urls_operator)
-        rewiew = RewiewPageStreet(driver, random_url)
-        rewiew.open()
-        rewiew.leave_the_feedback_101_pub_operator()
+        review = ReviewPageStreet(driver, random_url)
+        review.open()
+        review.leave_the_feedback_101_pub_operator()
 
     @allure.title("Отзыв оставлен на странице провайдера в разделе о провайдере")
-    def test_rewiew_provider(self, driver):
+    def test_review_provider(self, driver):
         random_url = random.choice(urls_provider)
-        rewiew = RewiewPageProvider(driver, random_url)
-        rewiew.open()
-        rewiew.scroll_to_feedback_provider()
-        rewiew.leave_feedback_provider()
+        review = ReviewPageProvider(driver, random_url)
+        review.open()
+        review.scroll_to_feedback_provider()
+        review.leave_feedback_provider()
 
     @allure.title("Отзыв оставлен на странице провайдера в разделе отзывы")
-    def test_rewiew_provider_feedback(self, driver):
+    def test_review_provider_feedback(self, driver):
         random_url = random.choice(urls_provider_feedback)
-        rewiew = RewiewPageProvider(driver, random_url)
-        rewiew.open()
-        rewiew.scroll_to_feedback_provider_feedback()
-        rewiew_2 = RewiewPageRegion(driver, random_url)
-        rewiew_2.leave_feedback()
+        review = ReviewPageProvider(driver, random_url)
+        review.open()
+        review.scroll_to_feedback_provider_feedback()
+        review_2 = ReviewPageRegion(driver, random_url)
+        review_2.leave_feedback()
 
     @allure.title("Отзыв оставлен на главной странице")
-    def test_rewiew_main_page(self, driver):
+    def test_review_main_page(self, driver):
         random_url = random.choice(urls_main_page)
-        rewiew = RewiewPageRegion(driver, random_url)
-        rewiew.open()
-        rewiew.scroll_to_feedback_maim_page()
-        rewiew.leave_feedback()
+        review = ReviewPageRegion(driver, random_url)
+        review.open()
+        review.scroll_to_feedback_maim_page()
+        review.leave_feedback()
 
     @allure.title("Отзыв оставлен на странице офиса")
-    def test_rewiew_office(self, driver):
+    def test_review_office(self, driver):
         random_url = random.choice(urls_office)
-        rewiew = RewiewPageRegion(driver, random_url)
-        rewiew.open()
-        rewiew.scroll_to_feedback_maim_page()
-        rewiew.leave_feedback()
+        review = ReviewPageRegion(driver, random_url)
+        review.open()
+        review.scroll_to_feedback_maim_page()
+        review.leave_feedback()
 
     @allure.title("Отзыв оставлен на странице загородной заявки")
-    def test_rewiew_dacha(self, driver):
+    def test_review_dacha(self, driver):
         random_url = random.choice(urls_dacha)
-        rewiew = RewiewPageRegion(driver, random_url)
-        rewiew.open()
-        rewiew.scroll_to_feedback_maim_page()
-        rewiew.leave_feedback()
+        review = ReviewPageRegion(driver, random_url)
+        review.open()
+        review.scroll_to_feedback_maim_page()
+        review.leave_feedback()
 
 
