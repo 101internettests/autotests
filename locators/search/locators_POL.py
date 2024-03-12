@@ -6,6 +6,7 @@ class CoverageMapPol:
     CHOOSE_THE_DISTRICT = (By.XPATH, "//a[contains(text(), 'Колпино')]")
     CHOOSE_THE_STREET = (By.XPATH, "//a[contains(text(), 'Анисимова ул')]")
     CHOOSE_THE_HOUSE = (By.XPATH, "(//a[contains(text(), '2')])[1]")
+    CHOOSE_LENOBL_REGION = (By.XPATH, "//a[contains(text(), 'Ленинградская область')]")
     CHOOSE_THE_DISTRICT_2 = (By.XPATH, "//a[contains(text(), 'Бокситогорск')]")
     CHOOSE_THE_STREET_2 = (By.XPATH, "//a[contains(text(), 'Вишнякова ул')]")
     CHOOSE_THE_HOUSE_2 = (By.XPATH, "(//a[contains(text(), '19')])[1]")

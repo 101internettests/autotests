@@ -15,5 +15,6 @@ class TestSearch:
         search_page.open()
         search_page.change_region_on_spb()
         search_page.check_the_coverage_map()
+        search_page.change_region_on_lenobl()
         search_page.check_the_coverage_map_2()
         search_page.check_the_coverage_map_3()

@@ -28,6 +28,15 @@ class CheckTheCoverageMapPol(BasePage):
         self.element_is_visible(CoverageMapPol.CHOOSE_SPB_REGION).click()
         time.sleep(1)
 
+    @allure.step("Выбрать регион Ленинградскую область в хедере")
+    def change_region_on_lenobl(self):
+        self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMap.WRITE_NAME_OF_REGION).send_keys("Ленинградская область")
+        time.sleep(1)
+        self.element_is_visible(CoverageMapPol.CHOOSE_LENOBL_REGION).click()
+        time.sleep(1)
+
     @allure.step("Проверка карты покрытия (ул Анисимова)")
     def check_the_coverage_map(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
