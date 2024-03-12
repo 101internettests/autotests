@@ -54,5 +54,8 @@ class BasePage:
     # def go_to_element(self, locator, timeout=__timeout):
     #     return wait(self.driver, timeout).until(EC.invisibility_of_element_located(locator))
 
-    def switch_back_handles_window(self):
+    def switch_handles_window(self):
         self.driver.switch_to.window(self.driver.window_handles[1])
+
+    def switch_back_handles_window(self):
+        self.driver.switch_to.window(self.driver.window_handles[0])
