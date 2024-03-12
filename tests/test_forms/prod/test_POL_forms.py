@@ -72,7 +72,7 @@ class TestPOLForms:
         forms_page.fill_the_address_provider_card()
         time.sleep(2)
         forms_page.fill_popup_number()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка реферальной ссылки с тарифа")
     def test_check_url_provider_pol(self, driver):
