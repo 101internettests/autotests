@@ -1,5 +1,5 @@
 import allure
-from pages.search.internet_page import CheckPage404
+from pages.search.internet_page import CheckPage404, CheckTheCoverageMap
 
 
 @allure.suite("Тесты поиск на 101")
@@ -18,3 +18,17 @@ class TestSearch:
         search_page = CheckPage404(driver, "https://101internet.ru/chelyabinsk")
         search_page.open()
         search_page.check_nonexistent_address()
+
+    @allure.title("Проверка карты покрытия в Челябинске")
+    def test_map_chb(self, driver):
+        search_page = CheckTheCoverageMap(driver, "https://101internet.ru")
+        search_page.open()
+        search_page.change_region_on_chb()
+        search_page.check_the_coverage_map()
+        search_page.check_the_coverage_map_2()
+        search_page.check_the_coverage_map_3()
+        search_page.check_the_coverage_map_4()
+        search_page.check_the_coverage_map_5()
+
+
+
