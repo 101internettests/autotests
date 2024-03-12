@@ -12,3 +12,6 @@ class PopUpPhoneNubMsk:
     NUMBER_INPUT = (By.XPATH, "//input[@datatest='rates_popup1_from_quiz_input_tel']")
     BUTTOM_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
 
+
+class ReferralUrlTariffMOL:
+    CHOSE_MOSCOW_REGION = (By.XPATH, "//a[contains(text(), 'Московская область')]")

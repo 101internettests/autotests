@@ -1,7 +1,7 @@
 import allure
 import time
 from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication
-from locators.forms.pol_locators import WaitPOLCallLocators, PopUpPhoneNub, OutOfTownApplicationPOL, RecentlyConnectionTariffsPol
+from locators.forms.pol_locators import WaitPOLCallLocators, PopUpPhoneNub, OutOfTownApplicationPOL, RecentlyConnectionTariffsPol, NonPartnerPOL, ReferralUrlTariffPOL
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
@@ -100,3 +100,37 @@ class FormsPage(BasePage):
         self.element_is_visible(RecentlyConnectionTariffsPol.CHOOSE_TYPE_OF_CONNECTION).click()
         self.element_is_visible(RecentlyConnectionTariffsPol.CLICK_ON_TYPE_OF_CONNECTION).click()
         self.element_is_visible(RecentlyConnectionTariffsPol.CHECK_CONNECTION).click()
+
+    @allure.step("Выбрать 'провайдеры' в меню бургер")
+    def chose_providers_burger_button(self):
+        self.element_is_visible(NonPartnerPOL.PROVIDERS_BUTTON).click()
+        time.sleep(3)
+
+    @allure.step("Выбрать в фильтрах 'А-ТЕЛ'")
+    def chose_mosnet_provider(self):
+        self.element_is_visible(NonPartnerPOL.CHOSE_PROVIDER_FILTER).send_keys("А-ТЕЛ")
+        self.element_is_visible(NonPartnerPOL.CHOSE_ATEL).click()
+        self.element_is_visible(NonPartnerPOL.ACCEPT_FILTER).click()
+        self.element_is_visible(NonPartnerPOL.CLICK_ON_PIC_ATEL).click()
+        time.sleep(3)
+
+    @allure.step("Заполнить адрес с карточке провайдера")
+    def fill_the_address_provider_card(self):
+        self.element_is_visible(NonPartnerPOL.INPUT_STREET).send_keys("Энгельса")
+        self.element_is_visible(NonPartnerPOL.CLICK_ON_THE_STREET).click()
+        self.element_is_visible(NonPartnerPOL.INPUT_HOUSE).send_keys("8")
+        self.element_is_visible(NonPartnerPOL.CLICK_ON_THE_HOUSE).click()
+        self.element_is_visible(NonPartnerPOL.SHOW_TARIFFS).click()
+
+    @allure.step("Выбрать в фильтрах 'ПАКТ'")
+    def chose_pact_provider(self):
+        self.element_is_visible(NonPartnerPOL.CHOSE_PROVIDER_FILTER).send_keys("ПАКТ")
+        self.element_is_visible(ReferralUrlTariffPOL.CHOSE_PACT).click()
+        self.element_is_visible(NonPartnerPOL.ACCEPT_FILTER).click()
+        self.element_is_visible(ReferralUrlTariffPOL.CLICK_ON_PIC_PACT).click()
+        time.sleep(3)
+
+    @allure.step("Перейти на сайт провайдера по кнопке'подключить' у провайдера 'ПАКТ'")
+    def check_redirect_pol(self):
+        self.element_is_visible(ReferralUrlTariffPOL.CONNECT_BUTTON).click()
+        self.switch_handles_window()

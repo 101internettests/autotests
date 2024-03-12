@@ -59,3 +59,26 @@ class TestMOLForms:
         time.sleep(2)
         forms_page.fill_popup_number()
         time.sleep(60)
+
+    @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
+    def test_check_button_connect_unpartner_mol(self, driver):
+        forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
+        forms_page.open()
+        forms_page.change_region_moscow()
+        forms_page.chose_providers_burger_button()
+        forms_page.chose_mosnet_provider()
+        forms_page.fill_the_address_provider_card()
+        time.sleep(2)
+        forms_page.fill_popup_number()
+        time.sleep(60)
+
+    @allure.title("Проверка реферальной ссылки с тарифа")
+    def test_check_url_provider_mol(self, driver):
+        forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
+        forms_page.open()
+        forms_page.change_region_moscow()
+        forms_page.chose_providers_burger_button()
+        forms_page.chose_abk_provider()
+        forms_page.check_redirect()
+        target_url = 'https://avk-wellcom.ru/zayavka-na-podklyuchenie.html'
+        assert driver.current_url == target_url

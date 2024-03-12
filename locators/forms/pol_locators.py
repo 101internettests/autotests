@@ -28,3 +28,22 @@ class RecentlyConnectionTariffsPol:
     CHOOSE_TYPE_OF_CONNECTION = (By.XPATH, "//span[contains(text(), 'Тип подключения')]")
     CLICK_ON_TYPE_OF_CONNECTION = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[3]")
     CHECK_CONNECTION = (By.XPATH, "(//div[contains(text(), 'Проверить')])[2]")
+
+
+class NonPartnerPOL:
+    PROVIDERS_BUTTON = (By.XPATH, "(//a[contains(text(), 'провайдеры')])[1]")
+    CHOSE_PROVIDER_FILTER = (By.XPATH, "//input[@datatest='providers_provider_input_filter']")
+    CHOSE_ATEL = (By.XPATH, "//div[contains(text(), 'А-ТЕЛ')]")
+    ACCEPT_FILTER = (By.XPATH, "//div[contains(text(), 'Применить')]")
+    CLICK_ON_PIC_ATEL= (By.XPATH, "//img[@alt='А-ТЕЛ']")
+    INPUT_STREET = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[1]")
+    CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
+    INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
+    CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
+    SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
+
+
+class ReferralUrlTariffPOL:
+    CHOSE_PACT = (By.XPATH, "//div[contains(text(), 'ПАКТ')]")
+    CLICK_ON_PIC_PACT = (By.XPATH, "//img[@alt='ПАКТ']")
+    CONNECT_BUTTON = (By.XPATH, f"(//div[@datatest='providers_form_inspect_connect_tariff_button'])[{randint(0, 5)}]")

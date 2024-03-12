@@ -1,7 +1,7 @@
 import allure
 import time
 from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, PopUpPhoneNub, AddreesTariffForm
-from locators.forms.internet_locator import RecentlyConnectionTariffs, OutOfTownApplication, NonPartnerCardRecCon
+from locators.forms.internet_locator import RecentlyConnectionTariffs, OutOfTownApplication, NonPartnerCardRecCon, ReferralUrlTariff
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
@@ -124,6 +124,14 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_PIC_MOSNET).click()
         time.sleep(3)
 
+    @allure.step("Выбрать в фильтрах 'АВК-Веллком'")
+    def chose_abk_provider(self):
+        self.element_is_visible(NonPartnerCardRecCon.CHOSE_PROVIDER_FILTER).send_keys("АВК-Веллком")
+        self.element_is_visible(ReferralUrlTariff.CHOSE_ABK_WELCOME).click()
+        self.element_is_visible(NonPartnerCardRecCon.ACCEPT_FILTER).click()
+        self.element_is_visible(ReferralUrlTariff.CLICK_ON_PIC_AVK_WELCOME).click()
+        time.sleep(3)
+
     @allure.step("Заполнить адрес с карточке провайдера")
     def fill_the_address_provider_card(self):
         self.element_is_visible(NonPartnerCardRecCon.INPUT_STREET).send_keys("Тестовый")
@@ -131,3 +139,8 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.INPUT_HOUSE).send_keys("1")
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_HOUSE).click()
         self.element_is_visible(NonPartnerCardRecCon.SHOW_TARIFFS).click()
+
+    @allure.step("Перейти на сайт провайдера по кнопке'подключить' у провайдера 'АВК-Веллком'")
+    def check_redirect(self):
+        self.element_is_visible(ReferralUrlTariff.CONNECT_BUTTON).click()
+        self.switch_handles_window()

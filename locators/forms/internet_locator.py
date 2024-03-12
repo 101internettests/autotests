@@ -72,3 +72,9 @@ class NonPartnerCardRecCon:
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
     CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
+
+
+class ReferralUrlTariff:
+    CHOSE_ABK_WELCOME = (By.XPATH, "//div[contains(text(), 'АВК-Веллком')]")
+    CLICK_ON_PIC_AVK_WELCOME = (By.XPATH, "//img[@alt='АВК-Веллком']")
+    CONNECT_BUTTON = (By.XPATH, f"(//span[contains(text(), 'Подключить')])[{randint(1, 6)}]")
