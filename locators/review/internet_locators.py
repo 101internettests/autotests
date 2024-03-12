@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 
 
-class RewiewForRegion:
+class ReviewForRegion:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Общая оценка')]")
     LEAVE_FEEDBACK = (By.XPATH, "(//a[@datatest='main_allreviews_button'])[2]")
     CHOOSE_PROVIDER = (By.XPATH, "(//span[contains(text(), 'Выберите')])[1]")
@@ -17,7 +17,7 @@ class RewiewForRegion:
     SUCCESS_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
 
 
-class RewiewOnTheStreet:
+class ReviewOnTheStreet:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Начать')]")
     LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
     LEAVE_NAME = (By.XPATH, "//input[@autocomplete='name']")
@@ -30,12 +30,12 @@ class RewiewOnTheStreet:
     By.XPATH, "//div[contains(text(), 'Дождитесь звонка, мы поможем вам подобрать интернет и начислим 101 руб')]")
 
 
-class RewiewOnTheHouse:
+class ReviewOnTheHouse:
     CLICK_PROVIDER = (By.XPATH, "(//li[contains(text(), 'Ростелеком')])[2]")
     ENTER_PHONE_NUMBER = (By.XPATH, "(//input[@id='fix_callback_phone'])[2]")
 
 
-class RewiewOperator:
+class ReviewOperator:
     SCROLL = (By.XPATH, "//p[contains(text(), 'Важность качественной мобильной связи сложно переоценить.')]")
     LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
     CHOOCE_OPERATOR = (By.XPATH, "//span[contains(text(), 'Оператор')]")
@@ -43,14 +43,14 @@ class RewiewOperator:
     CLOSE_THE_POPAP = (By.XPATH, "//div[contains(text(), 'Спасибо за отзыв!')]")
 
 
-class RewiewProvider:
+class ReviewProvider:
     SCROLL = (By.XPATH, "(//a[@datatest='providers_provider_allreviews_button'])[2]")
 
 
-class RewiewProviderFeedback:
+class ReviewProviderFeedback:
     LEAVE_FEEDBACK = (By.XPATH, "//a[@datatest='providers_reviews_feedback_button']")
 
 
-class RewiewMainPage:
+class ReviewMainPage:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Отзыв проверен и участвует в подсчёте рейтинга провайдера')]")
     LEAVE_FEEDBACK = (By.XPATH, "(//a[@datatest='main_allreviews_button'])[1]")

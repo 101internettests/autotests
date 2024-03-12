@@ -1,4 +1,4 @@
-from pages.rewiew.internet_page import ReviewPageRegion, ReviewPageStreet, ReviewPageProvider
+from pages.review.internet_page import ReviewPageRegion, ReviewPageStreet, ReviewPageProvider
 import random
 import allure
 

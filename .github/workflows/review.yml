@@ -81,7 +81,7 @@ jobs:
 
       - name: all tests
         # if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest tests/test_rewiew/prod --alluredir=allure-results && pwd
+        run: pytest tests/test_review/prod --alluredir=allure-results && pwd
         continue-on-error: true
 
       - name: Store allure results
