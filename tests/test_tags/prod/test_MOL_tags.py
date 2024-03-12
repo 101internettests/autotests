@@ -1,4 +1,5 @@
 from pages.tags.mol_page import OneHundredMainPage
+import allure
 
 
 @allure.suite("Тесты теговые на МОЛ")
