@@ -52,7 +52,7 @@ class ReviewPageStreet(BasePage):
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
-            "ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
+            "ТЕСТ. Со страницы улицы. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
         self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).click()
         self.element_is_visible(ReviewOnTheStreet.CLICK_PROVIDER).click()
@@ -69,7 +69,7 @@ class ReviewPageStreet(BasePage):
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
-            "ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
+            "ТЕСТ. Со страницы дома. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
         self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).click()
         self.element_is_visible(ReviewOnTheHouse.CLICK_PROVIDER).click()
@@ -86,7 +86,7 @@ class ReviewPageStreet(BasePage):
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
-            "ТЕСТ. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
+            "ТЕСТ. Со страницы оператора. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
         self.element_is_visible(ReviewOperator.CHOOCE_OPERATOR).click()
         self.element_is_visible(ReviewOperator.CLICK_OPERATOR).click()
