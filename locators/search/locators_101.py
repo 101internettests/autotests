@@ -13,3 +13,7 @@ class NonexistentAddress:
     CLICK_THE_HOUSE = (By.XPATH, "//li[@datatest='dropdown_list_main']")
     BUTTON_SHOW_THE_RATE = (By.XPATH, "//div[@data-test='find_tohome_button']")
     CHECK_TEXT = (By.XPATH, "//div[contains(text(), 'Автоматический поиск не дал результатов')]")
+
+
+
+    1+1=2
