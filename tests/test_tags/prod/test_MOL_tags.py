@@ -1,6 +1,7 @@
 from pages.tags.mol_page import OneHundredMainPage
 
 
+@allure.suite("Тесты теговые на МОЛ")
 class TestMOLRatesTags:
 
     def test_mol_tags(self, driver):
@@ -13,5 +14,3 @@ class TestMOLRatesTags:
                                   "https://www.moskvaonline.ru/providers/onlime/rates/internet-i-mobilnaya-svyaz")
         tags.open()
         tags.new_application_provider()
-
-
