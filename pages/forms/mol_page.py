@@ -57,6 +57,10 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.CLICK_ON_HOUSE).click()
         self.element_is_visible(PopUpPhoneNubMsk.BUTTOM_SHOW_TARIFFS).click()
 
+    @allure.step("Открыть попап")
+    def open_popup(self):
+        self.element_is_visible(AddreesTariffForm.OPEN_PPOPUP).click()
+
     @allure.step("Ввести номер телефона в попап")
     def fill_popup_number(self):
         time.sleep(2)
