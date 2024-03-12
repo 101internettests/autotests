@@ -34,7 +34,7 @@ urls_main_page = ['https://101internet.ru/chelyabinsk', 'https://www.moskvaonlin
 urls_dacha = ['https://101internet.ru/chelyabinsk/orders/sat', 'https://www.moskvaonline.ru/orders/sat',
               'https://piter-online.net/orders/sat']
 
-
+@allure.suite("Тесты по отзывам")
 class Test101Review:
 
     @allure.title("Отзыв оставлен на странице региона")

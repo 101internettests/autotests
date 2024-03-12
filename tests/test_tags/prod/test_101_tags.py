@@ -1,6 +1,7 @@
 from pages.tags.internet_page import OneHundredMainPage
 
 
+@allure.suite("Тесты теговые на 101")
 class TestOneHundredInternetTags:
 
     def test_voronezh_tags(self, driver):
@@ -15,7 +16,7 @@ class TestOneHundredInternetTags:
     #     tags.new_application_provider()
 
     def test_ekb_rostelecom_tags(self, driver):
-        tags = OneHundredMainPage(driver, "https://101internet.ru/ekaterinburg/providers/rostelecom/rates/internet-i-mobilnaya-svyaz")
+        tags = OneHundredMainPage(driver,
+                                  "https://101internet.ru/ekaterinburg/providers/rostelecom/rates/internet-i-mobilnaya-svyaz")
         tags.open()
         tags.new_application_provider_ekb()
-
