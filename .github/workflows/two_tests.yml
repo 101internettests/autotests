@@ -2,7 +2,7 @@ name: two tests
 
 on:
   schedule:
-  - cron: "30 6 * * *"
+  - cron: "15 4 * * *"
   workflow_dispatch:
 
 env:
