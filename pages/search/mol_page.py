@@ -1,6 +1,7 @@
 import allure
 import time
-from locators.search.locators_101 import NonexistentAddress
+from locators.search.locators_101 import NonexistentAddress, CoverageMap
+from locators.search.locators_MOL import CoverageMapMol
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
@@ -15,3 +16,60 @@ class CheckPage404(BasePage):
         self.element_is_visible(NonexistentAddress.BUTTON_SHOW_THE_RATE).click()
         text_automatic_search = self.element_is_present(NonexistentAddress.CHECK_TEXT)
         assert text_automatic_search.text == "Автоматический поиск не дал результатов"
+
+
+class CheckTheCoverageMapMol(BasePage):
+
+    @allure.step("Выбрать регион Балашиха в хедере")
+    def change_region_on_blsh(self):
+        self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMap.WRITE_NAME_OF_REGION).send_keys("Балашиха")
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_BLSH_REGION).click()
+        time.sleep(1)
+
+    @allure.step("Выбрать регион Москва в хедере")
+    def change_region_on_msk(self):
+        self.element_is_visible(CoverageMap.CHOOSE_THE_REGION).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMap.WRITE_NAME_OF_REGION).send_keys("Москва")
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_MSK_REGION).click()
+        time.sleep(1)
+
+    @allure.step("Проверка карты покрытия (пр-кт Ленина)")
+    def check_the_coverage_map(self):
+        self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT).click()
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET).click()
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+
+    @allure.step("Проверка карты покрытия (б-р Тестовый)")
+    def check_the_coverage_map_2(self):
+        self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT).click()
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET_2).click()
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_2).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+
+    @allure.step("Проверка карты покрытия (ул Шарикоподшипниковская)")
+    def check_the_coverage_map_3(self):
+        self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT_2).click()
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET_3).click()
+        time.sleep(1)
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_3).click()
+        time.sleep(3)
+        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
