@@ -15,15 +15,15 @@ class TestSearch:
         search_page = CheckTheCoverageMapMol(driver, "https://www.moskvaonline.ru/")
         search_page.open()
         search_page.change_region_on_blsh()
-        search_page.check_the_coverage_map()
-        search_page.check_the_coverage_map_2()
+        search_page.check_the_coverage_map_lenina()
+        search_page.check_the_coverage_map_test()
 
     @allure.title("Проверка карты покрытия в Москве")
     def test_map_msk(self, driver):
         search_page = CheckTheCoverageMapMol(driver, "https://www.moskvaonline.ru/")
         search_page.open()
         search_page.change_region_on_msk()
-        search_page.check_the_coverage_map_3()
+        search_page.check_the_coverage_map_sharik()
 
 
 
