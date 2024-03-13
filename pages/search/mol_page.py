@@ -39,7 +39,7 @@ class CheckTheCoverageMapMol(BasePage):
         time.sleep(1)
 
     @allure.step("Проверка карты покрытия (пр-кт Ленина)")
-    def check_the_coverage_map(self):
+    def check_the_coverage_map_lenina(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
         self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT).click()
@@ -51,7 +51,7 @@ class CheckTheCoverageMapMol(BasePage):
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
     @allure.step("Проверка карты покрытия (б-р Тестовый)")
-    def check_the_coverage_map_2(self):
+    def check_the_coverage_map_test(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
         self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT).click()
@@ -63,7 +63,7 @@ class CheckTheCoverageMapMol(BasePage):
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
     @allure.step("Проверка карты покрытия (ул Шарикоподшипниковская)")
-    def check_the_coverage_map_3(self):
+    def check_the_coverage_map_sharik(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
         self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT_2).click()

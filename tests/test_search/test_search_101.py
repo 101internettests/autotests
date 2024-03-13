@@ -24,11 +24,11 @@ class TestSearch:
         search_page = CheckTheCoverageMap(driver, "https://101internet.ru")
         search_page.open()
         search_page.change_region_on_chb()
-        search_page.check_the_coverage_map()
-        search_page.check_the_coverage_map_2()
-        search_page.check_the_coverage_map_3()
-        search_page.check_the_coverage_map_4()
-        search_page.check_the_coverage_map_5()
+        search_page.check_the_coverage_map_turkina()
+        search_page.check_the_coverage_map_agalakova()
+        search_page.check_the_coverage_map_boleiko_one()
+        search_page.check_the_coverage_map_boleiko_two()
+        search_page.check_the_coverage_map_test()
 
 
 
