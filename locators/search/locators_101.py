@@ -32,6 +32,8 @@ class CoverageMap:
     CHOOSE_THE_HOUSE_ONE = (By.XPATH, "(//a[contains(text(), '1')])[1]")
     CHOOSE_THE_HOUSE_TWO = (By.XPATH, "(//a[contains(text(), '2')])[1]")
     CHOOSE_THE_STREET_ALLEYA = (By.XPATH, "//a[contains(text(), 'Тестировщиков аллея')]")
+    CHECK_BLOCK_OF_PROVIDERS = (By.XPATH, "//div[@datatest='providers_provider_button']")
+    TEXT_MOBILE = (By.XPATH, "//div[contains(text(), 'МОБИЛЬНЫЙ ИНТЕРНЕТ С ВОЗМОЖНОСТЬЮ РАЗДАЧИ ЧЕРЕЗ РОУТЕР')]")
 
 
 
