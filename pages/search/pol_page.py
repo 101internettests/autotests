@@ -41,11 +41,11 @@ class CheckTheCoverageMapPol(BasePage):
     def check_the_coverage_map_anisimova(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT_KOLPINO).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_ANISIMOVA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_TWO).click()
         time.sleep(3)
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
@@ -53,11 +53,11 @@ class CheckTheCoverageMapPol(BasePage):
     def check_the_coverage_map_vishnaykova(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT_2).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT_BOKSITOGORSK).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_2).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_VISHNYAKOVA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_2).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_19).click()
         time.sleep(3)
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
@@ -65,10 +65,10 @@ class CheckTheCoverageMapPol(BasePage):
     def check_the_coverage_map_test(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT_3).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_DISTRICT_KHVOINYI).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_3).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_TEST).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_3).click()
+        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_ONE).click()
         time.sleep(3)
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
