@@ -58,7 +58,7 @@ class TestMOLForms:
         forms_page.fill_address_in_addresspage()
         time.sleep(2)
         forms_page.fill_popup_number()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
     def test_check_button_connect_unpartner_mol(self, driver):

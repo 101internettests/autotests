@@ -1,7 +1,7 @@
 import allure
 import time
 from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication
-from locators.forms.pol_locators import WaitPOLCallLocators, PopUpPhoneNub, OutOfTownApplicationPOL, RecentlyConnectionTariffsPol, NonPartnerPOL, ReferralUrlTariffPOL
+from locators.forms.pol_locators import WaitPOLCallLocators, PopUpPhoneNubPOL, OutOfTownApplicationPOL, RecentlyConnectionTariffsPol, NonPartnerPOL, ReferralUrlTariffPOL
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
@@ -51,12 +51,23 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
         self.element_is_visible(OfficeOrder.CHOOSE_HOUSE).send_keys("8")
         self.element_is_visible(OfficeOrder.CLICK_ON_HOUSE).click()
-        self.element_is_visible(PopUpPhoneNub.BUTTOM_SHOW_TARIFFS).click()
+        self.element_is_visible(PopUpPhoneNubPOL.BUTTON_SHOW_TARIFFS).click()
 
     @allure.step("Вести номер телефона в попап")
     def fill_popup_number(self):
-        self.element_is_visible(PopUpPhoneNub.NUMBER_INPUT).send_keys("1111111111")
-        self.element_is_visible(PopUpPhoneNub.BUTTOM_SHOW_RESULTS).click()
+        text_in_pop_up = self.element_is_present(PopUpPhoneNubPOL.POP_UP_TEXT).text
+        if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
+                              "телефона, оператор перезвонит вам в ближайшее "
+                              "время."):
+            self.element_is_visible(PopUpPhoneNubPOL.NUMBER_SECOND_INPUT).send_keys('1111111111')
+            self.element_is_visible(PopUpPhoneNubPOL.BUTTON_SUBMIT_APPLICATION).click()
+            print("Провайдер доступен в этом доме")
+        elif text_in_pop_up != ("Отлично! Подключение возможно. Введите номер "
+                                "телефона, оператор перезвонит вам в ближайшее "
+                                "время."):
+            self.element_is_visible(PopUpPhoneNubPOL.NUMBER_INPUT).send_keys('1111111111')
+            self.element_is_visible(PopUpPhoneNubPOL.BUTTON_SHOW_RESULTS).click()
+            print("Провайдер недоступен в этом доме, отправлена заявки на другие")
 
     @allure.step("Закрыть попап")
     def close_popup(self):
@@ -132,5 +143,8 @@ class FormsPage(BasePage):
 
     @allure.step("Перейти на сайт провайдера по кнопке'подключить' у провайдера 'ПАКТ'")
     def check_redirect_pol(self):
+        scroll = self.element_is_visible(ReferralUrlTariffPOL.SCROLL)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
         self.element_is_visible(ReferralUrlTariffPOL.CONNECT_BUTTON).click()
         self.switch_handles_window()
