@@ -42,11 +42,11 @@ class CheckTheCoverageMapMol(BasePage):
     def check_the_coverage_map_lenina(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT_BALASHIKHA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET_LENINA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_16).click()
         time.sleep(3)
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
@@ -54,11 +54,11 @@ class CheckTheCoverageMapMol(BasePage):
     def check_the_coverage_map_test(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT_BALASHIKHA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET_2).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET_TEST).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_2).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_ONE).click()
         time.sleep(3)
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
@@ -66,10 +66,10 @@ class CheckTheCoverageMapMol(BasePage):
     def check_the_coverage_map_sharik(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
         time.sleep(3)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT_2).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_DISTRICT_UZHNOPORTOVYI).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET_3).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_STREET_SHARIK).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_3).click()
+        self.element_is_visible(CoverageMapMol.CHOOSE_THE_HOUSE_11).click()
         time.sleep(3)
         self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
