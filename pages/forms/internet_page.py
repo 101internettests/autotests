@@ -61,12 +61,23 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
         self.element_is_visible(OfficeOrder.CHOOSE_HOUSE).send_keys("11")
         self.element_is_visible(OfficeOrder.CLICK_ON_HOUSE).click()
-        self.element_is_visible(PopUpPhoneNub.BUTTOM_SHOW_TARIFFS).click()
+        self.element_is_visible(PopUpPhoneNub.BUTTON_SHOW_TARIFFS).click()
 
     @allure.step("Вести номер телефона в попап")
     def fill_popup_number(self):
-        self.element_is_visible(PopUpPhoneNub.NUMBER_INPUT).send_keys("1111111111")
-        self.element_is_visible(PopUpPhoneNub.BUTTOM_SHOW_RESULTS).click()
+        text_in_pop_up = self.element_is_present(PopUpPhoneNub.POP_UP_TEXT).text
+        if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
+                              "телефона, оператор перезвонит вам в ближайшее "
+                              "время."):
+            self.element_is_visible(PopUpPhoneNub.NUMBER_SECOND_INPUT).send_keys('1111111111')
+            self.element_is_visible(PopUpPhoneNub.BUTTON_SUBMIT_APPLICATION).click()
+            print("Провайдер доступен в этом доме")
+        elif text_in_pop_up != ("Отлично! Подключение возможно. Введите номер "
+                                "телефона, оператор перезвонит вам в ближайшее "
+                                "время."):
+            self.element_is_visible(PopUpPhoneNub.NUMBER_INPUT).send_keys('1111111111')
+            self.element_is_visible(PopUpPhoneNub.BUTTON_SHOW_RESULTS).click()
+            print("Провайдер недоступен в этом доме, отправлена заявки на другие")
 
     @allure.step("Закрыть попап")
     def close_popup(self):

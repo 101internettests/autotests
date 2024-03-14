@@ -7,11 +7,13 @@ class WaitPOLCallLocators:
     SCROLL = (By.XPATH, "//a[contains(text(), 'ВайФаер')]")
 
 
-class PopUpPhoneNub:
-    BUTTOM_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
+class PopUpPhoneNubPOL:
+    BUTTON_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
     NUMBER_INPUT = (By.XPATH, "//input[@datatest='rates_popup1_from_quiz_input_tel']")
-    BUTTOM_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
-
+    BUTTON_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
+    POP_UP_TEXT = (By.XPATH, "(//img[@alt='icon']/../div)[1]")
+    NUMBER_SECOND_INPUT = (By.XPATH, "(//input[@autocomplete='tel'])[2]")
+    BUTTON_SUBMIT_APPLICATION = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
 
 class OutOfTownApplicationPOL:
     SCROLL = (By.XPATH, "//a[contains(text(), 'Статьи')]")
@@ -46,4 +48,5 @@ class NonPartnerPOL:
 class ReferralUrlTariffPOL:
     CHOSE_PACT = (By.XPATH, "//div[contains(text(), 'ПАКТ')]")
     CLICK_ON_PIC_PACT = (By.XPATH, "//img[@alt='ПАКТ']")
-    CONNECT_BUTTON = (By.XPATH, f"(//div[@datatest='providers_form_inspect_connect_tariff_button'])[{randint(0, 5)}]")
+    SCROLL = (By.XPATH, "(//a[contains(text(), 'Все тарифы')])[3]")
+    CONNECT_BUTTON = (By.XPATH, f"(//div[@datatest='providers_form_inspect_connect_tariff_button'])[{randint(0, 3)}]")

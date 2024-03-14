@@ -36,7 +36,7 @@ class PopupFillTheAddress:
 class PopupSuccess:
     POP_UP_SUCCESS_NUMBER = (By.XPATH, "//input[@autocomplete='tel']")
     POP_UP_NOT_SUCCESS_NUMBER = (By.XPATH, "(//input[@autocomplete='tel'])[2]")
-    POP_UP_NUMBER_CLICK = (By.XPATH, "//span[contains(text(), 'Номер мобильного телефона')]")
+    POP_UP_NUMBER_CLICK = (By.XPATH, "//input[@datatest='rates_popup1_from_quiz_input_tel']")
     POP_UP_SUCCESS_BUTTON = (By.XPATH, "//div[@data-test='rates_popup1_from_quiz_send_phone']")
     POP_UP_TEXT = (By.XPATH, "(//img[@alt='icon']/../div)[1]")
     BUTTON_THANK_YOU = (By.XPATH, "(//div[contains(text(), 'Спасибо')])[2]")

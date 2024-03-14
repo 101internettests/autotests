@@ -1,6 +1,7 @@
 import allure
 import time
-from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication, RecentlyConnectionTariffs, NonPartnerCardRecCon, ReferralUrlTariff
+from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication
+from locators.forms.internet_locator import RecentlyConnectionTariffs, NonPartnerCardRecCon, ReferralUrlTariff, PopUpPhoneNub
 from locators.forms.mol_locators import WaitMOLCallLocators, PopUpPhoneNubMsk, ReferralUrlTariffMOL
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
@@ -63,9 +64,19 @@ class FormsPage(BasePage):
 
     @allure.step("Ввести номер телефона в попап")
     def fill_popup_number(self):
-        time.sleep(2)
-        self.element_is_visible(PopUpPhoneNubMsk.NUMBER_INPUT).send_keys("1111111111")
-        self.element_is_visible(PopUpPhoneNubMsk.BUTTOM_SHOW_RESULTS).click()
+        text_in_pop_up = self.element_is_present(PopUpPhoneNub.POP_UP_TEXT).text
+        if text_in_pop_up == ("Отлично! Подключение возможно. Введите номер "
+                              "телефона, оператор перезвонит вам в ближайшее "
+                              "время."):
+            self.element_is_visible(PopUpPhoneNub.NUMBER_SECOND_INPUT).send_keys('1111111111')
+            self.element_is_visible(PopUpPhoneNub.BUTTON_SUBMIT_APPLICATION).click()
+            print("Провайдер доступен в этом доме")
+        elif text_in_pop_up != ("Отлично! Подключение возможно. Введите номер "
+                                "телефона, оператор перезвонит вам в ближайшее "
+                                "время."):
+            self.element_is_visible(PopUpPhoneNub.NUMBER_INPUT).send_keys('1111111111')
+            self.element_is_visible(PopUpPhoneNub.BUTTON_SHOW_RESULTS).click()
+            print("Провайдер недоступен в этом доме, отправлена заявки на другие")
 
     @allure.step("Закрыть попап")
     def close_popup(self):

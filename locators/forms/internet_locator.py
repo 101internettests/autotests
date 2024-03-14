@@ -27,10 +27,12 @@ class OfficeOrder:
 
 class PopUpPhoneNub:
     CHOOSE_MOSCOW = (By.XPATH, "(//a[contains(text(), 'Москва')])[1]")
-    BUTTOM_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
+    BUTTON_SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
     NUMBER_INPUT = (By.XPATH, "//input[@datatest='rates_popup1_from_quiz_input_tel']")
-    BUTTOM_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
-
+    NUMBER_SECOND_INPUT = (By.XPATH, "(//input[@autocomplete='tel'])[2]")
+    BUTTON_SHOW_RESULTS = (By.XPATH, "//div[contains(text(), 'Показать результаты')]")
+    BUTTON_SUBMIT_APPLICATION = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
+    POP_UP_TEXT = (By.XPATH, "(//img[@alt='icon']/../div)[1]")
 
 class AddreesTariffForm:
     CLOSE_POP_UP = (By.XPATH, "//div[@datatest='close_popup1_from_quiz_input_tel']")
@@ -51,7 +53,7 @@ class OutOfTownApplication:
 class RecentlyConnectionTariffs:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Руководство пользователя.pdf')]")
     BUTTON_FIND_ADDRESS = (By.XPATH, "(//a[contains(text(), 'Поиск по адресу')])[3]")
-    BUTTON_CHECK_ADDRESS = (By.XPATH, "(// a[contains(text(), 'Проверить адрес')])[2]")
+    BUTTON_CHECK_ADDRESS = (By.XPATH, f"(// a[contains(text(), 'Проверить адрес')])[{randint(0, 4)}]")
     INPUT_STREET = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[5]")
     CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[6]")
