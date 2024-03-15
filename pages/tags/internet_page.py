@@ -1,9 +1,7 @@
 import allure
 import time
-from locators.tags.internet_locators import DailyTagPages101Locators, TagPagelocators, LocatorsForOtherPages, \
-    RewiewOnTheHouse, RewiewMainPage
-from locators.tags.internet_locators import PopupFillTheAddress, PopupSuccess, RewiewOnTheStreet, \
-    RewiewOperator, RewiewProvider, RewiewProviderFeedback
+from locators.tags.internet_locators import DailyTagPages101Locators, TagPagelocators, LocatorsForOtherPages
+from locators.tags.internet_locators import PopupFillTheAddress, PopupSuccess
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
