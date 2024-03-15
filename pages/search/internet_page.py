@@ -41,9 +41,21 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMap.CHOOSE_THE_STREET_TURKINA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_THREE).click()
-        time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements == 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            # text_mobile = self.element_is_present(CoverageMap.TEXT_MOBILE)
+            # assert text_mobile.text == "МОБИЛЬНЫЙ ИНТЕРНЕТ С ВОЗМОЖНОСТЬЮ РАЗДАЧИ ЧЕРЕЗ РОУТЕР"
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_THREE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_THREE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
     @allure.step("Проверка карты покрытия (ул Агалакова)")
     def check_the_coverage_map_agalakova(self):
@@ -53,9 +65,19 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMap.CHOOSE_THE_STREET_AGALAKOVA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_19).click()
-        time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements == 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_19).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_19).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
     @allure.step("Проверка карты покрытия (ул Болейко 1)")
     def check_the_coverage_map_boleiko_one(self):
@@ -65,9 +87,19 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMap.CHOOSE_THE_STREET_BOLEIKO).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
-        time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements == 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
     @allure.step("Проверка карты покрытия (ул Болейко 2)")
     def check_the_coverage_map_boleiko_two(self):
@@ -77,9 +109,19 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMap.CHOOSE_THE_STREET_BOLEIKO).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_TWO).click()
-        time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements == 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_TWO).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_TWO).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
 
     @allure.step("Проверка карты покрытия (аллея Тестировщиков)")
     def check_the_coverage_map_test(self):
@@ -89,6 +131,16 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMap.CHOOSE_THE_STREET_ALLEYA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
-        time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements == 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
