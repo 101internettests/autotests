@@ -76,8 +76,13 @@ class FormsPage(BasePage):
     @allure.step("Заполнить заявку по кнопке 'подключить'")
     def fill_connect_to_application(self):
         self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
-        self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
-        self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+        time.sleep(2)
+        if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
+            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+        else:
+            self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Выбрать 'интернет на дачу' в футере")
     def chose_button_internet_outtown(self):

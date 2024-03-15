@@ -19,10 +19,11 @@ class ReviewForRegion:
 
 class ReviewOnTheStreet:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Начать')]")
-    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
+    LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style='height: 95.6px;']")
     LEAVE_NAME = (By.XPATH, "//input[@autocomplete='name']")
-    CHOOCE_PRIVIDER = (By.XPATH, "//span[contains(text(), 'Провайдер')]")
-    CLICK_PROVIDER = (By.XPATH, "//li[contains(text(), 'Ростелеком')]")
+    CHOOCE_PRIVIDER = (By.XPATH, "//span[contains(text(), 'Провайдер')]/following-sibling::input")
+    # CHOOSE_ROSTELECOM = (By.XPATH, "(//input[@maxlength='500'])[3]")
+    CLICK_PROVIDER = (By.XPATH, "(//li[contains(text(), 'Ростелеком')])[1]")
     LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
     ENTER_PHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
     GET_101_PUB = (By.XPATH, "//div[contains(text(), 'Получить 101 руб')]")
@@ -31,12 +32,12 @@ class ReviewOnTheStreet:
 
 
 class ReviewOnTheHouse:
-    CLICK_PROVIDER = (By.XPATH, "(//li[contains(text(), 'Ростелеком')])[2]")
+    CLICK_PROVIDER = (By.XPATH, "//*[@id='forSelectField']/div[1]/div/div/div/ul/li")
     ENTER_PHONE_NUMBER = (By.XPATH, "(//input[@id='fix_callback_phone'])[2]")
 
 
 class ReviewOperator:
-    SCROLL = (By.XPATH, "//p[contains(text(), 'Важность качественной мобильной связи сложно переоценить.')]")
+    SCROLL = (By.XPATH, "//span[contains(text(), 'контакты')]")
     LEAVE_FEEDBACK = (By.XPATH, "//textarea[@style = 'height: 96px;']")
     CHOOCE_OPERATOR = (By.XPATH, "//span[contains(text(), 'Оператор')]")
     CLICK_OPERATOR = (By.XPATH, "//li[contains(text(), 'МТС')]")
