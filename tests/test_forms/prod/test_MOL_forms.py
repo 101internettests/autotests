@@ -36,7 +36,7 @@ class TestMOLForms:
         forms_page.open()
         forms_page.change_region_moscow()
         forms_page.fill_address_on_main_page()
-        forms_page.close_popup()
+        # forms_page.close_popup()
         forms_page.fill_connect_to_application()
         time.sleep(60)
 
