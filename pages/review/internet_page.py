@@ -54,7 +54,7 @@ class ReviewPageStreet(BasePage):
         self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
             "ТЕСТ. Со страницы улицы. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
-        self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).click()
+        self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).send_keys("Ростелеком")
         self.element_is_visible(ReviewOnTheStreet.CLICK_PROVIDER).click()
         self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK_2).click()
         self.element_is_visible(ReviewOnTheStreet.ENTER_PHONE_NUMBER).send_keys('1111111111')
@@ -72,8 +72,8 @@ class ReviewPageStreet(BasePage):
         self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK).send_keys(
             "ТЕСТ. Со страницы дома. Это тестовый отзыв оставленный роботом для проверки отделом тестирования. Он будет проверен и деактивирован.")
         self.element_is_visible(ReviewOnTheStreet.LEAVE_NAME).send_keys("Тест")
-        self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).send_keys("Ростелеком")
-        # self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).click()
+        # self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).send_keys("Ростелеком")
+        self.element_is_visible(ReviewOnTheStreet.CHOOCE_PRIVIDER).click()
         self.element_is_visible(ReviewOnTheHouse.CLICK_PROVIDER).click()
         self.element_is_visible(ReviewOnTheStreet.LEAVE_FEEDBACK_2).click()
         self.element_is_visible(ReviewOnTheHouse.ENTER_PHONE_NUMBER).send_keys('1111111111')

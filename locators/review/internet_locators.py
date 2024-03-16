@@ -23,7 +23,7 @@ class ReviewOnTheStreet:
     LEAVE_NAME = (By.XPATH, "//input[@autocomplete='name']")
     CHOOCE_PRIVIDER = (By.XPATH, "//span[contains(text(), 'Провайдер')]/following-sibling::input")
     # CHOOSE_ROSTELECOM = (By.XPATH, "(//input[@maxlength='500'])[3]")
-    CLICK_PROVIDER = (By.XPATH, "(//li[contains(text(), 'Ростелеком')])[1]")
+    CLICK_PROVIDER = (By.XPATH, "//div[@id='forSelectField']//li[contains(text(), 'Ростелеком')]")
     LEAVE_FEEDBACK_2 = (By.XPATH, "//div[contains(text(), 'Отправить отзыв')]")
     ENTER_PHONE_NUMBER = (By.XPATH, "//input[@id='fix_callback_phone']")
     GET_101_PUB = (By.XPATH, "//div[contains(text(), 'Получить 101 руб')]")
@@ -32,7 +32,7 @@ class ReviewOnTheStreet:
 
 
 class ReviewOnTheHouse:
-    CLICK_PROVIDER = (By.XPATH, "//*[@id='forSelectField']/div[1]/div/div/div/ul/li")
+    CLICK_PROVIDER = (By.XPATH, "//li[contains(text(), 'Ростелеком')]")
     ENTER_PHONE_NUMBER = (By.XPATH, "(//input[@id='fix_callback_phone'])[2]")
 
 

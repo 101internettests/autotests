@@ -25,7 +25,7 @@ class TestInternetForms:
 
     @allure.title("Проверка попапа номера телефона")
     def test_popup_number(self, driver):
-        forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
+        forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
         forms_page.change_region_moscow()
         forms_page.fill_address_on_main_page()
@@ -38,7 +38,7 @@ class TestInternetForms:
         forms_page.open()
         forms_page.change_region_moscow()
         forms_page.fill_address_on_main_page()
-        forms_page.close_popup()
+        # forms_page.close_popup()
         forms_page.fill_connect_to_application()
         time.sleep(60)
 
