@@ -41,10 +41,11 @@ class AddreesTariffForm:
     INPUT_MOBILE_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")
     BUTTON_SEND_APPLICATION = (By.XPATH, "//div[contains(text(), 'Отправить заявку')]")
     OPEN_PPOPUP = (By.XPATH, f"(// span[contains(text(), 'Подключить')])[{randint(0, 4)}]")
-    TEXT = (By.XPATH, "//div[contains(text(), 'телефон')]")
+    TEXT = (By.XPATH, "(//div[contains(text(), 'телефон')])[1]")
     INPUT_NUMBER_SECOND = (By.XPATH, "//input[@datatest='providers_provider_order_input_tel']")
     BUTTON_SEND_APL_SECOND = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
     SCROLL = (By.XPATH, "//div[contains(text(), 'Показать все детали тарифа')]")
+    TARIFF_POPUP_NUM = (By.XPATH, "//input[@datatest='popup_tariff_order_input_tel']")
 
 
 class OutOfTownApplication:
@@ -85,5 +86,5 @@ class NonPartnerCardRecCon:
 class ReferralUrlTariff:
     CHOSE_ABK_WELCOME = (By.XPATH, "//div[contains(text(), 'АВК-Веллком')]")
     CLICK_ON_PIC_AVK_WELCOME = (By.XPATH, "//img[@alt='АВК-Веллком']")
-    CONNECT_BUTTON = (By.XPATH, f"(//span[contains(text(), 'Подключить')])[{randint(1, 5)}]")
+    CONNECT_BUTTON = (By.XPATH, f"(//span[contains(text(), 'Подключить')])[{randint(3, 5)}]")
     SCROLL = (By.XPATH, "(//a[contains(text(), 'Все тарифы')])[3]")
