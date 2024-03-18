@@ -35,14 +35,14 @@ urls_dacha = ['https://101internet.ru/chelyabinsk/orders/sat', 'https://www.mosk
 @allure.suite("Тесты по отзывам")
 class Test101Review:
 
-    # @allure.title("Отзыв оставлен на странице региона")
-    # def test_random_review(self, driver):
-    #     random_url = random.choice(urls)
-    #     review = ReviewPageRegion(driver, random_url)
-    #     review.open()
-    #     review.scroll_to_feedback_region()
-    #     review.leave_feedback()
-    #
+    @allure.title("Отзыв оставлен на странице региона")
+    def test_random_review(self, driver):
+        random_url = random.choice(urls)
+        review = ReviewPageRegion(driver, random_url)
+        review.open()
+        review.scroll_to_feedback_region()
+        review.leave_feedback()
+
     # @allure.title("Отзыв оставлен на странице улицы")
     # def test_101_rub_street(self, driver):
     #     random_url = random.choice(urls_street)

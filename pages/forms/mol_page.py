@@ -80,7 +80,8 @@ class FormsPage(BasePage):
 
     @allure.step("Закрыть попап")
     def close_popup(self):
-        self.element_is_visible(AddreesTariffForm.CLOSE_POP_UP).click()
+        if self.element_is_present(AddreesTariffForm.CLOSE_POP_UP):
+            self.element_is_visible(AddreesTariffForm.CLOSE_POP_UP).click()
 
     @allure.step("Заполнить заявку по кнопке 'подключить'")
     def fill_connect_to_application(self):
@@ -90,8 +91,12 @@ class FormsPage(BasePage):
             self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
             self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
         else:
-            self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
-            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+            if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
+                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+            else:
+                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
     @allure.step("Выбрать 'интернет на дачу' в футере")
     def chose_button_internet_outtown_mol(self):

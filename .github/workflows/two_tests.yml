@@ -1,4 +1,4 @@
-name: two tests
+name: three tests
 
 on:
   schedule:
@@ -81,7 +81,7 @@ jobs:
 
       - name: all tests
         # if: "github.event.inputs.deployment_target == 'all'"
-        run: printenv && pytest tests/test_tags/prod --alluredir=allure-result && ls allure-result
+        run: printenv && pytest tests/test_tags/prod tests/test_forms/prod tests/test_review/prod --alluredir=allure-result && ls allure-result
         continue-on-error: true
 
       - name: Store allure result
