@@ -60,7 +60,7 @@ class OutOfTownApplication:
 class RecentlyConnectionTariffs:
     SCROLL = (By.XPATH, "//div[contains(text(), 'Руководство пользователя.pdf')]")
     BUTTON_FIND_ADDRESS = (By.XPATH, "(//a[contains(text(), 'Поиск по адресу')])[3]")
-    BUTTON_CHECK_ADDRESS = (By.XPATH, f"(// a[contains(text(), 'Проверить адрес')])[{randint(0, 4)}]")
+    BUTTON_CHECK_ADDRESS = (By.XPATH, f"(// a[contains(text(), 'Проверить адрес')])[{randint(1, 4)}]")
     INPUT_STREET = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[5]")
     CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[6]")
