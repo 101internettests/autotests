@@ -56,6 +56,12 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_THREE).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements == 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
+        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
 
     @allure.step("Проверка карты покрытия (ул Агалакова)")
     def check_the_coverage_map_agalakova(self):
@@ -78,6 +84,12 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_19).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements == 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
+        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
 
     @allure.step("Проверка карты покрытия (ул Болейко 1)")
     def check_the_coverage_map_boleiko_one(self):
@@ -100,6 +112,10 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements == 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
 
     @allure.step("Проверка карты покрытия (ул Болейко 2)")
     def check_the_coverage_map_boleiko_two(self):
@@ -122,6 +138,12 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_TWO).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements == 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
+        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
 
     @allure.step("Проверка карты покрытия (аллея Тестировщиков)")
     def check_the_coverage_map_test(self):
@@ -144,3 +166,9 @@ class CheckTheCoverageMap(BasePage):
             self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_ONE).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements == 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
+        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
