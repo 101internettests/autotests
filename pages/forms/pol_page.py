@@ -1,7 +1,7 @@
 import allure
 import time
 from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication
-from locators.forms.pol_locators import WaitPOLCallLocators, PopUpPhoneNubPOL, OutOfTownApplicationPOL, RecentlyConnectionTariffsPol, NonPartnerPOL, ReferralUrlTariffPOL
+from locators.forms.pol_locators import WaitPOLCallLocators, PopUpPhoneNubPOL, OutOfTownApplicationPOL, RecentlyConnectionTariffsPol, NonPartnerPOL, ReferralUrlTariffPOL, WriteTariffNamePOL
 from pages.base_page import BasePage
 from selenium.webdriver import ActionChains
 
@@ -78,6 +78,7 @@ class FormsPage(BasePage):
     def fill_connect_to_application(self):
         self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
         time.sleep(2)
+        self.write_tariff_name()
         if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
             self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
             self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
@@ -158,3 +159,12 @@ class FormsPage(BasePage):
         actions.move_to_element(scroll).perform()
         self.element_is_visible(ReferralUrlTariffPOL.CONNECT_BUTTON).click()
         self.switch_handles_window()
+
+    @allure.step("Написать название тарифа в консоль")
+    def write_tariff_name(self):
+        name_element = self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF)
+        if name_element is not None:
+            name_text = name_element.text
+            print(name_text)
+        else:
+            print("Элемент не найден или не содержит текст")

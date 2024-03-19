@@ -50,3 +50,7 @@ class ReferralUrlTariffPOL:
     CLICK_ON_PIC_PACT = (By.XPATH, "//img[@alt='ПАКТ']")
     SCROLL = (By.XPATH, "(//a[contains(text(), 'Все тарифы')])[3]")
     CONNECT_BUTTON = (By.XPATH, f"(//div[@datatest='providers_form_inspect_connect_tariff_button'])[{randint(2, 3)}]")
+
+
+class WriteTariffNamePOL:
+    NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")
