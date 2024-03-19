@@ -15,3 +15,7 @@ class PopUpPhoneNubMsk:
 
 class ReferralUrlTariffMOL:
     CHOSE_MOSCOW_REGION = (By.XPATH, "//a[contains(text(), 'Московская область')]")
+
+
+class WriteTariffNameMOL:
+    NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")

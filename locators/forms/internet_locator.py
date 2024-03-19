@@ -88,3 +88,8 @@ class ReferralUrlTariff:
     CLICK_ON_PIC_AVK_WELCOME = (By.XPATH, "//img[@alt='АВК-Веллком']")
     CONNECT_BUTTON = (By.XPATH, f"(//span[contains(text(), 'Подключить')])[{randint(3, 5)}]")
     SCROLL = (By.XPATH, "(//a[contains(text(), 'Все тарифы')])[3]")
+
+
+class WriteTariffName:
+    NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")
+
