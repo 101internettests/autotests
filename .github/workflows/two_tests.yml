@@ -79,19 +79,20 @@ jobs:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v4.1.4
 
-      - name: review
-        # if: "github.event.inputs.deployment_target == 'all'"
-        run: printenv && pytest tests/test_review/prod --alluredir=allure-result && ls allure-result
-        continue-on-error: true
 
       - name: forms
         # if: "github.event.inputs.deployment_target == 'all'"
         run: printenv && pytest tests/test_forms/prod -n 3 --dist=loadscope --alluredir=allure-results && ls allure-results
         continue-on-error: true
 
-      - name: forms
+      - name: tags
         # if: "github.event.inputs.deployment_target == 'all'"
         run: printenv && pytest tests/test_tags/prod -n 3 --dist=loadscope --alluredir=allure-results && ls allure-results
+        continue-on-error: true
+
+      - name: review
+        # if: "github.event.inputs.deployment_target == 'all'"
+        run: printenv && pytest tests/test_review/prod --alluredir=allure-result && ls allure-result
         continue-on-error: true
 
       - name: Store allure result
