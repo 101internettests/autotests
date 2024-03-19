@@ -79,26 +79,15 @@ jobs:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v4.1.4
 
-      - name: forms
-        run: printenv && pytest tests/test_forms/prod -n 3 --dist=loadscope --alluredir=allure-results-forms && ls allure-results-forms
-        continue-on-error: true
-
-      - name: tags
-        run: printenv && pytest tests/test_tags/prod -n 3 --dist=loadscope --alluredir=allure-results-tags && ls allure-results-tags
-        continue-on-error: true
-
-      - name: review
-        run: printenv && pytest tests/test_review/prod --alluredir=allure-results-review && ls allure-results-review
+      - name: all tests
+        run: pytest tests/test_tags/prod tests/test_forms/prod tests/test_review/prod --alluredir=allure-result
         continue-on-error: true
 
       - name: Store allure result
         uses: actions/upload-artifact@v4.3.1
         with:
-          name: allure-results
-          path: |
-            allure-results-forms
-            allure-results-tags
-            allure-results-review
+          name: allure-result
+          path: allure-result
           retention-days: 2
 
 
