@@ -79,28 +79,26 @@ jobs:
       - name: Download all workflow run artifacts
         uses: actions/download-artifact@v4.1.4
 
-
       - name: forms
-        # if: "github.event.inputs.deployment_target == 'all'"
-        run: printenv && pytest tests/test_forms/prod -n 3 --dist=loadscope --alluredir=allure-results && ls allure-results
+        run: printenv && pytest tests/test_forms/prod -n 3 --dist=loadscope --alluredir=allure-results-forms && ls allure-results-forms
         continue-on-error: true
 
       - name: tags
-        # if: "github.event.inputs.deployment_target == 'all'"
-        run: printenv && pytest tests/test_tags/prod -n 3 --dist=loadscope --alluredir=allure-results && ls allure-results
+        run: printenv && pytest tests/test_tags/prod -n 3 --dist=loadscope --alluredir=allure-results-tags && ls allure-results-tags
         continue-on-error: true
 
       - name: review
-        # if: "github.event.inputs.deployment_target == 'all'"
-        run: printenv && pytest tests/test_review/prod --alluredir=allure-result && ls allure-result
+        run: printenv && pytest tests/test_review/prod --alluredir=allure-results-review && ls allure-results-review
         continue-on-error: true
 
       - name: Store allure result
         uses: actions/upload-artifact@v4.3.1
         with:
-          name: allure-result
-          path:
-            allure-result
+          name: allure-results
+          path: |
+            allure-results-forms
+            allure-results-tags
+            allure-results-review
           retention-days: 2
 
 
