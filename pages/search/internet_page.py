@@ -47,8 +47,6 @@ class CheckTheCoverageMap(BasePage):
         time.sleep(1)
         if num_elements == 2:
             assert self.element_is_present(CoverageMap.TEXT_MOBILE)
-            # text_mobile = self.element_is_present(CoverageMap.TEXT_MOBILE)
-            # assert text_mobile.text == "МОБИЛЬНЫЙ ИНТЕРНЕТ С ВОЗМОЖНОСТЬЮ РАЗДАЧИ ЧЕРЕЗ РОУТЕР"
             self.element_is_visible(CoverageMap.CHOOSE_THE_HOUSE_THREE).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
@@ -62,6 +60,24 @@ class CheckTheCoverageMap(BasePage):
                 pass
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
+        time.sleep(3)
+        paginations = [self.element_is_visible(CoverageMap.PANGINATION_2).click()]
+        time.sleep(5)
+        for p in paginations:
+            self.check_the_buttons()
+
+    @allure.step("Проверка кнопок подключить")
+    def check_the_buttons(self):
+        if self.element_is_visible(CoverageMap.CONNECT_BUTTON):
+            print("кнопка подключить найдена")
+        if self.element_is_visible(CoverageMap.ADRESS_BUTTON):
+            print("кнопка проверить адрес найдена")
+            time.sleep(5)
+        scroll = self.element_is_visible(CoverageMap.SCROLL)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
+        #self.element_is_visible(CoverageMap.PANGINATION_2).click()
+
 
     @allure.step("Проверка карты покрытия (ул Агалакова)")
     def check_the_coverage_map_agalakova(self):
