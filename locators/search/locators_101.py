@@ -42,6 +42,7 @@ class CoverageMap:
     PANGINATION_2 = (By.XPATH, "//a[@href='/chelyabinsk/doma-nzl/2']")
     SCROLL = (By.XPATH, "//div[contains(text(), 'Отзывы о 101 интернет на Яндекс Картах')]")
     PANGINATION_3 = (By.XPATH, "//a[@href='/chelyabinsk/doma-nzl/3']")
+    PANGINATION_3 = (By.XPATH, "//a[@href='/chelyabinsk/doma-nzl/4']")
 
 
 
