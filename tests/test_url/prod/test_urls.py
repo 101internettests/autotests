@@ -1,5 +1,8 @@
+import time
+
 import allure
 from pages.urls.url_page import UrlsPage, UrlsProviderPage
+from config import bot, chat_id
 
 
 @allure.title("Проверка urls")
@@ -35,7 +38,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number()
+            try:
+                links.check_the_main_number()
+                print(f"Номер на рыжей кнопке на {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке не пройдена")
 
     @allure.title("Проверка url на страницах Екатеринбурга")
     def test_ekb_main_url(self, driver):
@@ -49,7 +56,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_ekb()
+            try:
+                links.check_the_main_number_ekb()
+                print(f"Номер на рыжей кнопке в Екатеринбурге {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Екатеринбурге не пройдена")
 
     @allure.title("Проверка url на страницах Новосибирска")
     def test_nov_main_url(self, driver):
@@ -61,7 +72,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_nov()
+            try:
+                links.check_the_main_number_nov()
+                print(f"Номер на рыжей кнопке в Новосибирске {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Новосибирске не пройдена")
 
     @allure.title("Проверка url на страницах Краснодара")
     def test_nov_main_kras(self, driver):
@@ -73,7 +88,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_kras()
+            try:
+                links.check_the_main_number_kras()
+                print(f"Номер на рыжей кнопке в Краснодаре {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Краснодаре не пройдена")
 
     @allure.title("Проверка url на страницах Твери")
     def test_nov_main_tver(self, driver):
@@ -84,7 +103,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_tver()
+            try:
+                links.check_the_main_number_tver()
+                print(f"Номер на рыжей кнопке в Твери {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Твери не пройдена")
 
     @allure.title("Проверка url на страницах Ростова-на-Дону")
     def test_nov_main_rostov(self, driver):
@@ -95,7 +118,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_rostov()
+            try:
+                links.check_the_main_number_rostov()
+                print(f"Номер на рыжей кнопке в Ростове-на-Дону {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Ростове-на-Дону не пройдена")
 
     @allure.title("Проверка url на страницах Омска")
     def test_nov_main_omsk(self, driver):
@@ -106,7 +133,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_omsk()
+            try:
+                links.check_the_main_number_omsk()
+                print(f"Номер на рыжей кнопке в Омске {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Омске не пройдена")
 
     @allure.title("Проверка url на страницах Москвы и мск. области")
     def test_nov_main_msk(self, driver):
@@ -121,7 +152,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_msk()
+            try:
+                links.check_the_main_number_msk()
+                print(f"Номер на рыжей кнопке в Москве {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Москве не пройдена")
 
     @allure.title("Проверка url на страницах Санкт-Петербурга и лен. области")
     def test_nov_main_spb(self, driver):
@@ -134,7 +169,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsPage(driver, url)
             links.open()
-            links.check_the_main_number_spb()
+            try:
+                links.check_the_main_number_spb()
+                print(f"Номер на рыжей кнопке в СПб {url} успешно проверен")
+            except AssertionError:
+                bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в СПб не пройдена")
 
     @allure.title("Проверка url на провайдере Ростелеком")
     def test_rostelecom_provider(self, driver):
@@ -158,7 +197,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_rostelecom_number()
+            try:
+                links.check_the_rostelecom_number()
+                print(f"Проверка url на провайдере Ростелеком {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере Ростелеком не пройдена")
 
     @allure.title("Проверка url на провайдере Ростелеком для МОЛ")
     def test_rostelecom_msk_provider(self, driver):
@@ -169,7 +212,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_rostelecom_msk_number()
+            try:
+                links.check_the_rostelecom_msk_number()
+                print(f"Проверка url на провайдере Ростелеком для МОЛ {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере Ростелеком МОЛ не пройдена")
 
     @allure.title("Проверка url на провайдере Ростелеком для ПОЛ")
     def test_rostelecom_spb_provider(self, driver):
@@ -180,7 +227,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_rostelecom_spb_number()
+            try:
+                links.check_the_rostelecom_spb_number()
+                print(f"Проверка url на провайдере Ростелеком для ПОЛ {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере Ростелеком ПОЛ не пройдена")
 
     @allure.title("Проверка url на провайдере МТС")
     def test_mts_provider(self, driver):
@@ -191,7 +242,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_mts_number()
+            try:
+                links.check_the_mts_number()
+                print(f"Проверка url на провайдере МТС {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере МТС не пройдена")
 
     @allure.title("Проверка url на провайдере Билайн")
     def test_beeline_provider(self, driver):
@@ -202,7 +257,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_beeline_number()
+            try:
+                links.check_the_beeline_number()
+                print(f"Проверка url на провайдере Билайн {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере Билайн не пройдена")
 
     @allure.title("Проверка url на провайдере Дом.ру")
     def test_domru_provider(self, driver):
@@ -213,7 +272,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_domru_number()
+            try:
+                links.check_the_domru_number()
+                print(f"Проверка url на провайдере Дом.ру {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере Дом.ру не пройдена")
 
     @allure.title("Проверка url на провайдере ТТК")
     def test_ttk_provider(self, driver):
@@ -223,7 +286,11 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_ttk_number()
+            try:
+                links.check_the_ttk_number()
+                print(f"Проверка url на провайдере ТТК {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере ТТК не пройдена")
 
     @allure.title("Проверка url на провайдере МГТС")
     def test_mgts_provider(self, driver):
@@ -234,4 +301,8 @@ class TestCheckUrls:
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
-            links.check_the_mgts_number()
+            try:
+                links.check_the_mgts_number()
+                print(f"Проверка url на провайдере МГТС {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере МГТС не пройдена")
