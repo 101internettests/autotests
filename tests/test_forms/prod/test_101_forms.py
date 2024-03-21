@@ -84,4 +84,3 @@ class TestInternetForms:
         forms_page.check_redirect()
         target_url = 'https://avk-wellcom.ru/zayavka-na-podklyuchenie.html'
         assert driver.current_url == target_url
-        time.sleep(60)

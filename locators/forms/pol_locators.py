@@ -22,7 +22,7 @@ class OutOfTownApplicationPOL:
 class RecentlyConnectionTariffsPol:
     SCROLL = (By.XPATH, "//a[contains(text(), 'Согласие на обработку перс.данных')]")
     BUTTON_FIND_ADDRESS = (By.XPATH, "(//a[contains(text(), 'Поиск по адресу')])[3]")
-    BUTTON_CHECK_ADDRESS = (By.XPATH, f"(// a[contains(text(), 'Проверить адрес')])[{randint(0, 4)}]")
+    BUTTON_CHECK_ADDRESS = (By.XPATH, f"(// a[contains(text(), 'Проверить адрес')])[{randint(1, 4)}]")
     INPUT_STREET = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[5]")
     CLICK_ON_THE_STREET = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[6]")
@@ -54,3 +54,5 @@ class ReferralUrlTariffPOL:
 
 class WriteTariffNamePOL:
     NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")
+    NAME_OF_TARIFF_STAND = (By.XPATH, "//*[@id='root']/div/div[1]/div[4]/div[2]/div[2]/div[1]/form/div/div[1]/span")
+    NAME_OF_TARIFF_B = (By.XPATH, "//h1[contains(text(), 'Тариф')]")
