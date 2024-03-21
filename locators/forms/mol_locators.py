@@ -19,3 +19,5 @@ class ReferralUrlTariffMOL:
 
 class WriteTariffNameMOL:
     NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")
+    NAME_OF_TARIFF_STAND = (By.XPATH, "//*[@id='root']/div/div[1]/div[4]/div[2]/div[2]/div[1]/form/div/div[1]/span")
+    NAME_OF_TARIFF_B = (By.XPATH, "//h1[contains(text(), 'Тариф')]")

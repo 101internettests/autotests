@@ -149,7 +149,8 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerPOL.CHOSE_PROVIDER_FILTER).send_keys("ПАКТ")
         self.element_is_visible(ReferralUrlTariffPOL.CHOSE_PACT).click()
         self.element_is_visible(NonPartnerPOL.ACCEPT_FILTER).click()
-        self.element_is_visible(ReferralUrlTariffPOL.CLICK_ON_PIC_PACT).click()
+        time.sleep(2)
+        self.element_is_present(ReferralUrlTariffPOL.CLICK_ON_PIC_PACT).click()
         time.sleep(3)
 
     @allure.step("Перейти на сайт провайдера по кнопке'подключить' у провайдера 'ПАКТ'")
@@ -162,9 +163,24 @@ class FormsPage(BasePage):
 
     @allure.step("Написать название тарифа в консоль")
     def write_tariff_name(self):
-        name_element = self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF)
-        if name_element is not None:
-            name_text = name_element.text
-            print(name_text)
-        else:
-            print("Элемент не найден или не содержит текст")
+        if self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF):
+            name_element = self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF)
+            if name_element is not None:
+                name_text = name_element.text
+                print(name_text)
+            else:
+                print("Элемент не найден или не содержит текст")
+        if self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF_STAND):
+            name_element = self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF_STAND)
+            if name_element is not None:
+                name_text = name_element.text
+                print(name_text)
+            else:
+                print("Элемент не найден или не содержит текст")
+        if self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF_B):
+            name_element = self.element_is_visible(WriteTariffNamePOL.NAME_OF_TARIFF_B)
+            if name_element is not None:
+                name_text = name_element.text
+                print(name_text)
+            else:
+                print("Элемент не найден или не содержит текст")
