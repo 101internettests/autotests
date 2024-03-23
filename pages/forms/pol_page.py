@@ -149,7 +149,7 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerPOL.CHOSE_PROVIDER_FILTER).send_keys("ПАКТ")
         self.element_is_visible(ReferralUrlTariffPOL.CHOSE_PACT).click()
         self.element_is_visible(NonPartnerPOL.ACCEPT_FILTER).click()
-        time.sleep(2)
+        time.sleep(3)
         self.element_is_present(ReferralUrlTariffPOL.CLICK_ON_PIC_PACT).click()
         time.sleep(3)
 
