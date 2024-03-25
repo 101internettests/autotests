@@ -10,20 +10,17 @@ class TestSearch:
         search_page.open()
         search_page.check_nonexistent_address_mol()
 
-    @allure.title("Проверка карты покрытия в Балашихе")
+    @allure.title("Проверка карты покрытия в Балашихе и Москве")
     def test_map_blsh(self, driver):
-        search_page = CheckTheCoverageMapMol(driver, "https://www.moskvaonline.ru/")
-        search_page.open()
-        search_page.change_region_on_blsh()
-        search_page.check_the_coverage_map_lenina()
-        search_page.check_the_coverage_map_test()
-
-    @allure.title("Проверка карты покрытия в Москве")
-    def test_map_msk(self, driver):
         search_page = CheckTheCoverageMapMol(driver, "https://www.moskvaonline.ru/")
         search_page.open()
         search_page.change_region_on_msk()
         search_page.check_the_coverage_map_sharik()
+        search_page.change_region_on_blsh()
+        search_page.check_the_coverage_map_lenina()
+        search_page.check_the_coverage_map_test()
+
+
 
 
 

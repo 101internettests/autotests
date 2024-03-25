@@ -61,21 +61,25 @@ class CheckTheCoverageMapPol(BasePage):
     def pangination(self):
         if self.element_is_visible(CoverageMapPol.PANGINATION_2):
             self.element_is_visible(CoverageMapPol.PANGINATION_2).click()
+            print("переход на страницу 2")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapPol.PANGINATION_3):
             self.element_is_visible(CoverageMapPol.PANGINATION_3).click()
+            print("переход на страницу 3")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapPol.PANGINATION_4):
             self.element_is_visible(CoverageMapPol.PANGINATION_4).click()
+            print("переход на страницу 4")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapPol.PANGINATION_5):
             self.element_is_visible(CoverageMapPol.PANGINATION_5).click()
+            print("переход на страницу 5")
             self.check_the_buttons()
         else:
             pass
@@ -83,26 +87,31 @@ class CheckTheCoverageMapPol(BasePage):
     def pangination_obl(self):
         if self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL):
             self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL).click()
+            print("переход на страницу 2")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapPol.PANGINATION_3_OBL):
             self.element_is_visible(CoverageMapPol.PANGINATION_3_OBL).click()
+            print("переход на страницу 3")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapPol.PANGINATION_4_OBL):
             self.element_is_visible(CoverageMapPol.PANGINATION_4_OBL).click()
+            print("переход на страницу 4")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapPol.PANGINATION_5_OBL):
             self.element_is_visible(CoverageMapPol.PANGINATION_5_OBL).click()
+            print("переход на страницу 5")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapPol.PANGINATION_6_OBL):
             self.element_is_visible(CoverageMapPol.PANGINATION_6_OBL).click()
+            print("переход на страницу 6")
             self.check_the_buttons()
         else:
             pass
@@ -134,7 +143,7 @@ class CheckTheCoverageMapPol(BasePage):
                 pass
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(3)
+        time.sleep(10)
         self.pangination()
 
     @allure.step("Проверка карты покрытия (ул Вишнякова)")
@@ -166,7 +175,7 @@ class CheckTheCoverageMapPol(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(3)
+        time.sleep(10)
         self.pangination_obl()
 
     @allure.step("Проверка карты покрытия (линия Тестовая)")
@@ -198,5 +207,5 @@ class CheckTheCoverageMapPol(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(3)
+        time.sleep(10)
         self.pangination_obl()

@@ -38,56 +38,66 @@ class CheckTheCoverageMapMol(BasePage):
         self.element_is_visible(CoverageMapMol.CHOOSE_MSK_REGION).click()
         time.sleep(1)
 
-    # def pangination(self):
-    #     if self.element_is_visible(CoverageMapMol.PANGINATION_2):
-    #         self.element_is_visible(CoverageMapMol.PANGINATION_2).click()
-    #         self.check_the_buttons()
-    #     else:
-    #         pass
-    #     if self.element_is_visible(CoverageMapMol.PANGINATION_3):
-    #         self.element_is_visible(CoverageMapMol.PANGINATION_3).click()
-    #         self.check_the_buttons()
-    #     else:
-    #         pass
-    #     if self.element_is_visible(CoverageMapMol.PANGINATION_4):
-    #         self.element_is_visible(CoverageMapMol.PANGINATION_4).click()
-    #         self.check_the_buttons()
-    #     else:
-    #         pass
-    #     if self.element_is_visible(CoverageMapMol.PANGINATION_5):
-    #         self.element_is_visible(CoverageMapMol.PANGINATION_5).click()
-    #         self.check_the_buttons()
-    #     else:
-    #         pass
-    #     if self.element_is_visible(CoverageMapMol.PANGINATION_6):
-    #         self.element_is_visible(CoverageMapMol.PANGINATION_6).click()
-    #         self.check_the_buttons()
-    #     else:
-    #         pass
+    def pangination(self):
+        if self.element_is_visible(CoverageMapMol.PANGINATION_2):
+            self.element_is_visible(CoverageMapMol.PANGINATION_2).click()
+            print("переход на страницу 2")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapMol.PANGINATION_3):
+            self.element_is_visible(CoverageMapMol.PANGINATION_3).click()
+            print("переход на страницу 3")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapMol.PANGINATION_4):
+            self.element_is_visible(CoverageMapMol.PANGINATION_4).click()
+            print("переход на страницу 4")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapMol.PANGINATION_5):
+            self.element_is_visible(CoverageMapMol.PANGINATION_5).click()
+            print("переход на страницу 5")
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapMol.PANGINATION_6):
+            self.element_is_visible(CoverageMapMol.PANGINATION_6).click()
+            print("переход на страницу 6")
+            self.check_the_buttons()
+        else:
+            pass
 
     def pangination_msk(self):
         if self.element_is_visible(CoverageMapMol.PANGINATION_2_MSK):
             self.element_is_visible(CoverageMapMol.PANGINATION_2_MSK).click()
+            print("переход на страницу 2")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapMol.PANGINATION_3_MSK):
             self.element_is_visible(CoverageMapMol.PANGINATION_3_MSK).click()
+            print("переход на страницу 3")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapMol.PANGINATION_4_MSK):
             self.element_is_visible(CoverageMapMol.PANGINATION_4_MSK).click()
+            print("переход на страницу 4")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapMol.PANGINATION_5_MSK):
             self.element_is_visible(CoverageMapMol.PANGINATION_5_MSK).click()
+            print("переход на страницу 5")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMapMol.PANGINATION_6_MSK):
             self.element_is_visible(CoverageMapMol.PANGINATION_6_MSK).click()
+            print("переход на страницу 6")
             self.check_the_buttons()
         else:
             pass
@@ -123,7 +133,6 @@ class CheckTheCoverageMapMol(BasePage):
         time.sleep(1)
         elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
         num_elements = len(elements)
-        print(num_elements)
         time.sleep(1)
         if num_elements <= 2:
             assert self.element_is_present(CoverageMapMol.TEXT_MOBILE)
@@ -142,10 +151,8 @@ class CheckTheCoverageMapMol(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(5)
-        self.element_is_visible(CoverageMapMol.PANGINATION_2).click()
-        self.check_the_buttons()
-        #self.pangination()
+        time.sleep(10)
+        self.pangination()
 
     @allure.step("Проверка карты покрытия (б-р Тестовый)")
     def check_the_coverage_map_test(self):
@@ -157,7 +164,6 @@ class CheckTheCoverageMapMol(BasePage):
         time.sleep(1)
         elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
         num_elements = len(elements)
-        print(num_elements)
         time.sleep(2)
         if num_elements <= 2:
             assert self.element_is_visible(CoverageMapMol.TEXT_MOBILE)
@@ -176,11 +182,8 @@ class CheckTheCoverageMapMol(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(3)
-        self.element_is_visible(CoverageMapMol.PANGINATION_2)
-        self.element_is_visible(CoverageMapMol.PANGINATION_2).click()
-        self.check_the_buttons()
-        #self.pangination()
+        time.sleep(10)
+        self.pangination()
 
     @allure.step("Проверка карты покрытия (ул Шарикоподшипниковская)")
     def check_the_coverage_map_sharik(self):
@@ -192,7 +195,6 @@ class CheckTheCoverageMapMol(BasePage):
         time.sleep(1)
         elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
         num_elements = len(elements)
-        print(num_elements)
         time.sleep(1)
         if num_elements <= 2:
             assert self.element_is_present(CoverageMapMol.TEXT_MOBILE)
@@ -209,5 +211,5 @@ class CheckTheCoverageMapMol(BasePage):
                 pass
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(3)
+        time.sleep(10)
         self.pangination_msk()

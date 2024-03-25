@@ -37,16 +37,19 @@ class CheckTheCoverageMap(BasePage):
     def pangination(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
+            print("переход на страницу 2")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMap.PANGINATION_3):
             self.element_is_visible(CoverageMap.PANGINATION_3).click()
+            print("переход на страницу 3")
             self.check_the_buttons()
         else:
             pass
         if self.element_is_visible(CoverageMap.PANGINATION_4):
             self.element_is_visible(CoverageMap.PANGINATION_4).click()
+            print("переход на страницу 4")
             self.check_the_buttons()
         else:
             pass
@@ -103,12 +106,7 @@ class CheckTheCoverageMap(BasePage):
         else:
             print("проверь кнопки подключения")
 
-        # if self.elements_are_visible(CoverageMap.CONNECT_BUTTON):
-        #     time.sleep(10)
-        #     print("кнопка подключить найдена")
-        # if self.elements_are_visible(CoverageMap.ADRESS_BUTTON):
-        #     time.sleep(10)
-        #     print("кнопка проверить адрес найдена")
+
 
     @allure.step("Проверка карты покрытия (ул Агалакова)")
     def check_the_coverage_map_agalakova(self):
@@ -139,12 +137,7 @@ class CheckTheCoverageMap(BasePage):
         self.check_the_buttons()
         time.sleep(2)
         self.pangination()
-        # pagination = [self.element_is_visible(CoverageMap.PANGINATION_2).click(),
-        #               self.element_is_visible(CoverageMap.PANGINATION_3).click()]
-        # time.sleep(10)
-        # for p in pagination:
-        #     self.check_the_buttons()
-        #     time.sleep(10)
+
 
     @allure.step("Проверка карты покрытия (ул Болейко 1)")
     def check_the_coverage_map_boleiko_one(self):
