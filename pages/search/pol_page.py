@@ -37,6 +37,44 @@ class CheckTheCoverageMapPol(BasePage):
         self.element_is_visible(CoverageMapPol.CHOOSE_LENOBL_REGION).click()
         time.sleep(1)
 
+    @allure.step("Проверка кнопок подключить")
+    def check_the_buttons(self):
+        scroll = self.element_is_visible(CoverageMap.SCROLL)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
+        time.sleep(2)
+        elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
+        time.sleep(10)
+        num_elements = len(elements)
+        time.sleep(10)
+        print(num_elements)
+        compare = self.elements_are_present(CoverageMap.COMPARE)
+        time.sleep(10)
+        num_compare = len(compare)
+        time.sleep(10)
+        print(num_compare)
+        if num_elements >= num_compare:
+            print("все ок")
+        else:
+            print("проверь кнопки подключения")
+
+    def pangination(self):
+        if self.element_is_visible(CoverageMap.PANGINATION_2):
+            self.element_is_visible(CoverageMap.PANGINATION_2).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_3):
+            self.element_is_visible(CoverageMap.PANGINATION_3).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_4):
+            self.element_is_visible(CoverageMap.PANGINATION_4).click()
+            self.check_the_buttons()
+        else:
+            pass
+
     @allure.step("Проверка карты покрытия (ул Анисимова)")
     def check_the_coverage_map_anisimova(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
@@ -45,9 +83,29 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_ANISIMOVA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_TWO).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements <= 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_TWO).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_TWO).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements <= 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
+        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        self.check_the_buttons()
+        time.sleep(3)
+        self.pangination()
 
     @allure.step("Проверка карты покрытия (ул Вишнякова)")
     def check_the_coverage_map_vishnaykova(self):
@@ -57,9 +115,29 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_VISHNYAKOVA).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_19).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements <= 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_19).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_19).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements <= 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
+        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        self.check_the_buttons()
+        time.sleep(3)
+        self.pangination()
 
     @allure.step("Проверка карты покрытия (линия Тестовая)")
     def check_the_coverage_map_test(self):
@@ -69,6 +147,26 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(1)
         self.element_is_visible(CoverageMapPol.CHOOSE_THE_STREET_TEST).click()
         time.sleep(1)
-        self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_ONE).click()
+        elements = self.elements_are_visible(CoverageMap.CHECK_BLOCK_OF_PROVIDERS)
+        num_elements = len(elements)
+        print(num_elements)
+        time.sleep(1)
+        if num_elements <= 2:
+            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_ONE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        elif num_elements > 2:
+            self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_ONE).click()
+            time.sleep(3)
+            self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+            if num_elements <= 2:
+                assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            elif num_elements > 2:
+                pass
+        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
+        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
-        self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
+        self.check_the_buttons()
+        time.sleep(3)
+        self.pangination()

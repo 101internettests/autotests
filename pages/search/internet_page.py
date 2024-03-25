@@ -34,6 +34,23 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHOOSE_CHB_REGION).click()
         time.sleep(1)
 
+    def pangination(self):
+        if self.element_is_visible(CoverageMap.PANGINATION_2):
+            self.element_is_visible(CoverageMap.PANGINATION_2).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_3):
+            self.element_is_visible(CoverageMap.PANGINATION_3).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMap.PANGINATION_4):
+            self.element_is_visible(CoverageMap.PANGINATION_4).click()
+            self.check_the_buttons()
+        else:
+            pass
+
     @allure.step("Проверка карты покрытия (ул Петра Туркина)")
     def check_the_coverage_map_turkina(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
@@ -62,16 +79,8 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
-        if self.element_is_visible(CoverageMap.PANGINATION_2):
-            self.element_is_visible(CoverageMap.PANGINATION_2).click()
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_3):
-            self.element_is_visible(CoverageMap.PANGINATION_3).click()
-            self.check_the_buttons()
-        else:
-            pass
+        time.sleep(3)
+        self.pangination()
 
     @allure.step("Проверка кнопок подключить")
     def check_the_buttons(self):
@@ -79,9 +88,20 @@ class CheckTheCoverageMap(BasePage):
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         time.sleep(2)
-        elements = self.elements_are_visible(CoverageMap.ADRESS_BUTTON)
+        elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
         time.sleep(10)
         num_elements = len(elements)
+        time.sleep(10)
+        print(num_elements)
+        compare = self.elements_are_present(CoverageMap.COMPARE)
+        time.sleep(10)
+        num_compare = len(compare)
+        time.sleep(10)
+        print(num_compare)
+        if num_elements >= num_compare:
+            print("все ок")
+        else:
+            print("проверь кнопки подключения")
 
         # if self.elements_are_visible(CoverageMap.CONNECT_BUTTON):
         #     time.sleep(10)
@@ -118,16 +138,7 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         self.check_the_buttons()
         time.sleep(2)
-        if self.element_is_visible(CoverageMap.PANGINATION_2):
-            self.element_is_visible(CoverageMap.PANGINATION_2).click()
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_3):
-            self.element_is_visible(CoverageMap.PANGINATION_3).click()
-            self.check_the_buttons()
-        else:
-            pass
+        self.pangination()
         # pagination = [self.element_is_visible(CoverageMap.PANGINATION_2).click(),
         #               self.element_is_visible(CoverageMap.PANGINATION_3).click()]
         # time.sleep(10)
@@ -161,21 +172,7 @@ class CheckTheCoverageMap(BasePage):
                 pass
         self.check_the_buttons()
         time.sleep(2)
-        if self.element_is_visible(CoverageMap.PANGINATION_2):
-            self.element_is_visible(CoverageMap.PANGINATION_2).click()
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_3):
-            self.element_is_visible(CoverageMap.PANGINATION_3).click()
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_4):
-            self.element_is_visible(CoverageMap.PANGINATION_4).click()
-            self.check_the_buttons()
-        else:
-            pass
+        self.pangination()
 
     @allure.step("Проверка карты покрытия (ул Болейко 2)")
     def check_the_coverage_map_boleiko_two(self):
@@ -205,21 +202,7 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         self.check_the_buttons()
         time.sleep(2)
-        if self.element_is_visible(CoverageMap.PANGINATION_2):
-            self.element_is_visible(CoverageMap.PANGINATION_2).click()
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_3):
-            self.element_is_visible(CoverageMap.PANGINATION_3).click()
-            self.check_the_buttons()
-        else:
-            pass
-        if self.element_is_visible(CoverageMap.PANGINATION_4):
-            self.element_is_visible(CoverageMap.PANGINATION_4).click()
-            self.check_the_buttons()
-        else:
-            pass
+        self.pangination()
 
     @allure.step("Проверка карты покрытия (аллея Тестировщиков)")
     def check_the_coverage_map_test(self):
@@ -249,8 +232,4 @@ class CheckTheCoverageMap(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         self.check_the_buttons()
         time.sleep(2)
-        if self.element_is_visible(CoverageMap.PANGINATION_2):
-            self.element_is_visible(CoverageMap.PANGINATION_2).click()
-            self.check_the_buttons()
-        else:
-            pass
+        self.pangination()
