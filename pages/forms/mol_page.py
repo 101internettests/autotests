@@ -1,6 +1,6 @@
 import allure
 import time
-from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication
+from locators.forms.internet_locator import WaitCallLocators, OfficeOrder, AddreesTariffForm, OutOfTownApplication, OneClickLocators
 from locators.forms.internet_locator import RecentlyConnectionTariffs, NonPartnerCardRecCon, ReferralUrlTariff, PopUpPhoneNub
 from locators.forms.mol_locators import WaitMOLCallLocators, PopUpPhoneNubMsk, ReferralUrlTariffMOL, WriteTariffNameMOL
 from pages.base_page import BasePage
@@ -200,3 +200,29 @@ class FormsPage(BasePage):
                 print(name_text)
             else:
                 print("Элемент не найден или не содержит текст")
+
+    @allure.step("Скролл до формы 1 клик снизу страницы")
+    def scroll_to_form(self):
+        scroll = self.element_is_visible(OneClickLocators.SCROLL_MAIN_PAGE)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
+
+    @allure.step("Скролл до формы 1 клик на страринце поиска по адресу")
+    def scroll_to_tohome(self):
+        scroll = self.element_is_visible(OneClickLocators.SCROLL_TOHOME_PAGE)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
+
+    @allure.step("Заполнить форму 1 клик на главной странице")
+    def one_click_main(self):
+        self.element_is_visible(OneClickLocators.NUMBER_OF_PHONE).send_keys("1111111111")
+        self.element_is_visible(OneClickLocators.BUTTON_CHOSE_THE_TARIFF).click()
+        success = self.element_is_visible(OneClickLocators.TEXT_CHECK)
+        assert success.text == "Ваша заявка принята! Мы свяжемся с вами в ближайшее время."
+
+    @allure.step("Заполнить форму 1 клик на странице отзывов")
+    def one_click_review(self):
+        self.element_is_visible(OneClickLocators.NUMBER_OF_PHONE).send_keys("1111111111")
+        self.element_is_visible(OneClickLocators.BUTTON_GET_CONSULTATION).click()
+        success = self.element_is_visible(OneClickLocators.TEXT_CHECK)
+        assert success.text == "Ваша заявка принята! Мы свяжемся с вами в ближайшее время."
