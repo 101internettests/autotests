@@ -39,7 +39,7 @@ class CheckTheCoverageMapPol(BasePage):
 
     @allure.step("Проверка кнопок подключить")
     def check_the_buttons(self):
-        scroll = self.element_is_visible(CoverageMap.SCROLL)
+        scroll = self.element_is_visible(CoverageMapPol.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         time.sleep(2)
@@ -59,18 +59,50 @@ class CheckTheCoverageMapPol(BasePage):
             print("проверь кнопки подключения")
 
     def pangination(self):
-        if self.element_is_visible(CoverageMap.PANGINATION_2):
-            self.element_is_visible(CoverageMap.PANGINATION_2).click()
+        if self.element_is_visible(CoverageMapPol.PANGINATION_2):
+            self.element_is_visible(CoverageMapPol.PANGINATION_2).click()
             self.check_the_buttons()
         else:
             pass
-        if self.element_is_visible(CoverageMap.PANGINATION_3):
-            self.element_is_visible(CoverageMap.PANGINATION_3).click()
+        if self.element_is_visible(CoverageMapPol.PANGINATION_3):
+            self.element_is_visible(CoverageMapPol.PANGINATION_3).click()
             self.check_the_buttons()
         else:
             pass
-        if self.element_is_visible(CoverageMap.PANGINATION_4):
-            self.element_is_visible(CoverageMap.PANGINATION_4).click()
+        if self.element_is_visible(CoverageMapPol.PANGINATION_4):
+            self.element_is_visible(CoverageMapPol.PANGINATION_4).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapPol.PANGINATION_5):
+            self.element_is_visible(CoverageMapPol.PANGINATION_5).click()
+            self.check_the_buttons()
+        else:
+            pass
+
+    def pangination_obl(self):
+        if self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL):
+            self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapPol.PANGINATION_3_OBL):
+            self.element_is_visible(CoverageMapPol.PANGINATION_3_OBL).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapPol.PANGINATION_4_OBL):
+            self.element_is_visible(CoverageMapPol.PANGINATION_4_OBL).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapPol.PANGINATION_5_OBL):
+            self.element_is_visible(CoverageMapPol.PANGINATION_5_OBL).click()
+            self.check_the_buttons()
+        else:
+            pass
+        if self.element_is_visible(CoverageMapPol.PANGINATION_6_OBL):
+            self.element_is_visible(CoverageMapPol.PANGINATION_6_OBL).click()
             self.check_the_buttons()
         else:
             pass
@@ -100,8 +132,6 @@ class CheckTheCoverageMapPol(BasePage):
                 assert self.element_is_present(CoverageMap.TEXT_MOBILE)
             elif num_elements > 2:
                 pass
-        self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
-        assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
         time.sleep(3)
@@ -137,7 +167,7 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(3)
         self.check_the_buttons()
         time.sleep(3)
-        self.pangination()
+        self.pangination_obl()
 
     @allure.step("Проверка карты покрытия (линия Тестовая)")
     def check_the_coverage_map_test(self):
@@ -152,7 +182,7 @@ class CheckTheCoverageMapPol(BasePage):
         print(num_elements)
         time.sleep(1)
         if num_elements <= 2:
-            assert self.element_is_present(CoverageMap.TEXT_MOBILE)
+            assert self.element_is_present(CoverageMapPol.TEXT_MOBILE)
             self.element_is_visible(CoverageMapPol.CHOOSE_THE_HOUSE_ONE).click()
             time.sleep(3)
             self.element_is_visible(CoverageMap.CLOSE_THE_POPAP).click()
@@ -169,4 +199,4 @@ class CheckTheCoverageMapPol(BasePage):
         time.sleep(3)
         self.check_the_buttons()
         time.sleep(3)
-        self.pangination()
+        self.pangination_obl()
