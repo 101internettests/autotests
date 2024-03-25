@@ -13,6 +13,8 @@ class CoverageMapPol:
     CHOOSE_THE_DISTRICT_KHVOINYI = (By.XPATH, "//a[contains(text(), 'Хвойный')]")
     CHOOSE_THE_STREET_TEST = (By.XPATH, "//a[contains(text(), 'Тестовая линия')]")
     CHOOSE_THE_HOUSE_ONE = (By.XPATH, "(//a[contains(text(), '1')])[1]")
+    SCROLL = (By.XPATH, "//div[contains(text(), 'Частые вопросы')]")
+    TEXT_MOBILE = (By.XPATH, "//div[contains(text(), 'МОБИЛЬНЫЙ ИНТЕРНЕТ СО СКОРОСТЬЮ')]")
     PANGINATION_2 = (By.XPATH, "//a[@href='/doma-nzl/2']")
     PANGINATION_3 = (By.XPATH, "//a[@href='/doma-nzl/3']")
     PANGINATION_4 = (By.XPATH, "//a[@href='/doma-nzl/4']")
@@ -22,6 +24,5 @@ class CoverageMapPol:
     PANGINATION_4_OBL = (By.XPATH, "//a[@href='/leningradskaya-oblast/doma-nzl/4']")
     PANGINATION_5_OBL = (By.XPATH, "//a[@href='/leningradskaya-oblast/doma-nzl/5']")
     PANGINATION_6_OBL = (By.XPATH, "//a[@href='/leningradskaya-oblast/doma-nzl/6']")
-    SCROLL = (By.XPATH, "//div[contains(text(), 'Частые вопросы')]")
-    TEXT_MOBILE = (By.XPATH, "//div[contains(text(), 'МОБИЛЬНЫЙ ИНТЕРНЕТ СО СКОРОСТЬЮ')]")
+
 
