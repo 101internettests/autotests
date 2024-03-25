@@ -58,6 +58,7 @@ class CheckTheCoverageMapPol(BasePage):
         else:
             print("проверь кнопки подключения")
 
+    @allure.step("Пангинация на странице дома в СПБ")
     def pangination(self):
         if self.element_is_visible(CoverageMapPol.PANGINATION_2):
             self.element_is_visible(CoverageMapPol.PANGINATION_2).click()
@@ -84,6 +85,7 @@ class CheckTheCoverageMapPol(BasePage):
         else:
             pass
 
+    @allure.step("Пангинация на странице дома в ЛО")
     def pangination_obl(self):
         if self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL):
             self.element_is_visible(CoverageMapPol.PANGINATION_2_OBL).click()

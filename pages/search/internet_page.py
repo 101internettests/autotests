@@ -34,6 +34,7 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHOOSE_CHB_REGION).click()
         time.sleep(1)
 
+    @allure.step("Пангинация на странице дома")
     def pangination(self):
         if self.element_is_visible(CoverageMap.PANGINATION_2):
             self.element_is_visible(CoverageMap.PANGINATION_2).click()
@@ -106,8 +107,6 @@ class CheckTheCoverageMap(BasePage):
         else:
             print("проверь кнопки подключения")
 
-
-
     @allure.step("Проверка карты покрытия (ул Агалакова)")
     def check_the_coverage_map_agalakova(self):
         self.element_is_visible(CoverageMap.CHOOSE_THE_COVERAGE_MAP).click()
@@ -137,7 +136,6 @@ class CheckTheCoverageMap(BasePage):
         self.check_the_buttons()
         time.sleep(2)
         self.pangination()
-
 
     @allure.step("Проверка карты покрытия (ул Болейко 1)")
     def check_the_coverage_map_boleiko_one(self):

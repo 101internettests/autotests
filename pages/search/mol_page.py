@@ -38,6 +38,28 @@ class CheckTheCoverageMapMol(BasePage):
         self.element_is_visible(CoverageMapMol.CHOOSE_MSK_REGION).click()
         time.sleep(1)
 
+    @allure.step("Проверка кнопок подключить")
+    def check_the_buttons(self):
+        scroll = self.element_is_visible(CoverageMapMol.SCROLL)
+        actions = ActionChains(self.driver)
+        actions.move_to_element(scroll).perform()
+        time.sleep(2)
+        elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
+        time.sleep(10)
+        num_elements = len(elements)
+        time.sleep(10)
+        print(num_elements)
+        compare = self.elements_are_present(CoverageMap.COMPARE)
+        time.sleep(15)
+        num_compare = len(compare)
+        time.sleep(15)
+        print(num_compare)
+        if num_elements >= num_compare:
+            print("все ок")
+        else:
+            print("проверь кнопки подключения")
+
+    @allure.step("Пангинация на странице дома в Балашихе")
     def pangination(self):
         if self.element_is_visible(CoverageMapMol.PANGINATION_2):
             self.element_is_visible(CoverageMapMol.PANGINATION_2).click()
@@ -70,6 +92,7 @@ class CheckTheCoverageMapMol(BasePage):
         else:
             pass
 
+    @allure.step("Пангинация на странице дома в Москве")
     def pangination_msk(self):
         if self.element_is_visible(CoverageMapMol.PANGINATION_2_MSK):
             self.element_is_visible(CoverageMapMol.PANGINATION_2_MSK).click()
@@ -101,27 +124,6 @@ class CheckTheCoverageMapMol(BasePage):
             self.check_the_buttons()
         else:
             pass
-
-    @allure.step("Проверка кнопок подключить")
-    def check_the_buttons(self):
-        scroll = self.element_is_visible(CoverageMapMol.SCROLL)
-        actions = ActionChains(self.driver)
-        actions.move_to_element(scroll).perform()
-        time.sleep(2)
-        elements = self.elements_are_visible(CoverageMap.CONNECT_BUTTON)
-        time.sleep(10)
-        num_elements = len(elements)
-        time.sleep(10)
-        print(num_elements)
-        compare = self.elements_are_present(CoverageMap.COMPARE)
-        time.sleep(15)
-        num_compare = len(compare)
-        time.sleep(15)
-        print(num_compare)
-        if num_elements >= num_compare:
-            print("все ок")
-        else:
-            print("проверь кнопки подключения")
 
     @allure.step("Проверка карты покрытия (пр-кт Ленина)")
     def check_the_coverage_map_lenina(self):
