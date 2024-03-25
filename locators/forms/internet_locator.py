@@ -94,3 +94,12 @@ class WriteTariffName:
     NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")
     NAME_OF_TARIFF_STAND = (By.XPATH, "//*[@id='root']/div/div[1]/div[4]/div[2]/div[2]/div[1]/form/div/div[1]/span")
     NAME_OF_TARIFF_B = (By.XPATH, "//h1[contains(text(), 'Тариф')]")
+
+
+class OneClickLocators:
+    SCROLL_MAIN_PAGE = (By.XPATH, "(//div[contains(text(), 'Топ провайдеров')])[2]")
+    SCROLL_TOHOME_PAGE = (By.XPATH, "//div[contains(text(), 'Интернет-провайдеры ')]")
+    NUMBER_OF_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")
+    BUTTON_CHOSE_THE_TARIFF = (By.XPATH, "//div[contains(text(), 'Подобрать тариф')]")
+    TEXT_CHECK = (By.XPATH, "//div[contains(text(), 'Ваша заявка принята! Мы свяжемся с вами в ближайшее время.')]")
+    BUTTON_GET_CONSULTATION = (By.XPATH, "//div[contains(text(), 'Получить консультацию')]")

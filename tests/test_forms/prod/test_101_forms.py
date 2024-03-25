@@ -84,3 +84,28 @@ class TestInternetForms:
         forms_page.check_redirect()
         target_url = 'https://avk-wellcom.ru/zayavka-na-podklyuchenie.html'
         assert driver.current_url == target_url
+
+    @allure.title("Проверка формы 1 клик на главной странице")
+    def test_one_click_main(self, driver):
+        forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
+        forms_page.open()
+        forms_page.scroll_to_form()
+        forms_page.one_click_main()
+        time.sleep(60)
+
+    @allure.title("Проверка формы 1 клик на странице отзывов")
+    def test_one_click_review(self, driver):
+        forms_page = FormsPage(driver, "https://101internet.ru/chelyabinsk/reviews")
+        forms_page.open()
+        forms_page.one_click_review()
+        time.sleep(60)
+
+    @allure.title("Проверка формы 1 клик на странице поиска по адресу")
+    def test_one_click_tohome(self, driver):
+        forms_page = FormsPage(driver, "https://101internet.ru/chelyabinsk/orders/tohome")
+        forms_page.open()
+        forms_page.scroll_to_tohome()
+        forms_page.one_click_main()
+        time.sleep(60)
+
+
