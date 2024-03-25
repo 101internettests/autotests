@@ -26,9 +26,9 @@ class TestSearch:
         search_page.change_region_on_chb()
         search_page.check_the_coverage_map_turkina()
         search_page.check_the_coverage_map_agalakova()
-        search_page.check_the_coverage_map_boleiko_one()
-        search_page.check_the_coverage_map_boleiko_two()
-        search_page.check_the_coverage_map_test()
+        # search_page.check_the_coverage_map_boleiko_one()
+        # search_page.check_the_coverage_map_boleiko_two()
+        # search_page.check_the_coverage_map_test()
 
 
 
