@@ -134,7 +134,7 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         self.check_the_buttons()
-        time.sleep(2)
+        time.sleep(3)
         self.pangination()
 
     @allure.step("Проверка карты покрытия (ул Болейко 1)")
@@ -162,7 +162,7 @@ class CheckTheCoverageMap(BasePage):
             elif num_elements > 2:
                 pass
         self.check_the_buttons()
-        time.sleep(2)
+        time.sleep(3)
         self.pangination()
 
     @allure.step("Проверка карты покрытия (ул Болейко 2)")
@@ -192,7 +192,7 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         self.check_the_buttons()
-        time.sleep(2)
+        time.sleep(3)
         self.pangination()
 
     @allure.step("Проверка карты покрытия (аллея Тестировщиков)")
@@ -222,5 +222,5 @@ class CheckTheCoverageMap(BasePage):
         self.element_is_visible(CoverageMap.CHECK_LENTEST).click()
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         self.check_the_buttons()
-        time.sleep(2)
+        time.sleep(3)
         self.pangination()

@@ -153,7 +153,7 @@ class CheckTheCoverageMapMol(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(10)
+        time.sleep(7)
         self.pangination()
 
     @allure.step("Проверка карты покрытия (б-р Тестовый)")
@@ -184,7 +184,7 @@ class CheckTheCoverageMapMol(BasePage):
         assert self.element_is_visible(CoverageMap.CLICK_LENTEST)
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(10)
+        time.sleep(7)
         self.pangination()
 
     @allure.step("Проверка карты покрытия (ул Шарикоподшипниковская)")
@@ -213,5 +213,5 @@ class CheckTheCoverageMapMol(BasePage):
                 pass
         time.sleep(3)
         self.check_the_buttons()
-        time.sleep(10)
+        time.sleep(7)
         self.pangination_msk()
