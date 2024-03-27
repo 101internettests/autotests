@@ -44,6 +44,8 @@ class CoverageMap:
     PANGINATION_3 = (By.XPATH, "//a[@href='/chelyabinsk/doma-nzl/3']")
     PANGINATION_4 = (By.XPATH, "//a[@href='/chelyabinsk/doma-nzl/4']")
     COMPARE = (By.XPATH, "//span[contains(text(), 'сравнить')]")
+    TEST = test
+
 
 
 
