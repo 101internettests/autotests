@@ -11,6 +11,7 @@ load_dotenv()
 @pytest.fixture
 def driver():
     options = ChromeOptions()
+    options.add_argument('--incognito')
     if os.getenv("HEADLESS") == "True":
         options.add_argument("--headless")
     driver = webdriver.Chrome(options=options)
