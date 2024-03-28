@@ -42,6 +42,7 @@ class Test101Review:
         review.open()
         review.scroll_to_feedback_region()
         review.leave_feedback()
+        print("Выбранный URL:", random_url)
 
     # @allure.title("Отзыв оставлен на странице улицы")
     # def test_101_rub_street(self, driver):
@@ -71,6 +72,7 @@ class Test101Review:
         review.open()
         review.scroll_to_feedback_provider()
         review.leave_feedback_provider()
+        print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на странице провайдера в разделе отзывы")
     def test_review_provider_feedback(self, driver):
@@ -80,6 +82,7 @@ class Test101Review:
         review.scroll_to_feedback_provider_feedback()
         review_2 = ReviewPageRegion(driver, random_url)
         review_2.leave_feedback()
+        print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на главной странице")
     def test_review_main_page(self, driver):
@@ -88,6 +91,7 @@ class Test101Review:
         review.open()
         review.scroll_to_feedback_maim_page()
         review.leave_feedback()
+        print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на странице офиса")
     def test_review_office(self, driver):
@@ -96,6 +100,7 @@ class Test101Review:
         review.open()
         review.scroll_to_feedback_maim_page()
         review.leave_feedback()
+        print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на странице загородной заявки")
     def test_review_dacha(self, driver):
@@ -104,3 +109,4 @@ class Test101Review:
         review.open()
         review.scroll_to_feedback_maim_page()
         review.leave_feedback()
+        print("Выбранный URL:", random_url)
