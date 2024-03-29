@@ -80,7 +80,7 @@ jobs:
         uses: actions/download-artifact@v4.1.4
 
       - name: all tests
-        run: pytest tests/test_tags/prod tests/test_forms/prod tests/test_review/prod --alluredir=allure-result
+        run: pytest tests/test_new_tags tests/test_forms/prod tests/test_review/prod --alluredir=allure-result
         continue-on-error: true
 
       - name: Store allure result
