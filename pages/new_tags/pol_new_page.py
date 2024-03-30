@@ -14,7 +14,7 @@ class OneHundredMainPage(BasePage):
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
             self.send_application_from_new_window()
             self.driver.back()
-            # time.sleep(60)
+            time.sleep(60)
         tags_to_check = [
             Tagpagelocators.TAG_300_MB,
             Tagpagelocators.TAG_500_MB,
@@ -27,7 +27,7 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
                 self.send_application_from_new_window()
                 self.driver.back()
-                # time.sleep(60)
+                time.sleep(60)
 
     @allure.step("Заполнить адрес для города Санкт-Петербург")
     def execute_actions_after_rates_click(self):
@@ -88,25 +88,19 @@ class OneHundredMainPage(BasePage):
     @allure.step("Выполнить проверку тегов страницы")
     def megafon_fill_the_address(self):
         with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
-            self.send_application_provider()
-            self.choose_connection_type()
-            self.moscow_assert_text()
+            self.element_is_visible(Tagpagelocators.TAG_INTERNET_AND_MOBILE).click()
+            self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
+            self.send_application_from_new_window()
+            self.driver.back()
             time.sleep(60)
-        # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
-        #     self.element_is_visible(Tagpagelocators.TAG_INTERNET_TV_MOBILE).click()
-        #     self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
-        #     self.choose_connection_type()
-        #     self.moscow_assert_text()
-        #     time.sleep(60)
         new_new_tags = [Tagpagelocators.TAG_HOME_INTERNET,
                         Tagpagelocators.TAG_INTERNET_TV]
-                        # Tagpagelocators.TAG_CHEAP_INTERNET]
         for new_tag in new_new_tags:
             with allure.step(f"Проверка {new_tag}"):
                 self.element_is_visible(new_tag).click()
                 self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
-                self.choose_connection_type()
-                self.moscow_assert_text()
+                self.send_application_from_new_window()
+                self.driver.back()
                 time.sleep(60)
 
     @allure.step("Отправить заявку")

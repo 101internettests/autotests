@@ -19,13 +19,13 @@ class OneHundredMainPage(BasePage):
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
             self.send_application_from_new_window()
             self.driver.back()
-            # time.sleep(60)
+            time.sleep(60)
         with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
             self.send_application_from_new_window()
             self.driver.back()
-            # time.sleep(60)
+            time.sleep(60)
         tags_to_check = [
             TagPagelocators.TAG_HOME_INTERNET,
             # TagPagelocators.TAG_INTERNET_TV,
@@ -41,7 +41,7 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
                 self.send_application_from_new_window()
                 self.driver.back()
-                # time.sleep(60)
+                time.sleep(60)
 
     @allure.step("Заполнить адрес для города Воронеж")
     def execute_actions_after_rates_click(self):
@@ -139,13 +139,13 @@ class OneHundredMainPage(BasePage):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.send_application_from_new_window()
         self.driver.back()
-        # time.sleep(60)
+        time.sleep(60)
         with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             self.element_is_visible(TagPagelocators.TAG_INTERNET_TV_MOBILE).click()
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
             self.send_application_from_new_window()
             self.driver.back()
-            # time.sleep(60)
+            time.sleep(60)
 
 
     @allure.step("Отправить заявку")
