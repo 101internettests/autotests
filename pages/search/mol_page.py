@@ -59,6 +59,26 @@ class CheckTheCoverageMapMol(BasePage):
         else:
             print("проверь кнопки подключения")
 
+    @allure.step("2")
+    def click_2(self):
+        get_all_pagination_buttons = self.elements_are_present(CoverageMapMol.ALL_PAGINATION_BUTTON)
+        print(get_all_pagination_buttons)
+        raise Exception("Остановка программы")
+        # self.element_is_visible(CoverageMapMol.PANGINATION_2).click()
+        # print("Элемент обнаружен. Отмечаем 🎉")
+
+    def click_at_all_pagination_buttons(self):
+        elements = self.elements_are_present(CoverageMapMol.ALL_PAGINATION_BUTTON)
+        print('\n', elements)
+
+    @allure.step("3")
+    def click_3(self):
+        if self.elements_are_present(CoverageMapMol.PANGINATION_3):
+            self.element_is_present(CoverageMapMol.PANGINATION_3).click()
+            print("Элемент обнаружен. Отмечаем 🎉")
+        else:
+            print("Элемент не найден 😞")
+
     @allure.step("Пангинация на странице дома в Балашихе")
     def pangination(self):
         if self.element_is_visible(CoverageMapMol.PANGINATION_2):
