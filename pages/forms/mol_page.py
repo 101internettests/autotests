@@ -121,6 +121,26 @@ class FormsPage(BasePage):
         actions.move_to_element(scroll).perform()
         self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FIND_ADDRESS).click()
 
+    @allure.step("Заполнить адрес через кнопку 'проверить адрес' вариант 2")
+    def fill_address_in_addresspage_second(self):
+        self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FOR_CONNECTION).click()
+        time.sleep(3)
+
+    @allure.step("Заполнить заявку по кнопке 'подключить' 2 варинт")
+    def fill_connect_to_application_second(self):
+        time.sleep(2)
+        self.write_tariff_name()
+        if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
+            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+        else:
+            if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
+                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+            else:
+                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+
     @allure.step("Заполнить адрес через кнопку 'проверить адрес'")
     def fill_address_in_addresspage(self):
         self.element_is_visible(RecentlyConnectionTariffs.BUTTON_CHECK_ADDRESS).click()
