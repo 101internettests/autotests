@@ -104,6 +104,21 @@ class FormsPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
 
+    @allure.step("Заполнить заявку по кнопке 'подключить' 2 варинт")
+    def fill_connect_to_application_second(self):
+        time.sleep(2)
+        self.write_tariff_name()
+        if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
+            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+        else:
+            if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
+                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+            else:
+                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+
     @allure.step("Выбрать 'интернет на дачу' в футере")
     def chose_button_internet_outtown(self):
         scroll = self.element_is_visible(OutOfTownApplication.SCROLL)
@@ -136,6 +151,12 @@ class FormsPage(BasePage):
         self.element_is_visible(RecentlyConnectionTariffs.CHOOSE_TYPE_OF_CONNECTION).click()
         self.element_is_visible(RecentlyConnectionTariffs.CLICK_ON_TYPE_OF_CONNECTION).click()
         self.element_is_visible(RecentlyConnectionTariffs.CHECK_CONNECTION).click()
+
+    @allure.step("Заполнить адрес через кнопку 'проверить адрес' вариант 2")
+    def fill_address_in_addresspage_second(self):
+        self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FOR_CONNECTION).click()
+        time.sleep(3)
+
 
     @allure.step("Выбрать 'провайдеры' в меню бургер")
     def chose_providers_burger_button(self):
