@@ -68,7 +68,7 @@ class RecentlyConnectionTariffs:
     CHOOSE_TYPE_OF_CONNECTION = (By.XPATH, "//span[contains(text(), 'Тип подключения')]")
     CLICK_ON_TYPE_OF_CONNECTION = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[3]")
     CHECK_CONNECTION = (By.XPATH, "(//div[contains(text(), 'Проверить')])[2]")
-    BUTTON_FOR_CONNECTION = (By.XPATH, f"(//span[contains(text(), 'Подключить')])[{randint(1, 3)}]")
+    BUTTON_FOR_CONNECTION = (By.XPATH, "(//span[contains(text(), 'Подключить')])[3]")
 
 class NonPartnerCardRecCon:
     PROVIDERS_BUTTON = (By.XPATH, "(//a[contains(text(), 'провайдеры')])[1]")
