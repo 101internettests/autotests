@@ -1,4 +1,4 @@
-name: 1 test
+name: 3 tests
 
 on:
   workflow_dispatch:
@@ -34,7 +34,7 @@ jobs:
 
       - name: tests
         # if: "github.event.inputs.deployment_target == 'all'"
-        run: pytest tests/test_review/prod --alluredir=allure-results
+        run: pytest tests/test_new_tags tests/test_forms/prod tests/test_review/prod --alluredir=allure-result
         continue-on-error: true
 
       - name: Install Java
@@ -51,7 +51,7 @@ jobs:
         with:
           name: _site
           path: _site
-          retention-days: 1
+          retention-days: 2
 
   publish-report:
     name: Report publication
