@@ -33,5 +33,5 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: tests
-        run: pytest test/test_url/prod
+        run: pytest tests/test_url/prod
         continue-on-error: true
