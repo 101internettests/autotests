@@ -1,10 +1,12 @@
 import allure
 import time
 from pages.forms.internet_page import FormsPage
+from qaseio.pytest import qase
 
 
 class TestInternetForms:
     @allure.title("Проверка формы 'жду звонка'")
+    @qase.title("Проверка формы 'жду звонка' 101")
     def test_wait_call_form(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -14,6 +16,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка офисной заявки")
+    @qase.title("Проверка офисной заявки 101")
     def test_office_form(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -24,6 +27,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка попапа номера телефона")
+    @qase.title("Проверка попапа номера телефона 101")
     def test_popup_number(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -33,6 +37,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка формы заявки 'адрес-тариф'")
+    @qase.title("Проверка формы заявки 'адрес-тариф' 101")
     def test_tariff_form(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -43,6 +48,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка формы загородной заявки на 101")
+    @qase.title("Проверка формы загородной заявки на 101")
     def test_out_of_town_application(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -52,6 +58,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер")
+    @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер 101")
     def test_check_button_connect(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -62,6 +69,7 @@ class TestInternetForms:
         # time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
+    @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер 101")
     def test_check_button_connect_unpartner(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -74,6 +82,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка реферальной ссылки с тарифа")
+    @qase.title("Проверка реферальной ссылки с тарифа 101")
     def test_check_url_provider(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -85,6 +94,7 @@ class TestInternetForms:
         assert driver.current_url == target_url
 
     @allure.title("Проверка формы 1 клик на главной странице")
+    @qase.title("Проверка формы 1 клик на главной странице 101")
     def test_one_click_main(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/voronezh")
         forms_page.open()
@@ -93,6 +103,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице отзывов")
+    @qase.title("Проверка формы 1 клик на странице отзывов 101")
     def test_one_click_review(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/chelyabinsk/reviews")
         forms_page.open()
@@ -100,6 +111,7 @@ class TestInternetForms:
         time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице поиска по адресу")
+    @qase.title("Проверка формы 1 клик на странице поиска по адресу 101")
     def test_one_click_tohome(self, driver):
         forms_page = FormsPage(driver, "https://101internet.ru/chelyabinsk/orders/tohome")
         forms_page.open()
