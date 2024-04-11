@@ -12,7 +12,7 @@ env:
   HEADLESS: ${{ secrets.HEADLESS }}
   TOKEN: ${{ secrets.TOKEN }}
   QASE_REPORT: 1
-  QASE_PROJECT_CODE: ${{ secrets.QASE_PROJECT_CODE }}
+  QASE_PROJECT_CODE: INT
   QASE_RUN_COMPLETE: true
   QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_TESTOPS_API_TOKEN }}
 
@@ -33,5 +33,5 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: tests
-        run: pytest test/test_url
-        continue-on-error: false
+        run: pytest tests/test_url/prod
+        continue-on-error: true

@@ -8,6 +8,7 @@ from config import bot, chat_id
 @allure.title("Проверка urls")
 class TestCheckUrls:
     @allure.title("Проверка url на главной странице разных городов")
+    @qase.id(400)
     @qase.title("Проверка url на главной странице разных городов")
     def test_main_urls(self, driver):
         urls = [
@@ -46,6 +47,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке не пройдена")
 
     @allure.title("Проверка url на страницах Екатеринбурга")
+    @qase.id(401)
     @qase.title("Проверка url на страницах Екатеринбурга")
     def test_ekb_main_url(self, driver):
         urls = [
@@ -65,6 +67,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Екатеринбурге не пройдена")
 
     @allure.title("Проверка url на страницах Новосибирска")
+    @qase.id(402)
     @qase.title("Проверка url на страницах Новосибирска")
     def test_nov_main_url(self, driver):
         urls = [
@@ -82,6 +85,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Новосибирске не пройдена")
 
     @allure.title("Проверка url на страницах Краснодара")
+    @qase.id(403)
     @qase.title("Проверка url на страницах Краснодара")
     def test_nov_main_kras(self, driver):
         urls = [
@@ -99,6 +103,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Краснодаре не пройдена")
 
     @allure.title("Проверка url на страницах Твери")
+    @qase.id(404)
     @qase.title("Проверка url на страницах Твери")
     def test_nov_main_tver(self, driver):
         urls = [
@@ -115,6 +120,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Твери не пройдена")
 
     @allure.title("Проверка url на страницах Ростова-на-Дону")
+    @qase.id(405)
     @qase.title("Проверка url на страницах Ростова-на-Дону")
     def test_nov_main_rostov(self, driver):
         urls = [
@@ -131,6 +137,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Ростове-на-Дону не пройдена")
 
     @allure.title("Проверка url на страницах Омска")
+    @qase.id(405)
     @qase.title("Проверка url на страницах Омска")
     def test_nov_main_omsk(self, driver):
         urls = [
@@ -147,6 +154,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Омске не пройдена")
 
     @allure.title("Проверка url на страницах Москвы и мск. области")
+    @qase.id(406)
     @qase.title("Проверка url на страницах Москвы и мск. области")
     def test_nov_main_msk(self, driver):
         urls = [
@@ -167,6 +175,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в Москве не пройдена")
 
     @allure.title("Проверка url на страницах Санкт-Петербурга и лен. области")
+    @qase.id(406)
     @qase.title("Проверка url на страницах Санкт-Петербурга и лен. области")
     def test_nov_main_spb(self, driver):
         urls = [
@@ -185,6 +194,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"На {url} проверка номера на рыжей кнопке в СПб не пройдена")
 
     @allure.title("Проверка url на провайдере Ростелеком")
+    @qase.id(407)
     @qase.title("Проверка url на провайдере Ростелеком")
     def test_rostelecom_provider(self, driver):
         urls = [
@@ -214,6 +224,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере Ростелеком не пройдена")
 
     @allure.title("Проверка url на провайдере Ростелеком для МОЛ")
+    @qase.id(408)
     @qase.title("Проверка url на провайдере Ростелеком для МОЛ")
     def test_rostelecom_msk_provider(self, driver):
         urls = [
@@ -230,6 +241,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере Ростелеком МОЛ не пройдена")
 
     @allure.title("Проверка url на провайдере Ростелеком для ПОЛ")
+    @qase.id(409)
     @qase.title("Проверка url на провайдере Ростелеком для ПОЛ")
     def test_rostelecom_spb_provider(self, driver):
         urls = [
@@ -246,6 +258,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере Ростелеком ПОЛ не пройдена")
 
     @allure.title("Проверка url на провайдере МТС")
+    @qase.id(410)
     @qase.title("Проверка url на провайдере МТС")
     def test_mts_provider(self, driver):
         urls = [
@@ -262,6 +275,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере МТС не пройдена")
 
     @allure.title("Проверка url на провайдере Билайн")
+    @qase.id(411)
     @qase.title("Проверка url на провайдере Билайн")
     def test_beeline_provider(self, driver):
         urls = [
@@ -278,6 +292,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере Билайн не пройдена")
 
     @allure.title("Проверка url на провайдере Дом.ру")
+    @qase.id(412)
     @qase.title("Проверка url на провайдере Дом.ру")
     def test_domru_provider(self, driver):
         urls = [
@@ -294,6 +309,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере Дом.ру не пройдена")
 
     @allure.title("Проверка url на провайдере ТТК")
+    @qase.id(413)
     @qase.title("Проверка url на провайдере ТТК")
     def test_ttk_provider(self, driver):
         urls = [
@@ -309,6 +325,7 @@ class TestCheckUrls:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере ТТК не пройдена")
 
     @allure.title("Проверка url на провайдере МГТС")
+    @qase.id(414)
     @qase.title("Проверка url на провайдере МГТС")
     def test_mgts_provider(self, driver):
         urls = [
