@@ -1,11 +1,13 @@
 import time
 import allure
 from pages.forms.pol_page import FormsPage
+from qaseio.pytest import qase
 
 
 class TestPOLForms:
 
     @allure.title("Проверка формы 'жду звонка'")
+    @qase.title("Проверка формы 'жду звонка' ПОЛ")
     def test_wait_call_pol_form(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -15,6 +17,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка офисной заявки")
+    @qase.title("Проверка офисной заявки ПОЛ")
     def test_office_form_pol(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -24,6 +27,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка попапа номера телефона")
+    @qase.title("Проверка попапа номера телефона ПОЛ")
     def test_popup_number_pol(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -33,6 +37,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы заявки 'адрес-тариф'")
+    @qase.title("Проверка формы заявки 'адрес-тариф' ПОЛ")
     def test_tariff_form_pol(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -43,6 +48,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы загородной заявки на ПОЛ")
+    @qase.title("Проверка формы загородной заявки на ПОЛ")
     def test_out_of_town_application_pol(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -51,7 +57,8 @@ class TestPOLForms:
         forms_page.fill_connect_to_application_outtown()
         time.sleep(60)
 
-    @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы'")
+    @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер")
+    @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер ПОЛ")
     def test_check_button_connect(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -65,6 +72,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
+    @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер ПОЛ")
     def test_check_button_connect_unpartner_pol(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -77,6 +85,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка реферальной ссылки с тарифа")
+    @qase.title("Проверка реферальной ссылки с тарифа ПОЛ")
     def test_check_url_provider_pol(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -88,6 +97,7 @@ class TestPOLForms:
         assert driver.current_url == target_url
 
     @allure.title("Проверка формы 1 клик на главной странице")
+    @qase.title("Проверка формы 1 клик на главной странице ПОЛ")
     def test_one_click_main(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/")
         forms_page.open()
@@ -96,6 +106,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице отзывов")
+    @qase.title("Проверка формы 1 клик на странице отзывов ПОЛ")
     def test_one_click_review(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/reviews")
         forms_page.open()
@@ -103,6 +114,7 @@ class TestPOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице поиска по адресу")
+    @qase.title("Проверка формы 1 клик на странице поиска по адресу ПОЛ")
     def test_one_click_tohome(self, driver):
         forms_page = FormsPage(driver, "https://piter-online.net/orders/tohome")
         forms_page.open()
