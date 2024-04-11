@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 #  schedule:
 #    - cron: "20 13 * * *"
-#  pull_request:
+  pull_request:
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
@@ -12,7 +12,7 @@ env:
   HEADLESS: ${{ secrets.HEADLESS }}
   TOKEN: ${{ secrets.TOKEN }}
   QASE_REPORT: 1
-  QASE_PROJECT_CODE: INT
+  QASE_PROJECT_CODE: ${{ secrets.QASE_PROJECT_CODE }}
   QASE_RUN_COMPLETE: true
   QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_TESTOPS_API_TOKEN }}
 
