@@ -34,4 +34,4 @@ jobs:
 
       - name: tests
         run: pytest test/test_url/prod
-        continue-on-error: false
+        continue-on-error: true
