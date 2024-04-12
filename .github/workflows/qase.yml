@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 #  schedule:
 #    - cron: "20 13 * * *"
-  pull_request:
+#  pull_request:
 
 env:
   BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
