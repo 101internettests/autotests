@@ -15,7 +15,7 @@
 		"run": {
 			"complete": true
 		},
-		"defect": false,
+		"defect": true,
 		"project": "INT",
 		"chunk": 200
 	},
@@ -27,5 +27,5 @@
 			}
 		}
 	},
-	"environment": "local"
+	"environment": "github_actions"
 }
