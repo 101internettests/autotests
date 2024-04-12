@@ -1,5 +1,5 @@
 from pages.review.internet_page import ReviewPageRegion, ReviewPageStreet, ReviewPageProvider
-from qaseio.pytest import qase
+# from qaseio.pytest import qase
 import random
 import allure
 
@@ -37,7 +37,7 @@ urls_dacha = ['https://101internet.ru/chelyabinsk/orders/sat', 'https://www.mosk
 class Test101Review:
 
     @allure.title("Отзыв оставлен на странице региона")
-    @qase.title("Отзыв оставлен на странице региона")
+    # @qase.title("Отзыв оставлен на странице региона")
     def test_random_review(self, driver):
         random_url = random.choice(urls)
         review = ReviewPageRegion(driver, random_url)
@@ -68,7 +68,7 @@ class Test101Review:
     #     review.leave_the_feedback_101_pub_operator()
 
     @allure.title("Отзыв оставлен на странице провайдера в разделе о провайдере")
-    @qase.title("Отзыв оставлен на странице провайдера в разделе о провайдере")
+    # @qase.title("Отзыв оставлен на странице провайдера в разделе о провайдере")
     def test_review_provider(self, driver):
         random_url = random.choice(urls_provider)
         review = ReviewPageProvider(driver, random_url)
@@ -78,7 +78,7 @@ class Test101Review:
         print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на странице провайдера в разделе отзывы")
-    @qase.title("Отзыв оставлен на странице провайдера в разделе отзывы")
+    # @qase.title("Отзыв оставлен на странице провайдера в разделе отзывы")
     def test_review_provider_feedback(self, driver):
         random_url = random.choice(urls_provider_feedback)
         review = ReviewPageProvider(driver, random_url)
@@ -89,7 +89,7 @@ class Test101Review:
         print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на главной странице")
-    @qase.title("Отзыв оставлен на главной странице")
+    # @qase.title("Отзыв оставлен на главной странице")
     def test_review_main_page(self, driver):
         random_url = random.choice(urls_main_page)
         review = ReviewPageRegion(driver, random_url)
@@ -99,7 +99,7 @@ class Test101Review:
         print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на странице офиса")
-    @qase.title("Отзыв оставлен на странице офиса")
+    # @qase.title("Отзыв оставлен на странице офиса")
     def test_review_office(self, driver):
         random_url = random.choice(urls_office)
         review = ReviewPageRegion(driver, random_url)
@@ -109,7 +109,7 @@ class Test101Review:
         print("Выбранный URL:", random_url)
 
     @allure.title("Отзыв оставлен на странице загородной заявки")
-    @qase.title("Отзыв оставлен на странице загородной заявки")
+    # @qase.title("Отзыв оставлен на странице загородной заявки")
     def test_review_dacha(self, driver):
         random_url = random.choice(urls_dacha)
         review = ReviewPageRegion(driver, random_url)

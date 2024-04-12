@@ -1,6 +1,6 @@
 from pages.search.pol_page import CheckPage404, CheckTheCoverageMapPol
 import allure
-from qaseio.pytest import qase
+# from qaseio.pytest import qase
 
 @allure.suite("Тесты поиск на ПОЛ")
 class TestSearch:
@@ -10,7 +10,7 @@ class TestSearch:
         search_page.check_nonexistent_address_pol()
 
     @allure.title("Проверка карты покрытия в Санкт-Петербурге")
-    @qase.title("Проверка карты покрытия в Санкт-Петербурге")
+    # @qase.title("Проверка карты покрытия в Санкт-Петербурге")
     def test_map_spb(self, driver):
         search_page = CheckTheCoverageMapPol(driver, "https://piter-online.net/")
         search_page.open()
