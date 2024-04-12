@@ -1,5 +1,5 @@
 import time
-from qaseio.pytest import qase
+# from qaseio.pytest import qase
 from pages.search.mol_page import CheckPage404, CheckTheCoverageMapMol
 # import random
 import allure
@@ -13,7 +13,7 @@ class TestSearch:
         search_page.check_nonexistent_address_mol()
 
     @allure.title("Проверка карты покрытия в Балашихе и Москве")
-    @qase.title("Проверка карты покрытия в Балашихе и Москве")
+    # @qase.title("Проверка карты покрытия в Балашихе и Москве")
     def test_map_blsh(self, driver):
         search_page = CheckTheCoverageMapMol(driver, "https://www.moskvaonline.ru/")
         search_page.open()
@@ -28,7 +28,7 @@ class TestSearch:
         # search_page.check_the_coverage_map_test()
 
     @allure.title("Проверка карты покрытия в Балашихе и Москве")
-    @qase.title("Проверка карты покрытия в Балашихе и Москве")
+    # @qase.title("Проверка карты покрытия в Балашихе и Москве")
     def test_pagination(self, driver):
         search_page = CheckTheCoverageMapMol(driver, "https://www.moskvaonline.ru/")
         search_page.open()

@@ -1,5 +1,5 @@
 from pages.forms.mol_page import FormsPage
-from qaseio.pytest import qase
+# from qaseio.pytest import qase
 import allure
 import time
 
@@ -7,7 +7,7 @@ import time
 class TestMOLForms:
 
     @allure.title("Проверка формы 'жду звонка'")
-    @qase.title("Проверка формы 'жду звонка' МОЛ")
+    # @qase.title("Проверка формы 'жду звонка' МОЛ")
     def test_wait_call_mol_form(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/rates")
         forms_page.open()
@@ -15,7 +15,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка офисной заявки")
-    @qase.title("Проверка офисной заявки МОЛ")
+    # @qase.title("Проверка офисной заявки МОЛ")
     def test_office_form(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -25,7 +25,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка попапа номера телефона")
-    @qase.title("Проверка попапа номера телефона МОЛ")
+    # @qase.title("Проверка попапа номера телефона МОЛ")
     def test_popup_number_moscow(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -35,7 +35,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы заявки 'адрес-тариф'")
-    @qase.title("Проверка формы заявки 'адрес-тариф' МОЛ")
+    # @qase.title("Проверка формы заявки 'адрес-тариф' МОЛ")
     def test_tariff_form_moscow(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -46,7 +46,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы загородной заявки на МОЛ")
-    @qase.title("Проверка формы загородной заявки на МОЛ")
+    # @qase.title("Проверка формы загородной заявки на МОЛ")
     def test_out_of_town_application_moscow(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -56,7 +56,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер")
-    @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер МОЛ")
+    # @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' партнер МОЛ")
     def test_check_button_connect_mol(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -70,7 +70,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
-    @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер МОЛ")
+    # @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер МОЛ")
     def test_check_button_connect_unpartner_mol(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -83,7 +83,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка реферальной ссылки с тарифа")
-    @qase.title("Проверка реферальной ссылки с тарифа МОЛ")
+    # @qase.title("Проверка реферальной ссылки с тарифа МОЛ")
     def test_check_url_provider_mol(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -95,7 +95,7 @@ class TestMOLForms:
         assert driver.current_url == target_url
 
     @allure.title("Проверка формы 1 клик на главной странице")
-    @qase.title("Проверка формы 1 клик на главной странице МОЛ")
+    # @qase.title("Проверка формы 1 клик на главной странице МОЛ")
     def test_one_click_main(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/")
         forms_page.open()
@@ -104,7 +104,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице отзывов")
-    @qase.title("Проверка формы 1 клик на странице отзывов МОЛ")
+    # @qase.title("Проверка формы 1 клик на странице отзывов МОЛ")
     def test_one_click_review(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/reviews")
         forms_page.open()
@@ -112,7 +112,7 @@ class TestMOLForms:
         time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице поиска по адресу")
-    @qase.title("Проверка формы 1 клик на странице поиска по адресу МОЛ")
+    # @qase.title("Проверка формы 1 клик на странице поиска по адресу МОЛ")
     def test_one_click_tohome(self, driver):
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/orders/tohome")
         forms_page.open()
