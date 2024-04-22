@@ -66,7 +66,7 @@ class TestInternetForms:
         forms_page.chose_button_find_by_address()
         forms_page.fill_address_in_addresspage_second()
         forms_page.fill_connect_to_application_second()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер")
     # @qase.title("Проверка кнопки 'Подключить' в блоке 'Недавно подключённые тарифы' непартнер 101")

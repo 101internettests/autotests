@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 
 
 class WaitMOLCallLocators:
-    SCROLL = (By.XPATH, "//a[contains(text(), 'Статьи')]")
+    SCROLL = (By.XPATH, "//a[@aria-label='Главная']")
     REVIEWS = (By.XPATH, "//a[contains(text(), 'Отзывы')]")
 
 
