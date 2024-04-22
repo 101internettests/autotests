@@ -136,7 +136,7 @@ class FormsPage(BasePage):
 
     @allure.step("Выбрать 'Поиск по адресу' внизу страницы")
     def chose_button_find_by_address(self):
-        scroll = self.element_is_visible(RecentlyConnectionTariffs.SCROLL)
+        scroll = self.element_is_visible(OutOfTownApplication.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         self.element_is_visible(RecentlyConnectionTariffs.BUTTON_FIND_ADDRESS).click()

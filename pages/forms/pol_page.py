@@ -107,7 +107,7 @@ class FormsPage(BasePage):
 
     @allure.step("Выбрать 'Поиск по адресу' внизу страницы")
     def chose_button_find_by_address_pol(self):
-        scroll = self.element_is_visible(RecentlyConnectionTariffsPol.SCROLL)
+        scroll = self.element_is_visible(OutOfTownApplicationPOL.SCROLL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
         self.element_is_visible(RecentlyConnectionTariffsPol.BUTTON_FIND_ADDRESS).click()
@@ -207,7 +207,7 @@ class FormsPage(BasePage):
 
     @allure.step("Скролл до формы 1 клик снизу страницы")
     def scroll_to_form(self):
-        scroll = self.element_is_visible(OneClickLocators.SCROLL_MAIN_PAGE)
+        scroll = self.element_is_visible(OneClickLocators.SCROLL_FOR_POL)
         actions = ActionChains(self.driver)
         actions.move_to_element(scroll).perform()
 

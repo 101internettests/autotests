@@ -16,7 +16,7 @@ class PopUpPhoneNubPOL:
     BUTTON_SUBMIT_APPLICATION = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
 
 class OutOfTownApplicationPOL:
-    SCROLL = (By.XPATH, "//a[contains(text(), 'Статьи')]")
+    SCROLL = (By.XPATH, "//a[@aria-label='Главная']")
 
 
 class RecentlyConnectionTariffsPol:
