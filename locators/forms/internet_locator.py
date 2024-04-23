@@ -49,7 +49,7 @@ class AddreesTariffForm:
 
 
 class OutOfTownApplication:
-    SCROLL = (By.XPATH, "//div[contains(text(), 'Руководство пользователя.pdf')]")
+    SCROLL = (By.XPATH, "//a[@aria-label='Главная']")
     OUT_OF_TOWN_BUTTON = (By.XPATH, "//a[contains(text(), 'Интернет на дачу')]")
     INPUT_NAME = (By.XPATH, "(//input[@datatest='order_form_input_name'])[1]")
     INPUT_NUMBER = (By.XPATH, "(//input[@datatest='order_form_input_tel'])[1]")
@@ -97,8 +97,9 @@ class WriteTariffName:
 
 
 class OneClickLocators:
-    SCROLL_MAIN_PAGE = (By.XPATH, "(//div[contains(text(), 'Топ провайдеров')])[2]")
-    SCROLL_TOHOME_PAGE = (By.XPATH, "//div[contains(text(), 'Интернет-провайдеры ')]")
+    SCROLL_MAIN_PAGE = (By.XPATH, "(//h2[contains(text(), 'Топ провайдеров домашнего интернета в ')])[2]")
+    SCROLL_FOR_POL = (By.XPATH, "(//h2[contains(text(), 'Топ провайдеров')])[2]")
+    SCROLL_TOHOME_PAGE = (By.XPATH, "//h2[contains(text(), 'Интернет-провайдеры ')]")
     NUMBER_OF_PHONE = (By.XPATH, "//input[@id='fix_callback_phone']")
     BUTTON_CHOSE_THE_TARIFF = (By.XPATH, "//div[contains(text(), 'Подобрать тариф')]")
     TEXT_CHECK = (By.XPATH, "//div[contains(text(), 'Ваша заявка принята! Мы свяжемся с вами в ближайшее время.')]")
