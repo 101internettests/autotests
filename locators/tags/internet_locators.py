@@ -64,9 +64,10 @@ class AddreesTariffForm:
     TEXT = (By.XPATH, "(//div[contains(text(), 'телефон')])[1]")
     INPUT_NUMBER_SECOND = (By.XPATH, "//input[@datatest='providers_provider_order_input_tel']")
     BUTTON_SEND_APL_SECOND = (By.XPATH, "//div[contains(text(), 'Оставить заявку')]")
+    BUTTON_SEND_APL_THRID = (By.XPATH, "(//div[contains(text(), 'Оставить заявку')])[3]")
     SCROLL = (By.XPATH, "//div[contains(text(), 'Показать все детали тарифа')]")
     TARIFF_POPUP_NUM = (By.XPATH, "//input[@datatest='popup_tariff_order_input_tel']")
-
+    THANKYOU_BUTTON = (By.XPATH, "//div[@data-test='give_feedback']")
 
 class WriteTariffName:
     NAME_OF_TARIFF = (By.XPATH, "//*[@id='root']/div/div[4]/div/div/div/div[1]/form/div/div[1]/span")

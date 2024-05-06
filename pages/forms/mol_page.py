@@ -56,6 +56,7 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
         self.element_is_visible(OfficeOrder.CHOOSE_HOUSE).send_keys("11")
         self.element_is_visible(OfficeOrder.CLICK_ON_HOUSE).click()
+        self.element_is_visible(OfficeOrder.CHOOSE_TYPE).click()
         self.element_is_visible(PopUpPhoneNubMsk.BUTTOM_SHOW_TARIFFS).click()
 
     @allure.step("Открыть попап")
@@ -171,6 +172,7 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_STREET).click()
         self.element_is_visible(NonPartnerCardRecCon.INPUT_HOUSE).send_keys("1")
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_HOUSE).click()
+        self.element_is_visible(NonPartnerCardRecCon.CHOOSE_TYPE).click()
         self.element_is_visible(NonPartnerCardRecCon.SHOW_TARIFFS).click()
 
     @allure.step("Выбрать регион Московская область в хедере")

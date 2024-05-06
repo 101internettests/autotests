@@ -51,6 +51,7 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
         self.element_is_visible(OfficeOrder.CHOOSE_HOUSE).send_keys("8")
         self.element_is_visible(OfficeOrder.CLICK_ON_HOUSE).click()
+        self.element_is_visible(OfficeOrder.CHOOSE_TYPE).click()
         self.element_is_visible(PopUpPhoneNubPOL.BUTTON_SHOW_TARIFFS).click()
 
     @allure.step("Вести номер телефона в попап")
@@ -162,6 +163,7 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerPOL.CLICK_ON_THE_STREET).click()
         self.element_is_visible(NonPartnerPOL.INPUT_HOUSE).send_keys("8")
         self.element_is_visible(NonPartnerPOL.CLICK_ON_THE_HOUSE).click()
+        self.element_is_visible(NonPartnerPOL.CHOOSE_TYPE).click()
         self.element_is_visible(NonPartnerPOL.SHOW_TARIFFS).click()
 
     @allure.step("Выбрать в фильтрах 'ПАКТ'")

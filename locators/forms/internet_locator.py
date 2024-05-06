@@ -23,7 +23,7 @@ class OfficeOrder:
     PERSON_INPUT = (By.XPATH, "//input[@datatest='business_order_input_person']")
     TELEPHON_INPUT = (By.XPATH, "//input[@datatest='business_order_input_tel']")
     BUTTON_SEND_ORDER = (By.XPATH, "(//div[contains(text(), 'Отправить заявку')])[1]")
-
+    CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[1]")
 
 class PopUpPhoneNub:
     CHOOSE_MOSCOW = (By.XPATH, "(//a[contains(text(), 'Москва')])[1]")
@@ -81,7 +81,7 @@ class NonPartnerCardRecCon:
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
     CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
-
+    CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[2]")
 
 class ReferralUrlTariff:
     CHOSE_ABK_WELCOME = (By.XPATH, "//div[contains(text(), 'АВК-Веллком')]")
