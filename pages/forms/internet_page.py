@@ -62,6 +62,7 @@ class FormsPage(BasePage):
         self.element_is_visible(OfficeOrder.CLICK_ON_STREET).click()
         self.element_is_visible(OfficeOrder.CHOOSE_HOUSE).send_keys("11")
         self.element_is_visible(OfficeOrder.CLICK_ON_HOUSE).click()
+        self.element_is_visible(OfficeOrder.CHOOSE_TYPE).click()
         self.element_is_visible(PopUpPhoneNub.BUTTON_SHOW_TARIFFS).click()
 
     @allure.step("Вести номер телефона в попап")
@@ -82,6 +83,7 @@ class FormsPage(BasePage):
                 print("Провайдер недоступен в этом доме, отправлена заявки на другие")
         else:
             self.element_is_visible(AddreesTariffForm.OPEN_PPOPUP).click()
+        time.sleep(4)
 
     @allure.step("Закрыть попап")
     def close_popup(self):
@@ -186,6 +188,7 @@ class FormsPage(BasePage):
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_STREET).click()
         self.element_is_visible(NonPartnerCardRecCon.INPUT_HOUSE).send_keys("1")
         self.element_is_visible(NonPartnerCardRecCon.CLICK_ON_THE_HOUSE).click()
+        self.element_is_visible(NonPartnerCardRecCon.CHOOSE_TYPE).click()
         self.element_is_visible(NonPartnerCardRecCon.SHOW_TARIFFS).click()
 
     @allure.step("Перейти на сайт провайдера по кнопке'подключить' у провайдера 'АВК-Веллком'")

@@ -43,7 +43,7 @@ class NonPartnerPOL:
     INPUT_HOUSE = (By.XPATH, "(//input[@datatest='main_input_street_home_new'])[2]")
     CLICK_ON_THE_HOUSE = (By.XPATH, "(//li[@datatest='dropdown_list_main'])[1]")
     SHOW_TARIFFS = (By.XPATH, "(//div[contains(text(), 'показать тарифы')])[1]")
-
+    CHOOSE_TYPE = (By.XPATH, "(//li[contains(text(), 'В квартиру')])[2]")
 
 class ReferralUrlTariffPOL:
     CHOSE_PACT = (By.XPATH, "//div[contains(text(), 'ПАКТ')]")

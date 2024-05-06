@@ -118,5 +118,3 @@ class TestInternetForms:
         forms_page.scroll_to_tohome()
         forms_page.one_click_main()
         time.sleep(60)
-
-

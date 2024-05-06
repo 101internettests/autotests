@@ -12,8 +12,8 @@ class OneHundredMainPage(BasePage):
         with allure.step("Проверка TAG_INTERNET_AND_MOBILE"):
             self.element_is_visible(TagPagelocators.TAG_INTERNET_AND_MOBILE).click()
             self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
-            self.send_application_from_new_window()
-            self.driver.back()
+            self.send_application_from_new_window_new()
+            # self.driver.back()
             time.sleep(60)
         tags_to_check = [
             # TagPagelocators.TAG_HOME_INTERNET,
@@ -29,8 +29,8 @@ class OneHundredMainPage(BasePage):
             with allure.step(f"Проверка {tag}"):
                 self.element_is_visible(tag).click()
                 self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
-                self.send_application_from_new_window()
-                self.driver.back()
+                self.send_application_from_new_window_new()
+                # self.driver.back()
                 time.sleep(60)
 
     @allure.step("Заполнить адрес для города Москва")
@@ -76,7 +76,7 @@ class OneHundredMainPage(BasePage):
     def new_application_provider(self):
         self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
         self.send_application_from_new_window()
-        self.driver.back()
+        # self.driver.back()
         time.sleep(60)
         # with allure.step("Проверка TAG_INTERNET_TV_MOBILE"):
             # self.driver.back()
@@ -95,7 +95,7 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(new_tag).click()
                 self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS_SECOND).click()
                 self.send_application_from_new_window()
-                self.driver.back()
+                # self.driver.back()
                 time.sleep(60)
 
     @allure.step("Проверить текст попапа и отправить заявку для города Москва")
@@ -175,7 +175,26 @@ class OneHundredMainPage(BasePage):
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
             else:
                 self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_THRID).click()
+                self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
+
+    @allure.step("Отправить заявку")
+    def send_application_from_new_window_new(self):
+        # self.element_is_visible(PopupFillTheAddress.BUTTON_CHECK_THE_ADDRESS).click()
+        # self.element_is_visible(AddreesTariffForm.BUTTON_CONNECT).click()
+        time.sleep(2)
+        self.write_tariff_name()
+        if self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE):
+            self.element_is_visible(AddreesTariffForm.INPUT_MOBILE_PHONE).send_keys("1111111111")
+            self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APPLICATION).click()
+        else:
+            if self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND):
+                self.element_is_visible(AddreesTariffForm.INPUT_NUMBER_SECOND).send_keys("1111111111")
                 self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+            else:
+                self.element_is_visible(AddreesTariffForm.TARIFF_POPUP_NUM).send_keys("1111111111")
+                self.element_is_visible(AddreesTariffForm.BUTTON_SEND_APL_SECOND).click()
+                self.element_is_visible(AddreesTariffForm.THANKYOU_BUTTON).click()
 
     @allure.step("Написать название тарифа в консоль")
     def write_tariff_name(self):

@@ -109,7 +109,7 @@ class TestMOLForms:
         forms_page = FormsPage(driver, "https://www.moskvaonline.ru/reviews")
         forms_page.open()
         forms_page.one_click_review()
-        # time.sleep(60)
+        time.sleep(60)
 
     @allure.title("Проверка формы 1 клик на странице поиска по адресу")
     # @qase.title("Проверка формы 1 клик на странице поиска по адресу МОЛ")
@@ -118,5 +118,5 @@ class TestMOLForms:
         forms_page.open()
         forms_page.scroll_to_tohome()
         forms_page.one_click_main()
-        # time.sleep(60)
+        time.sleep(60)
 
