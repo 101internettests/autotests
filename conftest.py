@@ -5,7 +5,6 @@ from selenium import webdriver
 from config import bot, chat_id
 load_dotenv()
 
-]
 # def pytest_addoption(parser):
 #     parser.addoption("--browser", action="store", default="chome")
 #     parser.addoption("--executor", action="store", default="444.444.4.14")
