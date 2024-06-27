@@ -8,7 +8,7 @@ load_dotenv()
 ]
 # def pytest_addoption(parser):
 #     parser.addoption("--browser", action="store", default="chome")
-#     parser.addoption("--executor", action="store", default="172.24.16.1")
+#     parser.addoption("--executor", action="store", default="444.444.4.14")
 
 
 # @pytest.fixture
