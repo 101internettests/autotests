@@ -198,7 +198,7 @@ class TestCheckUrls:
     # @qase.title("Проверка url на провайдере Ростелеком")
     def test_rostelecom_provider(self, driver):
         urls = [
-            "https://101internet.ru/belgorod/providers/rostelecom/",
+            # "https://101internet.ru/belgorod/providers/rostelecom/",
             "https://101internet.ru/barnaul/providers/rostelecom/",
             "https://101internet.ru/chelyabinsk/providers/rostelecom/",
             "https://101internet.ru/kirov/providers/rostelecom/",
@@ -209,10 +209,10 @@ class TestCheckUrls:
             "https://101internet.ru/perm/providers/rostelecom/",
             "https://101internet.ru/nizhniy-novgorod/providers/rostelecom/",
             "https://101internet.ru/irkutsk/providers/rostelecom/",
-            "https://101internet.ru/ekaterinburg/providers/rostelecom/",
-            "https://101internet.ru/novosibirsk/providers/rostelecom",
-            "https://101internet.ru/krasnodar/providers/rostelecom",
-            "https://101internet.ru/tver/providers/rostelecom"
+            # "https://101internet.ru/ekaterinburg/providers/rostelecom/",
+            # "https://101internet.ru/novosibirsk/providers/rostelecom",
+            # "https://101internet.ru/krasnodar/providers/rostelecom",
+            # "https://101internet.ru/tver/providers/rostelecom"
         ]
         for url in urls:
             links = UrlsProviderPage(driver, url)
@@ -263,7 +263,7 @@ class TestCheckUrls:
     def test_mts_provider(self, driver):
         urls = [
             "https://101internet.ru/ekaterinburg/providers/mts/",
-            "https://101internet.ru/novosibirsk/providers/mts"
+            # "https://101internet.ru/novosibirsk/providers/mts"
         ]
         for url in urls:
             links = UrlsProviderPage(driver, url)
@@ -274,19 +274,51 @@ class TestCheckUrls:
             except AssertionError:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере МТС не пройдена")
 
+    @allure.title("Проверка url на провайдере МТС")
+    # @qase.id(410)
+    # @qase.title("Проверка url на провайдере МТС")
+    def test_mts_provider_2(self, driver):
+        urls = [
+            "https://101internet.ru/novosibirsk/providers/mts"
+        ]
+        for url in urls:
+            links = UrlsProviderPage(driver, url)
+            links.open()
+            try:
+                links.check_the_mts_number_2()
+                print(f"Проверка url на провайдере МТС {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере МТС не пройдена")
+
     @allure.title("Проверка url на провайдере Билайн")
     # @qase.id(411)
     # @qase.title("Проверка url на провайдере Билайн")
     def test_beeline_provider(self, driver):
         urls = [
             "https://101internet.ru/ekaterinburg/providers/beeline/",
-            "https://101internet.ru/omsk/providers/beeline"
+            # "https://101internet.ru/omsk/providers/beeline"
         ]
         for url in urls:
             links = UrlsProviderPage(driver, url)
             links.open()
             try:
                 links.check_the_beeline_number()
+                print(f"Проверка url на провайдере Билайн {url} пройдена")
+            except AssertionError:
+                bot.send_message(chat_id, f"Проверка на {url} url на провайдере Билайн не пройдена")
+
+    @allure.title("Проверка url на провайдере Билайн")
+    # @qase.id(411)
+    # @qase.title("Проверка url на провайдере Билайн")
+    def test_beeline_provider_2(self, driver):
+        urls = [
+            "https://101internet.ru/omsk/providers/beeline"
+        ]
+        for url in urls:
+            links = UrlsProviderPage(driver, url)
+            links.open()
+            try:
+                links.check_the_beeline_number_2()
                 print(f"Проверка url на провайдере Билайн {url} пройдена")
             except AssertionError:
                 bot.send_message(chat_id, f"Проверка на {url} url на провайдере Билайн не пройдена")

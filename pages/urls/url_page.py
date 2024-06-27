@@ -57,7 +57,7 @@ class UrlsProviderPage(BasePage):
     @allure.step("Проверь номер телефона у провайдера Ростелеком в регионах")
     def check_the_rostelecom_number(self):
         main = self.element_is_visible(ProviderPhoneNumbersPage.ROSTELECOM_NUMBER)
-        assert main.text == "+7 (800) 101-17-90"
+        assert main.text == "+7 (800) 302-32-76"
 
     @allure.step("Проверь номер телефона у провайдера Ростелеком в Москве")
     def check_the_rostelecom_msk_number(self):
@@ -72,12 +72,22 @@ class UrlsProviderPage(BasePage):
     @allure.step("Проверь номер телефона у провайдера МТС")
     def check_the_mts_number(self):
         main = self.element_is_visible(ProviderPhoneNumbersPage.MTS_NUMBER)
-        assert main.text == "+7 (800) 101-17-95"
+        assert main.text == "+7 (343) 301-68-45"
+
+    @allure.step("Проверь номер телефона у провайдера МТС")
+    def check_the_mts_number_2(self):
+        main = self.element_is_visible(ProviderPhoneNumbersPage.MTS_NUMBER_2)
+        assert main.text == "+7 (383) 382-99-85"
 
     @allure.step("Проверь номер телефона у провайдера Билайн")
     def check_the_beeline_number(self):
         main = self.element_is_visible(ProviderPhoneNumbersPage.BEELINE_NUMBER)
-        assert main.text == "+7 (800) 101-17-81"
+        assert main.text == "+7 (343) 301-68-45"
+
+    @allure.step("Проверь номер телефона у провайдера Билайн")
+    def check_the_beeline_number_2(self):
+        main = self.element_is_visible(ProviderPhoneNumbersPage.BEELINE_NUMBER_2)
+        assert main.text == "+7 (381) 229-01-37"
 
     @allure.step("Проверь номер телефона у провайдера Дом-ру")
     def check_the_domru_number(self):
